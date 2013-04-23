@@ -1,7 +1,5 @@
 EstateManagement
 ================
-EstateManagement
-================
 1.Login--------Different Role Different Main Panel
 2.Main Panel---客户管理---合同管理(设置几个月一收,终止合同管理)
             |           |-车位管理
