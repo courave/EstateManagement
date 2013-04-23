@@ -8,3 +8,5 @@ C:\Users\11171\documents\visual studio 2010\Projects\EstateManagement\EstateMana
 C:\Users\11171\documents\visual studio 2010\Projects\EstateManagement\EstateManagement\obj\x86\Debug\EstateManagement.exe
 C:\Users\11171\documents\visual studio 2010\Projects\EstateManagement\EstateManagement\obj\x86\Debug\EstateManagement.pdb
 C:\Users\11171\documents\visual studio 2010\Projects\EstateManagement\EstateManagement\obj\x86\Debug\EstateManagement.users.FormLogin.resources
+C:\Users\lancelot\Documents\Visual Studio 2010\Projects\EstateManagement\EstateManagement\obj\x86\Debug\EstateManagement.exe
+C:\Users\lancelot\Documents\Visual Studio 2010\Projects\EstateManagement\EstateManagement\obj\x86\Debug\EstateManagement.pdb
