@@ -20,7 +20,7 @@ namespace EstateManagement.pub
                 db.AddParameter("PASSWORD", Password);
                 DataTable dt = db.ExecuteDataTable("SELECT A.[ID],[USERNAME],[NICKNAME],[ROLE_NAME]," +
                     "[PERMISSIONS] FROM CJ_ADMIN A,CJ_ROLE B WHERE A.ROLE_ID=B.ID AND " +
-                    "USERNAME=@USERNAME AND PASSWORD=@PASSWORD");
+                    "USERNAME=@USER_NAME AND PASSWORD=@PASSWORD");
                 if (dt.Rows.Count == 1)
                 {
                     UserInfo.UserName = UserName;

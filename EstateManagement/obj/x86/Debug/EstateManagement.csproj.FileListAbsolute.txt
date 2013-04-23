@@ -1,0 +1,10 @@
+C:\Users\11171\documents\visual studio 2010\Projects\EstateManagement\EstateManagement\bin\Debug\EstateManagement.exe
+C:\Users\11171\documents\visual studio 2010\Projects\EstateManagement\EstateManagement\bin\Debug\EstateManagement.pdb
+C:\Users\11171\documents\visual studio 2010\Projects\EstateManagement\EstateManagement\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Users\11171\documents\visual studio 2010\Projects\EstateManagement\EstateManagement\obj\x86\Debug\EstateManagement.FormMainPanel.resources
+C:\Users\11171\documents\visual studio 2010\Projects\EstateManagement\EstateManagement\obj\x86\Debug\EstateManagement.Properties.Resources.resources
+C:\Users\11171\documents\visual studio 2010\Projects\EstateManagement\EstateManagement\obj\x86\Debug\GenerateResource-ResGen.read.1.tlog
+C:\Users\11171\documents\visual studio 2010\Projects\EstateManagement\EstateManagement\obj\x86\Debug\GenerateResource-ResGen.write.1.tlog
+C:\Users\11171\documents\visual studio 2010\Projects\EstateManagement\EstateManagement\obj\x86\Debug\EstateManagement.exe
+C:\Users\11171\documents\visual studio 2010\Projects\EstateManagement\EstateManagement\obj\x86\Debug\EstateManagement.pdb
+C:\Users\11171\documents\visual studio 2010\Projects\EstateManagement\EstateManagement\obj\x86\Debug\EstateManagement.users.FormLogin.resources
