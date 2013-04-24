@@ -58,6 +58,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="pub\CalendarColumn.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="pub\DataBase.cs" />
     <Compile Include="pub\UserInfo.cs" />
     <Compile Include="users\FormLogin.cs">

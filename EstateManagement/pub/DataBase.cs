@@ -10,7 +10,7 @@ namespace EstateManagement.pub
     {
         public SqlConnection objConnection;
         public SqlCommand objCommand;
-
+        public static string connStr = "Data Source=vmwinxp\\SQLEXPRESS;Initial Catalog=CJWYGL;User ID=cj;Password=cj";
         public DataBase()
             : this("Data Source=vmwinxp\\SQLEXPRESS;Initial Catalog=CJWYGL;User ID=cj;Password=cj")
         {

@@ -41,5 +41,11 @@ namespace EstateManagement
             listViewMain.LargeImageList = itemsImageList;
             listViewMain.Items.Add(new ListViewItem("客户管理", 0));
         }
+
+        private void 合同管理ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            customers.ContractList frmContract = new customers.ContractList();
+            frmContract.Show();
+        }
     }
 }
