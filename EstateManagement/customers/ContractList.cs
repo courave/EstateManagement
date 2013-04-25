@@ -44,7 +44,7 @@ namespace EstateManagement.customers
         private void LoadData(string sql)
         {
             ds.Clear();
-            InitAdapter(queryStr);
+            InitAdapter(sql);
             adapter.Fill(ds, tbname);
             
             this.dgvContract.DataSource = ds.Tables[tbname];
@@ -105,17 +105,68 @@ namespace EstateManagement.customers
             string msg = "";
             if (dgvselrows.Count == 1)
             {
-                msg = "确定要将合同:" + dgvselrows[0].Cells["CONTRACT_NO"].ToString() + "终止吗?";
+                msg = "确定要将合同:" + dgvselrows[0].Cells["CONTRACT_NO"].Value.ToString() + "终止吗?";
                 DialogResult dr=MessageBox.Show(msg, "Alert", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                 if (dr == DialogResult.Yes)
                 {
-                    string sql = "DELETE FROM " + tbname + " WHERE ID=" + dgvselrows[0].Cells["ID"].ToString();
-                    using (DataBase DB = new DataBase())
+                    string sql = "UPDATE "+tbname+" SET TERMINATE=@TERMINATE WHERE ID=@ID";
+                    using (DataBase db = new DataBase())
                     {
-
+                        db.AddParameter("TERMINATE", true);
+                        db.AddParameter("ID", dgvselrows[0].Cells["ID"].Value);
+                        db.ExecuteNonQuery(sql);
+                        LoadData();
                     }
                 }
             }
+            else
+            {
+                //msg = "确定要将所选的" + dgvselrows.Count + "条合同终止吗?";
+                //DialogResult dr = MessageBox.Show(msg, "Alert", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                //if (dr == DialogResult.Yes)
+                //{
+                //    foreach (DataGridViewRow dgvr in dgvselrows)
+                //    {
+                //        string sql = "UPDATE " + tbname + " SET TERMINATE=@TERMINATE WHERE ID=@ID";
+                //        using (DataBase db = new DataBase())
+                //        {
+                //            db.AddParameter("TERMINATE", true);
+                //            db.AddParameter("ID", dgvr.Cells["ID"].Value);
+                //            db.ExecuteNonQuery(sql);
+                //        }
+                //    }
+                //    LoadData();
+                //}
+                msg = "您选择了" + dgvselrows.Count+"条记录,不建议您这样操作!";
+                MessageBox.Show(msg, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void button_search_Click(object sender, EventArgs e)
+        {
+            SearchAction();
+        }
+
+        private void textBox_search_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                SearchAction();
+            }
+        }
+
+        private void SearchAction()
+        {
+            string key = textBox_search.Text.Trim();
+            if (key == "") { LoadData(queryStr); return; }
+            string[] searchItems = { "COMP_NAME", "CONTRACT_NO", "CORP_REP", "CONTACT", "TELEPHONE", "MOBILE", "PLACE", "TAX_ID", "IC_ID", "ORG_CODE", "CATEGORY", "MAIN_BUZZ", "COMMENT" };
+            StringBuilder sb = new StringBuilder(queryStr + " AND ( 1=2 ");
+            foreach (string item in searchItems)
+            {
+                sb.Append("OR " + item + " LIKE '%" + key + "%' ");
+            }
+            sb.Append(" )");
+            LoadData(sb.ToString());
         }
         
 

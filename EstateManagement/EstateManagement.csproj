@@ -50,6 +50,18 @@
     <Compile Include="customers\ContractList.Designer.cs">
       <DependentUpon>ContractList.cs</DependentUpon>
     </Compile>
+    <Compile Include="customers\DepositInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="customers\DepositInfo.Designer.cs">
+      <DependentUpon>DepositInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="customers\FormAddCustomer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="customers\FormAddCustomer.Designer.cs">
+      <DependentUpon>FormAddCustomer.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormMainPanel.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -71,6 +83,9 @@
     </Compile>
     <EmbeddedResource Include="customers\ContractList.resx">
       <DependentUpon>ContractList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="customers\FormAddCustomer.resx">
+      <DependentUpon>FormAddCustomer.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormMainPanel.resx">
       <DependentUpon>FormMainPanel.cs</DependentUpon>
