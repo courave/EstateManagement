@@ -11,3 +11,7 @@ C:\Users\11171\documents\visual studio 2010\Projects\EstateManagement\EstateMana
 C:\Users\lancelot\Documents\Visual Studio 2010\Projects\EstateManagement\EstateManagement\obj\x86\Debug\EstateManagement.exe
 C:\Users\lancelot\Documents\Visual Studio 2010\Projects\EstateManagement\EstateManagement\obj\x86\Debug\EstateManagement.pdb
 C:\Users\11171\documents\visual studio 2010\Projects\EstateManagement\EstateManagement\obj\x86\Debug\EstateManagement.customers.ContractList.resources
+C:\Users\11171\Documents\Visual Studio 2010\Projects\EstateManagement\EstateManagement\obj\x86\Debug\EstateManagement.customers.FormAddCustomer.resources
+C:\Users\11171\Documents\Visual Studio 2010\Projects\EstateManagement\EstateManagement\obj\x86\Debug\EstateManagement.customers.FormAddRoom.resources
+C:\Users\11171\Documents\Visual Studio 2010\Projects\EstateManagement\EstateManagement\obj\x86\Debug\EstateManagement.customers.FormAddCar.resources
+C:\Users\11171\Documents\Visual Studio 2010\Projects\EstateManagement\EstateManagement\obj\x86\Debug\EstateManagement.customers.FormCars.resources

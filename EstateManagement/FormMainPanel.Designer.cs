@@ -31,10 +31,11 @@
             System.Windows.Forms.ListViewItem listViewItem1 = new System.Windows.Forms.ListViewItem("");
             this.menuStripMain = new System.Windows.Forms.MenuStrip();
             this.客户管理CToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem_addNewCustomer = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
-            this.合同管理ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.车位管理ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.ToolStripMenuItem_ContractManage = new System.Windows.Forms.ToolStripMenuItem();
+            this.ToolStripMenuItem_parking = new System.Windows.Forms.ToolStripMenuItem();
             this.房间管理ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.押金管理ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.固定资费设置ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -76,10 +77,11 @@
             // 客户管理CToolStripMenuItem
             // 
             this.客户管理CToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripMenuItem_addNewCustomer,
             this.toolStripMenuItem1,
             this.toolStripSeparator1,
-            this.合同管理ToolStripMenuItem,
-            this.车位管理ToolStripMenuItem,
+            this.ToolStripMenuItem_ContractManage,
+            this.ToolStripMenuItem_parking,
             this.房间管理ToolStripMenuItem,
             this.押金管理ToolStripMenuItem,
             this.固定资费设置ToolStripMenuItem});
@@ -87,29 +89,37 @@
             this.客户管理CToolStripMenuItem.Size = new System.Drawing.Size(83, 23);
             this.客户管理CToolStripMenuItem.Text = "客户管理(&C)";
             // 
+            // toolStripMenuItem_addNewCustomer
+            // 
+            this.toolStripMenuItem_addNewCustomer.Name = "toolStripMenuItem_addNewCustomer";
+            this.toolStripMenuItem_addNewCustomer.Size = new System.Drawing.Size(170, 22);
+            this.toolStripMenuItem_addNewCustomer.Text = "添加一个新的客户";
+            this.toolStripMenuItem_addNewCustomer.Click += new System.EventHandler(this.toolStripMenuItem_addNewCustomer_Click);
+            // 
             // toolStripMenuItem1
             // 
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
             this.toolStripMenuItem1.Size = new System.Drawing.Size(170, 22);
-            this.toolStripMenuItem1.Text = "添加一个新的客户";
+            this.toolStripMenuItem1.Text = "客户信息管理";
             // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
             this.toolStripSeparator1.Size = new System.Drawing.Size(167, 6);
             // 
-            // 合同管理ToolStripMenuItem
+            // ToolStripMenuItem_ContractManage
             // 
-            this.合同管理ToolStripMenuItem.Name = "合同管理ToolStripMenuItem";
-            this.合同管理ToolStripMenuItem.Size = new System.Drawing.Size(170, 22);
-            this.合同管理ToolStripMenuItem.Text = "合同管理";
-            this.合同管理ToolStripMenuItem.Click += new System.EventHandler(this.合同管理ToolStripMenuItem_Click);
+            this.ToolStripMenuItem_ContractManage.Name = "ToolStripMenuItem_ContractManage";
+            this.ToolStripMenuItem_ContractManage.Size = new System.Drawing.Size(170, 22);
+            this.ToolStripMenuItem_ContractManage.Text = "合同管理";
+            this.ToolStripMenuItem_ContractManage.Click += new System.EventHandler(this.ToolStripMenuItem_ContractManage_Click);
             // 
-            // 车位管理ToolStripMenuItem
+            // ToolStripMenuItem_parking
             // 
-            this.车位管理ToolStripMenuItem.Name = "车位管理ToolStripMenuItem";
-            this.车位管理ToolStripMenuItem.Size = new System.Drawing.Size(170, 22);
-            this.车位管理ToolStripMenuItem.Text = "车位管理";
+            this.ToolStripMenuItem_parking.Name = "ToolStripMenuItem_parking";
+            this.ToolStripMenuItem_parking.Size = new System.Drawing.Size(170, 22);
+            this.ToolStripMenuItem_parking.Text = "车位管理";
+            this.ToolStripMenuItem_parking.Click += new System.EventHandler(this.ToolStripMenuItem_parking_Click);
             // 
             // 房间管理ToolStripMenuItem
             // 
@@ -273,8 +283,8 @@
 
         private System.Windows.Forms.MenuStrip menuStripMain;
         private System.Windows.Forms.ToolStripMenuItem 客户管理CToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem 合同管理ToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem 车位管理ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem ToolStripMenuItem_ContractManage;
+        private System.Windows.Forms.ToolStripMenuItem ToolStripMenuItem_parking;
         private System.Windows.Forms.ToolStripMenuItem 房间管理ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 押金管理ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 费用管理FToolStripMenuItem;
@@ -294,9 +304,10 @@
         private System.Windows.Forms.ToolStripMenuItem aboutToolStripMenuItem;
         private System.Windows.Forms.ToolStripTextBox toolStripTextBoxUserInfo;
         private System.Windows.Forms.ListView listViewMain;
-        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem_addNewCustomer;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
         private System.Windows.Forms.ToolStripMenuItem 固定资费设置ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
 
 
     }

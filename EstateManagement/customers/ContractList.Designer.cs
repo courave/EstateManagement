@@ -51,7 +51,6 @@
             this.ORG_CODE = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CATEGORY = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.MAIN_BUZZ = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.COMMENT = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.calendarColumn1 = new CalendarColumn();
@@ -145,7 +144,6 @@
             // 
             this.dgvContract.AllowUserToAddRows = false;
             this.dgvContract.AllowUserToDeleteRows = false;
-            this.dgvContract.AllowUserToOrderColumns = true;
             this.dgvContract.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvContract.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ID,
@@ -164,8 +162,7 @@
             this.IC_ID,
             this.ORG_CODE,
             this.CATEGORY,
-            this.MAIN_BUZZ,
-            this.COMMENT});
+            this.MAIN_BUZZ});
             this.dgvContract.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvContract.EditMode = System.Windows.Forms.DataGridViewEditMode.EditOnEnter;
             this.dgvContract.Location = new System.Drawing.Point(0, 0);
@@ -287,12 +284,6 @@
             this.MAIN_BUZZ.Name = "MAIN_BUZZ";
             this.MAIN_BUZZ.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.MAIN_BUZZ.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
-            // COMMENT
-            // 
-            this.COMMENT.DataPropertyName = "COMMENT";
-            this.COMMENT.HeaderText = "备注";
-            this.COMMENT.Name = "COMMENT";
             // 
             // dataGridViewTextBoxColumn1
             // 
@@ -440,6 +431,5 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn ORG_CODE;
         private System.Windows.Forms.DataGridViewComboBoxColumn CATEGORY;
         private System.Windows.Forms.DataGridViewTextBoxColumn MAIN_BUZZ;
-        private System.Windows.Forms.DataGridViewTextBoxColumn COMMENT;
     }
 }

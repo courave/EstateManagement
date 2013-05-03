@@ -18,7 +18,7 @@ namespace EstateManagement.customers
         
         private string queryStr = "SELECT[ID],[COMP_NAME],[CONTRACT_NO],[START_DATE],[END_DATE],[RENT_AREA],[CORP_REP] " +
                 ",[CONTACT],[TELEPHONE],[MOBILE],[CAPITAL],[PLACE],[TAX_ID],[IC_ID],[ORG_CODE],[CATEGORY] " +
-                ",[MAIN_BUZZ],[COMMENT] FROM [CONTRACT_INFO] WHERE [TERMINATE]<>1 ";
+                ",[MAIN_BUZZ] FROM [CONTRACT_INFO] WHERE [TERMINATE]<>1 ";
         private void InitAdapter(string sql)
         {
             SqlConnection conn = new SqlConnection(DataBase.connStr);
@@ -85,7 +85,7 @@ namespace EstateManagement.customers
                 button_showterminate.Text = "显示已终止的合同";
                 queryStr = "SELECT[ID],[COMP_NAME],[CONTRACT_NO],[START_DATE],[END_DATE],[RENT_AREA],[CORP_REP] " +
                     ",[CONTACT],[TELEPHONE],[MOBILE],[CAPITAL],[PLACE],[TAX_ID],[IC_ID],[ORG_CODE],[CATEGORY] " +
-                    ",[MAIN_BUZZ],[COMMENT] FROM [CONTRACT_INFO] WHERE [TERMINATE]<>1 ";
+                    ",[MAIN_BUZZ] FROM [CONTRACT_INFO] WHERE [TERMINATE]<>1 ";
                 LoadData();
             }
             else
@@ -93,7 +93,7 @@ namespace EstateManagement.customers
                 button_showterminate.Text = "显示未终止的合同";
                 queryStr = "SELECT[ID],[COMP_NAME],[CONTRACT_NO],[START_DATE],[END_DATE],[RENT_AREA],[CORP_REP] " +
                     ",[CONTACT],[TELEPHONE],[MOBILE],[CAPITAL],[PLACE],[TAX_ID],[IC_ID],[ORG_CODE],[CATEGORY] " +
-                    ",[MAIN_BUZZ],[COMMENT] FROM [CONTRACT_INFO] WHERE [TERMINATE]=1 ";
+                    ",[MAIN_BUZZ] FROM [CONTRACT_INFO] WHERE [TERMINATE]=1 ";
                 LoadData();
             }
 
@@ -159,7 +159,7 @@ namespace EstateManagement.customers
         {
             string key = textBox_search.Text.Trim();
             if (key == "") { LoadData(queryStr); return; }
-            string[] searchItems = { "COMP_NAME", "CONTRACT_NO", "CORP_REP", "CONTACT", "TELEPHONE", "MOBILE", "PLACE", "TAX_ID", "IC_ID", "ORG_CODE", "CATEGORY", "MAIN_BUZZ", "COMMENT" };
+            string[] searchItems = { "COMP_NAME", "CONTRACT_NO", "CORP_REP", "CONTACT", "TELEPHONE", "MOBILE", "PLACE", "TAX_ID", "IC_ID", "ORG_CODE", "CATEGORY", "MAIN_BUZZ" };
             StringBuilder sb = new StringBuilder(queryStr + " AND ( 1=2 ");
             foreach (string item in searchItems)
             {

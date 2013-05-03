@@ -56,11 +56,29 @@
     <Compile Include="customers\DepositInfo.Designer.cs">
       <DependentUpon>DepositInfo.cs</DependentUpon>
     </Compile>
+    <Compile Include="customers\FormAddCar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="customers\FormAddCar.Designer.cs">
+      <DependentUpon>FormAddCar.cs</DependentUpon>
+    </Compile>
     <Compile Include="customers\FormAddCustomer.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="customers\FormAddCustomer.Designer.cs">
       <DependentUpon>FormAddCustomer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="customers\FormAddRoom.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="customers\FormAddRoom.Designer.cs">
+      <DependentUpon>FormAddRoom.cs</DependentUpon>
+    </Compile>
+    <Compile Include="customers\FormCars.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="customers\FormCars.Designer.cs">
+      <DependentUpon>FormCars.cs</DependentUpon>
     </Compile>
     <Compile Include="FormMainPanel.cs">
       <SubType>Form</SubType>
@@ -73,6 +91,7 @@
     <Compile Include="pub\CalendarColumn.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="pub\ComboItem.cs" />
     <Compile Include="pub\DataBase.cs" />
     <Compile Include="pub\UserInfo.cs" />
     <Compile Include="users\FormLogin.cs">
@@ -84,8 +103,17 @@
     <EmbeddedResource Include="customers\ContractList.resx">
       <DependentUpon>ContractList.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="customers\FormAddCar.resx">
+      <DependentUpon>FormAddCar.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="customers\FormAddCustomer.resx">
       <DependentUpon>FormAddCustomer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="customers\FormAddRoom.resx">
+      <DependentUpon>FormAddRoom.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="customers\FormCars.resx">
+      <DependentUpon>FormCars.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormMainPanel.resx">
       <DependentUpon>FormMainPanel.cs</DependentUpon>

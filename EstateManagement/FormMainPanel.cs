@@ -42,10 +42,25 @@ namespace EstateManagement
             listViewMain.Items.Add(new ListViewItem("客户管理", 0));
         }
 
-        private void 合同管理ToolStripMenuItem_Click(object sender, EventArgs e)
+        private void ToolStripMenuItem_ContractManage_Click(object sender, EventArgs e)
         {
             customers.ContractList frmContract = new customers.ContractList();
             frmContract.Show();
         }
+
+        private void toolStripMenuItem_addNewCustomer_Click(object sender, EventArgs e)
+        {
+            customers.FormAddCustomer frmAddCustomer = new customers.FormAddCustomer();
+            frmAddCustomer.Show();
+        }
+
+        private void ToolStripMenuItem_parking_Click(object sender, EventArgs e)
+        {
+            customers.FormCars frmCars = new customers.FormCars();
+            frmCars.Show();
+        }
+
+
+
     }
 }
