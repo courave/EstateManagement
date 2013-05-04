@@ -80,6 +80,24 @@
     <Compile Include="customers\FormCars.Designer.cs">
       <DependentUpon>FormCars.cs</DependentUpon>
     </Compile>
+    <Compile Include="customers\FormCustomers.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="customers\FormCustomers.Designer.cs">
+      <DependentUpon>FormCustomers.cs</DependentUpon>
+    </Compile>
+    <Compile Include="customers\FormPredCharge.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="customers\FormPredCharge.Designer.cs">
+      <DependentUpon>FormPredCharge.cs</DependentUpon>
+    </Compile>
+    <Compile Include="customers\FormRooms.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="customers\FormRooms.Designer.cs">
+      <DependentUpon>FormRooms.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormMainPanel.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -102,6 +120,10 @@
     </Compile>
     <EmbeddedResource Include="customers\ContractList.resx">
       <DependentUpon>ContractList.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="customers\DepositInfo.resx">
+      <DependentUpon>DepositInfo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="customers\FormAddCar.resx">
       <DependentUpon>FormAddCar.cs</DependentUpon>
@@ -114,6 +136,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="customers\FormCars.resx">
       <DependentUpon>FormCars.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="customers\FormCustomers.resx">
+      <DependentUpon>FormCustomers.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="customers\FormPredCharge.resx">
+      <DependentUpon>FormPredCharge.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="customers\FormRooms.resx">
+      <DependentUpon>FormRooms.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormMainPanel.resx">
       <DependentUpon>FormMainPanel.cs</DependentUpon>

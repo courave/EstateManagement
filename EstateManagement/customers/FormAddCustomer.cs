@@ -72,7 +72,7 @@ namespace EstateManagement.customers
                     DataRow dr = dt.Rows[0];
                     this.Text = dr[0].ToString()+" 记录修改";
                     button_confirm.Text = "确定修改";
-                    if (dr[16].ToString() == "True") { button_confirm.Enabled = false; button_confirm.Text = "该合同已终止"; }
+                    if ((bool)dr[16] == true) { button_confirm.Enabled = false; button_confirm.Text = "该合同已终止"; }
                     textBox_compname.Text = dr[0].ToString();
                     textBox_contractno.Text = dr[1].ToString();
                     textBox_area.Text = dr[4].ToString();
@@ -145,7 +145,7 @@ namespace EstateManagement.customers
                     if (dt.Rows.Count == 1)
                     {
                         textBox_deposit.Text = dt.Rows[0][0].ToString();
-                        if (dt.Rows[0][1].ToString() == "True")
+                        if ((bool)dt.Rows[0][1] == true)
                         {
                             lblMsg.Text = "已归还";
                         }

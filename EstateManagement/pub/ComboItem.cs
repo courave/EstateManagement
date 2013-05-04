@@ -31,4 +31,20 @@ public class ComboItem
     {
         return this._value;
     }
+    public static bool operator ==(ComboItem item1, ComboItem item2)
+    {
+        return ComboItem.Equals(item1, item2);
+    }
+    public static bool operator !=(ComboItem item1, ComboItem item2)
+    {
+        return !ComboItem.Equals(item1, item2);
+    }
+    public override bool Equals(object obj)
+    {
+        if (GetType() != obj.GetType())
+        {
+            return false;
+        }
+        return ((ComboItem)obj).Key == this._key && ((ComboItem)obj).Value == this._value;
+    }
 }

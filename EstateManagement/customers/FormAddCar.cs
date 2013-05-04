@@ -77,7 +77,7 @@ namespace EstateManagement.customers
                     textBox_location.Text = dt.Rows[0][8].ToString();
                     textBox_remark.Text = dt.Rows[0][9].ToString();
                     textBox_user.Text = dt.Rows[0][10].ToString();
-                    if (dt.Rows[0][11] == null || dt.Rows[0][11].ToString() == "True")
+                    if (dt.Rows[0][11] == null || (bool)dt.Rows[0][11] == true)
                     {
                         button_confirm.Text = "这个车位已经停用了";
                         button_confirm.Enabled = false;

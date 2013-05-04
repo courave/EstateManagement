@@ -24,20 +24,38 @@ namespace EstateManagement.customers
         }
         private void InitializeData()
         {
+            comboBox_comp.Items.Add(new ComboItem("-1", "<无公司>"));
+            using (DataBase db = new DataBase())
+            {
+                DataTable dt = db.ExecuteDataTable("SELECT ID,COMP_NAME FROM CONTRACT_INFO WHERE TERMINATE<>1");
+                foreach (DataRow dr in dt.Rows)
+                {
+                    comboBox_comp.Items.Add(new ComboItem(dr[0].ToString(), dr[1].ToString()));
+                }
+            }
+            comboBox_comp.Enabled = false;//new record do not need to select company
+            comboBox_comp.SelectedIndex = 0;
             if (!isNew)
             {
+                comboBox_comp.Enabled = true;
+                this.Text = "修改房间信息";
+                button_confirm.Text = "确定修改";
                 using (DataBase db = new DataBase())
                 {
-                    DataTable dt = db.ExecuteDataTable("SELECT [ROOM_NO],[LOCATION],[REMARK],[HASCOMP] FROM [ROOM_INFO] WHERE [ID]="+roomid);
+                    string sql = "SELECT A.ROOM_NO,A.LOCATION,A.REMARK,A.HASCOMP,A.COMP_ID,B.COMP_NAME "+
+                        "FROM ROOM_INFO A LEFT JOIN CONTRACT_INFO B ON A.COMP_ID=B.ID "+
+                        "WHERE A.ID="+roomid;
+                    DataTable dt = db.ExecuteDataTable(sql);
                     if (dt.Rows.Count == 1)
                     {
                         textBox_roomno.Text = dt.Rows[0][0].ToString();
                         textBox_location.Text = dt.Rows[0][1].ToString();
                         textBox_remark.Text = dt.Rows[0][2].ToString();
-                        if (dt.Rows[0][3] != null && dt.Rows[0][3].ToString() == "True")
+                        if (dt.Rows[0][3] != null && (bool)dt.Rows[0][3] == true)
                         {
-                            button_confirm.Text = "这个房间已经有公司入驻";
-                            button_confirm.Enabled = false;
+                            ComboItem compitem = new ComboItem(dt.Rows[0][4].ToString(), dt.Rows[0][5].ToString());
+                            comboBox_comp.SelectedItem = compitem;
+                            
                         }
                     }
                 }
@@ -49,6 +67,7 @@ namespace EstateManagement.customers
             string roomno = textBox_roomno.Text;
             string location = textBox_location.Text;
             string remark = textBox_remark.Text;
+
             if (roomno == "")
                 return false;
             if (isNew)
@@ -68,7 +87,36 @@ namespace EstateManagement.customers
             }
             else
             {
-                //todo
+                using (DataBase db = new DataBase())
+                {
+                    sql = "UPDATE [ROOM_INFO] SET [ROOM_NO]=@ROOM_NO,[LOCATION]=@LOCATION " +
+                        ",[REMARK]=@REMARK,[COMP_ID]=@COMP_ID,[HASCOMP]=@HASCOMP " +
+                        "WHERE [ID]=@ROOM_ID";
+                    db.AddParameter("ROOM_NO", roomno);
+                    db.AddParameter("LOCATION", location);
+                    db.AddParameter("REMARK", remark);
+                    db.AddParameter("ROOM_ID", roomid);
+                    if (comboBox_comp.SelectedItem != null)
+                    {
+                        ComboItem compitem = (ComboItem)comboBox_comp.SelectedItem;
+                        if (compitem.Key == "-1")
+                        {
+                            db.AddParameter("COMP_ID", DBNull.Value);
+                            db.AddParameter("HASCOMP", false);
+                        }
+                        else
+                        {
+                            db.AddParameter("COMP_ID", compitem.Key);
+                            db.AddParameter("HASCOMP", true);
+                        }
+                    }
+                    else
+                    {
+                        db.AddParameter("COMP_ID", DBNull.Value);
+                        db.AddParameter("HASCOMP", false);
+                    }
+                    db.ExecuteNonQuery(sql);
+                }
             }
             return true;
         }

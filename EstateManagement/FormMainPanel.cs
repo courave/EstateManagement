@@ -60,6 +60,30 @@ namespace EstateManagement
             frmCars.Show();
         }
 
+        private void ToolStripMenuItem_Rooms_Click(object sender, EventArgs e)
+        {
+            customers.FormRooms frmRooms = new customers.FormRooms();
+            frmRooms.Show();
+        }
+
+        private void ToolStripMenuItem_deposit_Click(object sender, EventArgs e)
+        {
+            customers.DepositInfo frmDeposit = new customers.DepositInfo();
+            frmDeposit.Show();
+        }
+
+        private void ToolStripMenuItem_predcharge_Click(object sender, EventArgs e)
+        {
+            customers.FormPredCharge frmPredCharge = new customers.FormPredCharge();
+            frmPredCharge.Show();
+        }
+
+        private void toolStripMenuItem_customers_Click(object sender, EventArgs e)
+        {
+            customers.FormCustomers frmCustomers = new customers.FormCustomers();
+            frmCustomers.Show();
+        }
+
 
 
     }
