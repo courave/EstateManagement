@@ -1,0 +1,32 @@
+USE [cjwygl]
+GO
+
+/****** Object:  Table [dbo].[SDM_INFO]    Script Date: 05/05/2013 20:01:20 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+CREATE TABLE [dbo].[SDM_INFO](
+	[ID] [int] IDENTITY(1,1) NOT NULL,
+	[SDM_TYPE] [nvarchar](50) NULL,
+	[SDM_SUM] [real] NULL,
+	[SDM_CHARGE] [real] NULL,
+	[SDM_TIME] [datetime] NULL,
+	[COMP_ID] [int] NULL,
+	[ISPAID] [bit] NULL,
+	[COMMENT] [nvarchar](500) NULL,
+	[SDM_CBER] [nvarchar](50) NULL,
+	[ROOM_ID] [int] NULL,
+ CONSTRAINT [PK_sdm_info] PRIMARY KEY CLUSTERED 
+(
+	[ID] ASC
+)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
+) ON [PRIMARY]
+
+GO
+
+ALTER TABLE [dbo].[SDM_INFO] ADD  CONSTRAINT [DF_sdm_info_ISPAID]  DEFAULT ((0)) FOR [ISPAID]
+GO
+

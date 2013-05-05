@@ -84,6 +84,12 @@ namespace EstateManagement
             frmCustomers.Show();
         }
 
+        private void ToolStripMenuItem_addsdm_Click(object sender, EventArgs e)
+        {
+            charges.FormAddSdm frmSdm = new charges.FormAddSdm();
+            frmSdm.Show();
+        }
+
 
 
     }

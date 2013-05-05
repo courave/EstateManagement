@@ -44,6 +44,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="charges\FormAddSdm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="charges\FormAddSdm.Designer.cs">
+      <DependentUpon>FormAddSdm.cs</DependentUpon>
+    </Compile>
     <Compile Include="customers\ContractList.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -118,6 +124,9 @@
     <Compile Include="users\FormLogin.Designer.cs">
       <DependentUpon>FormLogin.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="charges\FormAddSdm.resx">
+      <DependentUpon>FormAddSdm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="customers\ContractList.resx">
       <DependentUpon>ContractList.cs</DependentUpon>
       <SubType>Designer</SubType>
@@ -174,6 +183,7 @@
   <ItemGroup>
     <Content Include="resources\test.bmp" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

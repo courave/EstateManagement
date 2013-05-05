@@ -16,10 +16,25 @@ namespace EstateManagement.customers
             ",[CORP_REP],[CONTACT],[TELEPHONE],[MOBILE],[FANGZU],[WUYE],[FUWU],[WANGLUO] " +
             ",[INTERVAL],[ROOMCOUNT],[PARKINGCOUNT],[YAJIN] " +
             "FROM [View_CUSTOMERS] WHERE [TERMINATE]<>1 ";
+        private void InitData()
+        {
+            toolStripComboBox_comp.Items.Add("<ALL>");
+            //init combocomp
+            using (DataBase db = new DataBase())
+            {
+                DataTable dt = db.ExecuteDataTable("SELECT [COMP_NAME] FROM [CONTRACT_INFO] WHERE [TERMINATE]<>1");
+                foreach (DataRow dr in dt.Rows)
+                {
+                    toolStripComboBox_comp.Items.Add(dr[0].ToString());
+                }
+
+            }
+        }
         public FormCustomers()
         {
             InitializeComponent();
             dgvCustomers.AutoGenerateColumns = false;
+            InitData();
         }
         private void LoadData(string sql)
         {
@@ -182,5 +197,252 @@ namespace EstateManagement.customers
 
         }
 
+        private void SearchAction()
+        {
+            StringBuilder sb = new StringBuilder(queryStr);
+            
+            if (toolStripComboBox_comp.Text.Trim() != "")
+            {
+                string key=toolStripComboBox_comp.Text.Trim();
+                key=key == "<ALL>" ? "" : key;
+                sb.Append(" AND COMP_NAME LIKE '%"+key+"%'");
+            }
+            if (toolStripTextBox_contractno.Text.Trim() != "")
+            {
+                string key = toolStripTextBox_contractno.Text.Trim();
+                sb.Append(" AND CONTRACT_NO LIKE '%" + key + "%'");
+            }
+            if (toolStripTextBox_startdate.Text.Trim() != "")
+            {
+                string key = toolStripTextBox_startdate.Text.Trim();
+                if (key.Length > 8)
+                {
+                    int year = 0;
+                    int month = 0;
+                    int day = 0;
+                    if (key.StartsWith(">"))
+                    {
+                        key = key.Remove(0, 1);
+                        if (key.StartsWith("="))//>=
+                        {
+                            key = key.Remove(0, 1);
+
+                            if (key.Length==8 && int.TryParse(key.Substring(0, 4), out year) &&
+                               int.TryParse(key.Substring(4, 2), out month) &&
+                               int.TryParse(key.Substring(6, 2), out day))
+                            {
+                                DateTime tmpdate = new DateTime(year, month, day);
+                                sb.Append(" AND [START_DATE]>='" + tmpdate.ToShortDateString() + "' ");
+                            }
+
+                        }
+                        else//>
+                        {
+                            if (key.Length == 8 && int.TryParse(key.Substring(0, 4), out year) &&
+                               int.TryParse(key.Substring(4, 2), out month) &&
+                               int.TryParse(key.Substring(6, 2), out day))
+                            {
+                                DateTime tmpdate = new DateTime(year, month, day);
+                                sb.Append(" AND [START_DATE]>'" + tmpdate.ToShortDateString() + "' ");
+                            }
+                        }
+                    }
+                    else if (key.StartsWith("<"))
+                    {
+                        key = key.Remove(0, 1);
+                        if (key.StartsWith("="))//<=
+                        {
+                            key = key.Remove(0, 1);
+                            if (key.Length == 8 && int.TryParse(key.Substring(0, 4), out year) &&
+                               int.TryParse(key.Substring(4, 2), out month) &&
+                               int.TryParse(key.Substring(6, 2), out day))
+                            {
+                                DateTime tmpdate = new DateTime(year, month, day);
+                                sb.Append(" AND [START_DATE]<='" + tmpdate.ToShortDateString() + "' ");
+                            }
+
+                        }
+                        else//<
+                        {
+                            if (key.Length == 8 && int.TryParse(key.Substring(0, 4), out year) &&
+                               int.TryParse(key.Substring(4, 2), out month) &&
+                               int.TryParse(key.Substring(6, 2), out day))
+                            {
+                                DateTime tmpdate = new DateTime(year, month, day);
+                                sb.Append(" AND [START_DATE]<'" + tmpdate.ToShortDateString() + "' ");
+                            }
+                        }
+                    }
+                    else if (key.StartsWith("="))
+                    {
+                        key = key.Remove(0, 1);
+                        if (key.Length == 8 && int.TryParse(key.Substring(0, 4), out year) &&
+                           int.TryParse(key.Substring(4, 2), out month) &&
+                           int.TryParse(key.Substring(6, 2), out day))
+                        {
+                            sb.Append(" AND YEAR([START_DATE])=" + year + " AND MONTH([START_DATE])=" + month + " AND DAY([START_DATE])=" + day);
+                        }
+                    }
+                }
+            }
+            if (toolStripTextBox_enddate.Text.Trim() != "")
+            {
+                string key = toolStripTextBox_enddate.Text.Trim();
+                int year = 0;
+                int month = 0;
+                int day = 0;
+                if (key.StartsWith(">"))
+                {
+                    key = key.Remove(0, 1);
+                    if (key.StartsWith("="))//>=
+                    {
+                        key = key.Remove(0, 1);
+                        if (int.TryParse(key.Substring(0, 4), out year) &&
+                           int.TryParse(key.Substring(4, 2), out month) &&
+                           int.TryParse(key.Substring(6, 2), out day))
+                        {
+                            DateTime tmpdate = new DateTime(year, month, day);
+                            sb.Append(" AND [END_DATE]>='" + tmpdate.ToShortDateString() + "' ");
+                        }
+
+                    }
+                    else//>
+                    {
+                        if (int.TryParse(key.Substring(0, 4), out year) &&
+                           int.TryParse(key.Substring(4, 2), out month) &&
+                           int.TryParse(key.Substring(6, 2), out day))
+                        {
+                            DateTime tmpdate = new DateTime(year, month, day);
+                            sb.Append(" AND [END_DATE]>'" + tmpdate.ToShortDateString() + "' ");
+                        }
+                    }
+                }
+                else if (key.StartsWith("<"))
+                {
+                    key = key.Remove(0, 1);
+                    if (key.StartsWith("="))//<=
+                    {
+                        key = key.Remove(0, 1);
+                        if (int.TryParse(key.Substring(0, 4), out year) &&
+                           int.TryParse(key.Substring(4, 2), out month) &&
+                           int.TryParse(key.Substring(6, 2), out day))
+                        {
+                            DateTime tmpdate = new DateTime(year, month, day);
+                            sb.Append(" AND [END_DATE]<='" + tmpdate.ToShortDateString() + "' ");
+                        }
+
+                    }
+                    else//<
+                    {
+                        if (int.TryParse(key.Substring(0, 4), out year) &&
+                           int.TryParse(key.Substring(4, 2), out month) &&
+                           int.TryParse(key.Substring(6, 2), out day))
+                        {
+                            DateTime tmpdate = new DateTime(year, month, day);
+                            sb.Append(" AND [END_DATE]<'" + tmpdate.ToShortDateString() + "' ");
+                        }
+                    }
+                }
+                else if (key.StartsWith("="))
+                {
+                    key = key.Remove(0, 1);
+                    if (int.TryParse(key.Substring(0, 4), out year) &&
+                       int.TryParse(key.Substring(4, 2), out month) &&
+                       int.TryParse(key.Substring(6, 2), out day))
+                    {
+                        sb.Append(" AND YEAR([END_DATE])=" + year + " AND MONTH([END_DATE])=" + month + " AND DAY([END_DATE])=" + day);
+                    }
+                }
+            }
+            LoadData(sb.ToString());
+        }
+
+        private void ToolStripMenuItem_showterminate_Click(object sender, EventArgs e)
+        {
+            string sql="";
+            if (ToolStripMenuItem_showterminate.Text == "显示已终止的合同")
+            {
+                ToolStripMenuItem_showterminate.Text = "显示现有未终止的合同";
+                sql = "SELECT [ID],[COMP_NAME],[CONTRACT_NO],[START_DATE],[END_DATE],[RENT_AREA] " +
+                ",[CORP_REP],[CONTACT],[TELEPHONE],[MOBILE],[FANGZU],[WUYE],[FUWU],[WANGLUO] " +
+                ",[INTERVAL],[ROOMCOUNT],[PARKINGCOUNT],[YAJIN] " +
+                "FROM [View_CUSTOMERS] WHERE [TERMINATE]=1";
+            }
+            else
+            {
+                ToolStripMenuItem_showterminate.Text = "显示已终止的合同";
+                sql=queryStr;
+            }
+            LoadData(sql);
+        }
+
+        private void ToolStripMenuItem_showexpired_Click(object sender, EventArgs e)
+        {
+            string sql = queryStr;
+
+            if (ToolStripMenuItem_showexpired.Text == "显示已过期的合同")
+            {
+                ToolStripMenuItem_showexpired.Text = "显示未过期的合同";
+                sql += " AND [END_DATE]<GETDATE() ";
+            }
+            else
+            {
+                ToolStripMenuItem_showexpired.Text = "显示已过期的合同";
+                sql += " AND [END_DATE]>GETDATE() ";
+            }
+            LoadData(sql);
+        }
+
+        private void ToolStripMenuItem_shownextexpire_Click(object sender, EventArgs e)
+        {
+            LoadData(queryStr+" AND [END_DATE]<DATEADD(mm,2,GETDATE()) ");
+
+        }
+
+        private void toolStripTextBox_search_TextChanged(object sender, EventArgs e)
+        {
+            string key = toolStripTextBox_search.Text.Trim();
+            if (key == "") { LoadData(queryStr); return; }
+            string[] searchItems = { "COMP_NAME", "CONTRACT_NO", "CORP_REP", "CONTACT", "TELEPHONE", "MOBILE", "PLACE", "TAX_ID", "IC_ID", "ORG_CODE", "CATEGORY", "MAIN_BUZZ", "COMMENT" };
+            StringBuilder sb = new StringBuilder(queryStr + " AND (1=2 ");
+            foreach (string item in searchItems)
+            {
+                sb.Append("OR " + item + " LIKE '%" + key + "%' ");
+            }
+            sb.Append(" )");
+            LoadData(sb.ToString());
+
+        }
+
+        private void toolStripMenuItem_reset_Click(object sender, EventArgs e)
+        {
+            LoadData();
+            ToolStripMenuItem_showexpired.Text = "显示已过期的合同";
+            ToolStripMenuItem_showterminate.Text = "显示已终止的合同";
+            toolStripComboBox_comp.Text = "";
+            toolStripTextBox_contractno.Text = "";
+            toolStripTextBox_startdate.Text = "";
+            toolStripTextBox_enddate.Text = "";
+        }
+
+        private void toolStripComboBox_comp_TextChanged(object sender, EventArgs e)
+        {
+            SearchAction();
+        }
+
+        private void toolStripTextBox_contractno_TextChanged(object sender, EventArgs e)
+        {
+            SearchAction();
+        }
+
+        private void toolStripTextBox_startdate_TextChanged(object sender, EventArgs e)
+        {
+            SearchAction();
+        }
+
+        private void toolStripTextBox_enddate_TextChanged(object sender, EventArgs e)
+        {
+            SearchAction();
+        }
     }
 }

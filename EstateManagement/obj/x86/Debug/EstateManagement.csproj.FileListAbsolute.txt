@@ -34,3 +34,4 @@ C:\Users\lancelot\Documents\Visual Studio 2010\Projects\EstateManagement\EstateM
 C:\Users\lancelot\Documents\Visual Studio 2010\Projects\EstateManagement\EstateManagement\obj\x86\Debug\EstateManagement.customers.DepositInfo.resources
 C:\Users\lancelot\Documents\Visual Studio 2010\Projects\EstateManagement\EstateManagement\obj\x86\Debug\EstateManagement.customers.FormPredCharge.resources
 C:\Users\lancelot\Documents\Visual Studio 2010\Projects\EstateManagement\EstateManagement\obj\x86\Debug\EstateManagement.customers.FormCustomers.resources
+C:\Users\lancelot\Documents\Visual Studio 2010\Projects\EstateManagement\EstateManagement\obj\x86\Debug\EstateManagement.charges.FormAddSdm.resources
