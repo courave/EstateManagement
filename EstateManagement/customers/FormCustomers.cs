@@ -291,66 +291,69 @@ namespace EstateManagement.customers
                 int year = 0;
                 int month = 0;
                 int day = 0;
-                if (key.StartsWith(">"))
+                if (key.Length > 8)
                 {
-                    key = key.Remove(0, 1);
-                    if (key.StartsWith("="))//>=
+                    if (key.StartsWith(">"))
                     {
                         key = key.Remove(0, 1);
-                        if (int.TryParse(key.Substring(0, 4), out year) &&
-                           int.TryParse(key.Substring(4, 2), out month) &&
-                           int.TryParse(key.Substring(6, 2), out day))
+                        if (key.StartsWith("="))//>=
                         {
-                            DateTime tmpdate = new DateTime(year, month, day);
-                            sb.Append(" AND [END_DATE]>='" + tmpdate.ToShortDateString() + "' ");
-                        }
+                            key = key.Remove(0, 1);
+                            if (key.Length == 8 && int.TryParse(key.Substring(0, 4), out year) &&
+                               int.TryParse(key.Substring(4, 2), out month) &&
+                               int.TryParse(key.Substring(6, 2), out day))
+                            {
+                                DateTime tmpdate = new DateTime(year, month, day);
+                                sb.Append(" AND [END_DATE]>='" + tmpdate.ToShortDateString() + "' ");
+                            }
 
-                    }
-                    else//>
-                    {
-                        if (int.TryParse(key.Substring(0, 4), out year) &&
-                           int.TryParse(key.Substring(4, 2), out month) &&
-                           int.TryParse(key.Substring(6, 2), out day))
+                        }
+                        else//>
                         {
-                            DateTime tmpdate = new DateTime(year, month, day);
-                            sb.Append(" AND [END_DATE]>'" + tmpdate.ToShortDateString() + "' ");
+                            if (key.Length == 8 && int.TryParse(key.Substring(0, 4), out year) &&
+                               int.TryParse(key.Substring(4, 2), out month) &&
+                               int.TryParse(key.Substring(6, 2), out day))
+                            {
+                                DateTime tmpdate = new DateTime(year, month, day);
+                                sb.Append(" AND [END_DATE]>'" + tmpdate.ToShortDateString() + "' ");
+                            }
                         }
                     }
-                }
-                else if (key.StartsWith("<"))
-                {
-                    key = key.Remove(0, 1);
-                    if (key.StartsWith("="))//<=
+                    else if (key.StartsWith("<"))
                     {
                         key = key.Remove(0, 1);
-                        if (int.TryParse(key.Substring(0, 4), out year) &&
-                           int.TryParse(key.Substring(4, 2), out month) &&
-                           int.TryParse(key.Substring(6, 2), out day))
+                        if (key.StartsWith("="))//<=
                         {
-                            DateTime tmpdate = new DateTime(year, month, day);
-                            sb.Append(" AND [END_DATE]<='" + tmpdate.ToShortDateString() + "' ");
-                        }
+                            key = key.Remove(0, 1);
+                            if (key.Length == 8 && int.TryParse(key.Substring(0, 4), out year) &&
+                               int.TryParse(key.Substring(4, 2), out month) &&
+                               int.TryParse(key.Substring(6, 2), out day))
+                            {
+                                DateTime tmpdate = new DateTime(year, month, day);
+                                sb.Append(" AND [END_DATE]<='" + tmpdate.ToShortDateString() + "' ");
+                            }
 
+                        }
+                        else//<
+                        {
+                            if (key.Length == 8 && int.TryParse(key.Substring(0, 4), out year) &&
+                               int.TryParse(key.Substring(4, 2), out month) &&
+                               int.TryParse(key.Substring(6, 2), out day))
+                            {
+                                DateTime tmpdate = new DateTime(year, month, day);
+                                sb.Append(" AND [END_DATE]<'" + tmpdate.ToShortDateString() + "' ");
+                            }
+                        }
                     }
-                    else//<
+                    else if (key.StartsWith("="))
                     {
-                        if (int.TryParse(key.Substring(0, 4), out year) &&
+                        key = key.Remove(0, 1);
+                        if (key.Length == 8 && int.TryParse(key.Substring(0, 4), out year) &&
                            int.TryParse(key.Substring(4, 2), out month) &&
                            int.TryParse(key.Substring(6, 2), out day))
                         {
-                            DateTime tmpdate = new DateTime(year, month, day);
-                            sb.Append(" AND [END_DATE]<'" + tmpdate.ToShortDateString() + "' ");
+                            sb.Append(" AND YEAR([END_DATE])=" + year + " AND MONTH([END_DATE])=" + month + " AND DAY([END_DATE])=" + day);
                         }
-                    }
-                }
-                else if (key.StartsWith("="))
-                {
-                    key = key.Remove(0, 1);
-                    if (int.TryParse(key.Substring(0, 4), out year) &&
-                       int.TryParse(key.Substring(4, 2), out month) &&
-                       int.TryParse(key.Substring(6, 2), out day))
-                    {
-                        sb.Append(" AND YEAR([END_DATE])=" + year + " AND MONTH([END_DATE])=" + month + " AND DAY([END_DATE])=" + day);
                     }
                 }
             }

@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
+            this.button_reset = new System.Windows.Forms.Button();
             this.comboBox_comp = new System.Windows.Forms.ComboBox();
             this.dgvPredCharge = new System.Windows.Forms.DataGridView();
             this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -57,24 +58,37 @@
             // 
             // splitContainer1.Panel1
             // 
+            this.splitContainer1.Panel1.Controls.Add(this.button_reset);
             this.splitContainer1.Panel1.Controls.Add(this.comboBox_comp);
             // 
             // splitContainer1.Panel2
             // 
             this.splitContainer1.Panel2.Controls.Add(this.dgvPredCharge);
-            this.splitContainer1.Size = new System.Drawing.Size(517, 407);
+            this.splitContainer1.Size = new System.Drawing.Size(517, 441);
             this.splitContainer1.SplitterDistance = 33;
             this.splitContainer1.TabIndex = 0;
+            // 
+            // button_reset
+            // 
+            this.button_reset.Dock = System.Windows.Forms.DockStyle.Right;
+            this.button_reset.Location = new System.Drawing.Point(442, 0);
+            this.button_reset.Name = "button_reset";
+            this.button_reset.Size = new System.Drawing.Size(75, 33);
+            this.button_reset.TabIndex = 1;
+            this.button_reset.Text = "Reset";
+            this.button_reset.UseVisualStyleBackColor = true;
+            this.button_reset.Click += new System.EventHandler(this.button_reset_Click);
             // 
             // comboBox_comp
             // 
             this.comboBox_comp.Dock = System.Windows.Forms.DockStyle.Left;
-            this.comboBox_comp.Font = new System.Drawing.Font("宋体", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.comboBox_comp.Font = new System.Drawing.Font("SimSun", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.comboBox_comp.FormattingEnabled = true;
             this.comboBox_comp.Location = new System.Drawing.Point(0, 0);
             this.comboBox_comp.Name = "comboBox_comp";
             this.comboBox_comp.Size = new System.Drawing.Size(273, 27);
             this.comboBox_comp.TabIndex = 0;
+            this.comboBox_comp.SelectedIndexChanged += new System.EventHandler(this.comboBox_comp_SelectedIndexChanged);
             this.comboBox_comp.TextUpdate += new System.EventHandler(this.comboBox_comp_TextUpdate);
             // 
             // dgvPredCharge
@@ -93,7 +107,7 @@
             this.dgvPredCharge.Name = "dgvPredCharge";
             this.dgvPredCharge.ReadOnly = true;
             this.dgvPredCharge.RowTemplate.Height = 23;
-            this.dgvPredCharge.Size = new System.Drawing.Size(517, 370);
+            this.dgvPredCharge.Size = new System.Drawing.Size(517, 404);
             this.dgvPredCharge.TabIndex = 0;
             // 
             // ID
@@ -111,7 +125,7 @@
             this.COMP_NAME.HeaderText = "公司";
             this.COMP_NAME.Name = "COMP_NAME";
             this.COMP_NAME.ReadOnly = true;
-            this.COMP_NAME.Width = 54;
+            this.COMP_NAME.Width = 56;
             // 
             // CHARGE_TYPE
             // 
@@ -173,9 +187,9 @@
             // 
             // FormPredCharge
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(517, 407);
+            this.ClientSize = new System.Drawing.Size(517, 441);
             this.Controls.Add(this.splitContainer1);
             this.Name = "FormPredCharge";
             this.Text = "固定资费预设置管理";
@@ -203,5 +217,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
         private System.Windows.Forms.ComboBox comboBox_comp;
+        private System.Windows.Forms.Button button_reset;
     }
 }

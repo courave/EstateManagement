@@ -42,9 +42,9 @@
             this.费用管理FToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ToolStripMenuItem_addsdm = new System.Windows.Forms.ToolStripMenuItem();
             this.其他费用录入ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.水电煤费用列表ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.ToolStripMenuItem_sdm = new System.Windows.Forms.ToolStripMenuItem();
             this.其他费用列表ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.水电煤基数管理ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.ToolStripMenuItem_sdmbase = new System.Windows.Forms.ToolStripMenuItem();
             this.报表管理RToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.费用报表管理ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.打印当月报表ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -70,7 +70,7 @@
             this.toolStripTextBoxUserInfo});
             this.menuStripMain.Location = new System.Drawing.Point(0, 0);
             this.menuStripMain.Name = "menuStripMain";
-            this.menuStripMain.Size = new System.Drawing.Size(768, 25);
+            this.menuStripMain.Size = new System.Drawing.Size(768, 24);
             this.menuStripMain.TabIndex = 0;
             this.menuStripMain.Text = "menuStripMain";
             // 
@@ -86,60 +86,60 @@
             this.ToolStripMenuItem_deposit,
             this.ToolStripMenuItem_predcharge});
             this.客户管理CToolStripMenuItem.Name = "客户管理CToolStripMenuItem";
-            this.客户管理CToolStripMenuItem.Size = new System.Drawing.Size(84, 21);
+            this.客户管理CToolStripMenuItem.Size = new System.Drawing.Size(83, 20);
             this.客户管理CToolStripMenuItem.Text = "客户管理(&C)";
             // 
             // toolStripMenuItem_addNewCustomer
             // 
             this.toolStripMenuItem_addNewCustomer.Name = "toolStripMenuItem_addNewCustomer";
-            this.toolStripMenuItem_addNewCustomer.Size = new System.Drawing.Size(172, 22);
+            this.toolStripMenuItem_addNewCustomer.Size = new System.Drawing.Size(170, 22);
             this.toolStripMenuItem_addNewCustomer.Text = "添加一个新的客户";
             this.toolStripMenuItem_addNewCustomer.Click += new System.EventHandler(this.toolStripMenuItem_addNewCustomer_Click);
             // 
             // toolStripMenuItem_customers
             // 
             this.toolStripMenuItem_customers.Name = "toolStripMenuItem_customers";
-            this.toolStripMenuItem_customers.Size = new System.Drawing.Size(172, 22);
+            this.toolStripMenuItem_customers.Size = new System.Drawing.Size(170, 22);
             this.toolStripMenuItem_customers.Text = "客户信息管理";
             this.toolStripMenuItem_customers.Click += new System.EventHandler(this.toolStripMenuItem_customers_Click);
             // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(169, 6);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(167, 6);
             // 
             // ToolStripMenuItem_ContractManage
             // 
             this.ToolStripMenuItem_ContractManage.Name = "ToolStripMenuItem_ContractManage";
-            this.ToolStripMenuItem_ContractManage.Size = new System.Drawing.Size(172, 22);
+            this.ToolStripMenuItem_ContractManage.Size = new System.Drawing.Size(170, 22);
             this.ToolStripMenuItem_ContractManage.Text = "合同管理";
             this.ToolStripMenuItem_ContractManage.Click += new System.EventHandler(this.ToolStripMenuItem_ContractManage_Click);
             // 
             // ToolStripMenuItem_parking
             // 
             this.ToolStripMenuItem_parking.Name = "ToolStripMenuItem_parking";
-            this.ToolStripMenuItem_parking.Size = new System.Drawing.Size(172, 22);
+            this.ToolStripMenuItem_parking.Size = new System.Drawing.Size(170, 22);
             this.ToolStripMenuItem_parking.Text = "车位管理";
             this.ToolStripMenuItem_parking.Click += new System.EventHandler(this.ToolStripMenuItem_parking_Click);
             // 
             // ToolStripMenuItem_Rooms
             // 
             this.ToolStripMenuItem_Rooms.Name = "ToolStripMenuItem_Rooms";
-            this.ToolStripMenuItem_Rooms.Size = new System.Drawing.Size(172, 22);
+            this.ToolStripMenuItem_Rooms.Size = new System.Drawing.Size(170, 22);
             this.ToolStripMenuItem_Rooms.Text = "房间管理";
             this.ToolStripMenuItem_Rooms.Click += new System.EventHandler(this.ToolStripMenuItem_Rooms_Click);
             // 
             // ToolStripMenuItem_deposit
             // 
             this.ToolStripMenuItem_deposit.Name = "ToolStripMenuItem_deposit";
-            this.ToolStripMenuItem_deposit.Size = new System.Drawing.Size(172, 22);
+            this.ToolStripMenuItem_deposit.Size = new System.Drawing.Size(170, 22);
             this.ToolStripMenuItem_deposit.Text = "押金管理";
             this.ToolStripMenuItem_deposit.Click += new System.EventHandler(this.ToolStripMenuItem_deposit_Click);
             // 
             // ToolStripMenuItem_predcharge
             // 
             this.ToolStripMenuItem_predcharge.Name = "ToolStripMenuItem_predcharge";
-            this.ToolStripMenuItem_predcharge.Size = new System.Drawing.Size(172, 22);
+            this.ToolStripMenuItem_predcharge.Size = new System.Drawing.Size(170, 22);
             this.ToolStripMenuItem_predcharge.Text = "固定资费预设置";
             this.ToolStripMenuItem_predcharge.Click += new System.EventHandler(this.ToolStripMenuItem_predcharge_Click);
             // 
@@ -148,43 +148,45 @@
             this.费用管理FToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.ToolStripMenuItem_addsdm,
             this.其他费用录入ToolStripMenuItem,
-            this.水电煤费用列表ToolStripMenuItem,
+            this.ToolStripMenuItem_sdm,
             this.其他费用列表ToolStripMenuItem,
-            this.水电煤基数管理ToolStripMenuItem});
+            this.ToolStripMenuItem_sdmbase});
             this.费用管理FToolStripMenuItem.Name = "费用管理FToolStripMenuItem";
-            this.费用管理FToolStripMenuItem.Size = new System.Drawing.Size(82, 21);
+            this.费用管理FToolStripMenuItem.Size = new System.Drawing.Size(81, 20);
             this.费用管理FToolStripMenuItem.Text = "费用管理(&F)";
             // 
             // ToolStripMenuItem_addsdm
             // 
             this.ToolStripMenuItem_addsdm.Name = "ToolStripMenuItem_addsdm";
-            this.ToolStripMenuItem_addsdm.Size = new System.Drawing.Size(192, 22);
+            this.ToolStripMenuItem_addsdm.Size = new System.Drawing.Size(190, 22);
             this.ToolStripMenuItem_addsdm.Text = "水电煤录入(按房间号)";
             this.ToolStripMenuItem_addsdm.Click += new System.EventHandler(this.ToolStripMenuItem_addsdm_Click);
             // 
             // 其他费用录入ToolStripMenuItem
             // 
             this.其他费用录入ToolStripMenuItem.Name = "其他费用录入ToolStripMenuItem";
-            this.其他费用录入ToolStripMenuItem.Size = new System.Drawing.Size(192, 22);
+            this.其他费用录入ToolStripMenuItem.Size = new System.Drawing.Size(190, 22);
             this.其他费用录入ToolStripMenuItem.Text = "其他费用录入";
             // 
-            // 水电煤费用列表ToolStripMenuItem
+            // ToolStripMenuItem_sdm
             // 
-            this.水电煤费用列表ToolStripMenuItem.Name = "水电煤费用列表ToolStripMenuItem";
-            this.水电煤费用列表ToolStripMenuItem.Size = new System.Drawing.Size(192, 22);
-            this.水电煤费用列表ToolStripMenuItem.Text = "水电煤费用列表";
+            this.ToolStripMenuItem_sdm.Name = "ToolStripMenuItem_sdm";
+            this.ToolStripMenuItem_sdm.Size = new System.Drawing.Size(190, 22);
+            this.ToolStripMenuItem_sdm.Text = "水电煤费用列表";
+            this.ToolStripMenuItem_sdm.Click += new System.EventHandler(this.ToolStripMenuItem_sdm_Click);
             // 
             // 其他费用列表ToolStripMenuItem
             // 
             this.其他费用列表ToolStripMenuItem.Name = "其他费用列表ToolStripMenuItem";
-            this.其他费用列表ToolStripMenuItem.Size = new System.Drawing.Size(192, 22);
+            this.其他费用列表ToolStripMenuItem.Size = new System.Drawing.Size(190, 22);
             this.其他费用列表ToolStripMenuItem.Text = "其他费用列表";
             // 
-            // 水电煤基数管理ToolStripMenuItem
+            // ToolStripMenuItem_sdmbase
             // 
-            this.水电煤基数管理ToolStripMenuItem.Name = "水电煤基数管理ToolStripMenuItem";
-            this.水电煤基数管理ToolStripMenuItem.Size = new System.Drawing.Size(192, 22);
-            this.水电煤基数管理ToolStripMenuItem.Text = "水电煤基数管理";
+            this.ToolStripMenuItem_sdmbase.Name = "ToolStripMenuItem_sdmbase";
+            this.ToolStripMenuItem_sdmbase.Size = new System.Drawing.Size(190, 22);
+            this.ToolStripMenuItem_sdmbase.Text = "水电煤基数管理";
+            this.ToolStripMenuItem_sdmbase.Click += new System.EventHandler(this.ToolStripMenuItem_sdmbase_Click);
             // 
             // 报表管理RToolStripMenuItem
             // 
@@ -192,19 +194,19 @@
             this.费用报表管理ToolStripMenuItem,
             this.打印当月报表ToolStripMenuItem});
             this.报表管理RToolStripMenuItem.Name = "报表管理RToolStripMenuItem";
-            this.报表管理RToolStripMenuItem.Size = new System.Drawing.Size(84, 21);
+            this.报表管理RToolStripMenuItem.Size = new System.Drawing.Size(82, 20);
             this.报表管理RToolStripMenuItem.Text = "报表管理(&R)";
             // 
             // 费用报表管理ToolStripMenuItem
             // 
             this.费用报表管理ToolStripMenuItem.Name = "费用报表管理ToolStripMenuItem";
-            this.费用报表管理ToolStripMenuItem.Size = new System.Drawing.Size(148, 22);
+            this.费用报表管理ToolStripMenuItem.Size = new System.Drawing.Size(146, 22);
             this.费用报表管理ToolStripMenuItem.Text = "费用报表管理";
             // 
             // 打印当月报表ToolStripMenuItem
             // 
             this.打印当月报表ToolStripMenuItem.Name = "打印当月报表ToolStripMenuItem";
-            this.打印当月报表ToolStripMenuItem.Size = new System.Drawing.Size(148, 22);
+            this.打印当月报表ToolStripMenuItem.Size = new System.Drawing.Size(146, 22);
             this.打印当月报表ToolStripMenuItem.Text = "打印当月报表";
             // 
             // 用户管理UToolStripMenuItem
@@ -214,25 +216,25 @@
             this.角色管理ToolStripMenuItem,
             this.注销ToolStripMenuItem});
             this.用户管理UToolStripMenuItem.Name = "用户管理UToolStripMenuItem";
-            this.用户管理UToolStripMenuItem.Size = new System.Drawing.Size(85, 21);
+            this.用户管理UToolStripMenuItem.Size = new System.Drawing.Size(83, 20);
             this.用户管理UToolStripMenuItem.Text = "用户管理(&U)";
             // 
             // 用户管理ToolStripMenuItem
             // 
             this.用户管理ToolStripMenuItem.Name = "用户管理ToolStripMenuItem";
-            this.用户管理ToolStripMenuItem.Size = new System.Drawing.Size(124, 22);
+            this.用户管理ToolStripMenuItem.Size = new System.Drawing.Size(122, 22);
             this.用户管理ToolStripMenuItem.Text = "用户管理";
             // 
             // 角色管理ToolStripMenuItem
             // 
             this.角色管理ToolStripMenuItem.Name = "角色管理ToolStripMenuItem";
-            this.角色管理ToolStripMenuItem.Size = new System.Drawing.Size(124, 22);
+            this.角色管理ToolStripMenuItem.Size = new System.Drawing.Size(122, 22);
             this.角色管理ToolStripMenuItem.Text = "角色管理";
             // 
             // 注销ToolStripMenuItem
             // 
             this.注销ToolStripMenuItem.Name = "注销ToolStripMenuItem";
-            this.注销ToolStripMenuItem.Size = new System.Drawing.Size(124, 22);
+            this.注销ToolStripMenuItem.Size = new System.Drawing.Size(122, 22);
             this.注销ToolStripMenuItem.Text = "注销";
             // 
             // helpToolStripMenuItem
@@ -240,13 +242,13 @@
             this.helpToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.aboutToolStripMenuItem});
             this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
-            this.helpToolStripMenuItem.Size = new System.Drawing.Size(47, 21);
+            this.helpToolStripMenuItem.Size = new System.Drawing.Size(44, 20);
             this.helpToolStripMenuItem.Text = "&Help";
             // 
             // aboutToolStripMenuItem
             // 
             this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
-            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(120, 22);
+            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(116, 22);
             this.aboutToolStripMenuItem.Text = "&About...";
             // 
             // toolStripTextBoxUserInfo
@@ -255,24 +257,24 @@
             this.toolStripTextBoxUserInfo.CausesValidation = false;
             this.toolStripTextBoxUserInfo.Name = "toolStripTextBoxUserInfo";
             this.toolStripTextBoxUserInfo.ReadOnly = true;
-            this.toolStripTextBoxUserInfo.Size = new System.Drawing.Size(200, 21);
+            this.toolStripTextBoxUserInfo.Size = new System.Drawing.Size(200, 20);
             // 
             // listViewMain
             // 
             this.listViewMain.Dock = System.Windows.Forms.DockStyle.Fill;
             this.listViewMain.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
             listViewItem1});
-            this.listViewMain.Location = new System.Drawing.Point(0, 25);
+            this.listViewMain.Location = new System.Drawing.Point(0, 24);
             this.listViewMain.Name = "listViewMain";
-            this.listViewMain.Size = new System.Drawing.Size(768, 394);
+            this.listViewMain.Size = new System.Drawing.Size(768, 430);
             this.listViewMain.TabIndex = 1;
             this.listViewMain.UseCompatibleStateImageBehavior = false;
             // 
             // FormMainPanel
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(768, 419);
+            this.ClientSize = new System.Drawing.Size(768, 454);
             this.Controls.Add(this.listViewMain);
             this.Controls.Add(this.menuStripMain);
             this.MainMenuStrip = this.menuStripMain;
@@ -297,9 +299,9 @@
         private System.Windows.Forms.ToolStripMenuItem 费用管理FToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem ToolStripMenuItem_addsdm;
         private System.Windows.Forms.ToolStripMenuItem 其他费用录入ToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem 水电煤费用列表ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem ToolStripMenuItem_sdm;
         private System.Windows.Forms.ToolStripMenuItem 其他费用列表ToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem 水电煤基数管理ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem ToolStripMenuItem_sdmbase;
         private System.Windows.Forms.ToolStripMenuItem 报表管理RToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 费用报表管理ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 打印当月报表ToolStripMenuItem;

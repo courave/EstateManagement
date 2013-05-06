@@ -59,5 +59,23 @@ namespace EstateManagement.customers
                 LoadData(queryStr + " AND B.[COMP_NAME] LIKE '%" + comboBox_comp.Text + "%'");
             }
         }
+
+        private void comboBox_comp_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (comboBox_comp.SelectedItem != null)
+            {
+                LoadData(queryStr + " AND A.[COMP_ID]=" + ((ComboItem)comboBox_comp.SelectedItem).Key);
+            }
+            else
+            {
+                LoadData(queryStr + " AND B.[COMP_NAME] LIKE '%" + comboBox_comp.Text + "%'");
+            }
+        }
+
+        private void button_reset_Click(object sender, EventArgs e)
+        {
+            LoadData();
+        }
+
     }
 }

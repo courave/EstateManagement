@@ -35,3 +35,12 @@ C:\Users\lancelot\Documents\Visual Studio 2010\Projects\EstateManagement\EstateM
 C:\Users\lancelot\Documents\Visual Studio 2010\Projects\EstateManagement\EstateManagement\obj\x86\Debug\EstateManagement.customers.FormPredCharge.resources
 C:\Users\lancelot\Documents\Visual Studio 2010\Projects\EstateManagement\EstateManagement\obj\x86\Debug\EstateManagement.customers.FormCustomers.resources
 C:\Users\lancelot\Documents\Visual Studio 2010\Projects\EstateManagement\EstateManagement\obj\x86\Debug\EstateManagement.charges.FormAddSdm.resources
+C:\Users\11171\Documents\Visual Studio 2010\Projects\EstateManagement\EstateManagement\obj\x86\Debug\EstateManagement.charges.FormAddSdm.resources
+C:\Users\11171\Documents\Visual Studio 2010\Projects\EstateManagement\EstateManagement\obj\x86\Debug\EstateManagement.customers.DepositInfo.resources
+C:\Users\11171\Documents\Visual Studio 2010\Projects\EstateManagement\EstateManagement\obj\x86\Debug\EstateManagement.customers.FormCustomers.resources
+C:\Users\11171\Documents\Visual Studio 2010\Projects\EstateManagement\EstateManagement\obj\x86\Debug\EstateManagement.customers.FormPredCharge.resources
+C:\Users\11171\Documents\Visual Studio 2010\Projects\EstateManagement\EstateManagement\obj\x86\Debug\EstateManagement.customers.FormRooms.resources
+C:\Users\11171\Documents\Visual Studio 2010\Projects\EstateManagement\EstateManagement\obj\x86\Debug\ResGen.read.1.tlog
+C:\Users\11171\Documents\Visual Studio 2010\Projects\EstateManagement\EstateManagement\obj\x86\Debug\ResGen.write.1.tlog
+C:\Users\11171\Documents\Visual Studio 2010\Projects\EstateManagement\EstateManagement\obj\x86\Debug\EstateManagement.charges.FormSdmBase.resources
+C:\Users\11171\Documents\Visual Studio 2010\Projects\EstateManagement\EstateManagement\obj\x86\Debug\EstateManagement.charges.FormSdm.resources

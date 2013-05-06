@@ -71,47 +71,119 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new System.Drawing.Point(60, 9);
+            label1.Location = new System.Drawing.Point(60, 10);
             label1.Name = "label1";
-            label1.Size = new System.Drawing.Size(35, 12);
+            label1.Size = new System.Drawing.Size(34, 13);
             label1.TabIndex = 0;
             label1.Text = "公司:";
             // 
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new System.Drawing.Point(48, 35);
+            label2.Location = new System.Drawing.Point(48, 38);
             label2.Name = "label2";
-            label2.Size = new System.Drawing.Size(47, 12);
+            label2.Size = new System.Drawing.Size(46, 13);
             label2.TabIndex = 0;
             label2.Text = "房间号:";
             // 
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new System.Drawing.Point(60, 61);
+            label3.Location = new System.Drawing.Point(60, 66);
             label3.Name = "label3";
-            label3.Size = new System.Drawing.Size(35, 12);
+            label3.Size = new System.Drawing.Size(34, 13);
             label3.TabIndex = 0;
             label3.Text = "名目:";
+            // 
+            // label6
+            // 
+            label6.AutoSize = true;
+            label6.Location = new System.Drawing.Point(36, 64);
+            label6.Name = "label6";
+            label6.Size = new System.Drawing.Size(58, 13);
+            label6.TabIndex = 3;
+            label6.Text = "上期费用:";
+            // 
+            // label5
+            // 
+            label5.AutoSize = true;
+            label5.Location = new System.Drawing.Point(24, 36);
+            label5.Name = "label5";
+            label5.Size = new System.Drawing.Size(70, 13);
+            label5.TabIndex = 2;
+            label5.Text = "上期抄表数:";
+            // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.Location = new System.Drawing.Point(12, 8);
+            label4.Name = "label4";
+            label4.Size = new System.Drawing.Size(82, 13);
+            label4.TabIndex = 4;
+            label4.Text = "上期抄表时间:";
+            // 
+            // label11
+            // 
+            label11.AutoSize = true;
+            label11.Location = new System.Drawing.Point(60, 126);
+            label11.Name = "label11";
+            label11.Size = new System.Drawing.Size(34, 13);
+            label11.TabIndex = 6;
+            label11.Text = "备注:";
+            // 
+            // label10
+            // 
+            label10.AutoSize = true;
+            label10.Location = new System.Drawing.Point(48, 98);
+            label10.Name = "label10";
+            label10.Size = new System.Drawing.Size(46, 13);
+            label10.TabIndex = 5;
+            label10.Text = "抄表员:";
+            // 
+            // label9
+            // 
+            label9.AutoSize = true;
+            label9.Location = new System.Drawing.Point(60, 69);
+            label9.Name = "label9";
+            label9.Size = new System.Drawing.Size(34, 13);
+            label9.TabIndex = 7;
+            label9.Text = "金额:";
+            // 
+            // label8
+            // 
+            label8.AutoSize = true;
+            label8.Location = new System.Drawing.Point(48, 41);
+            label8.Name = "label8";
+            label8.Size = new System.Drawing.Size(46, 13);
+            label8.TabIndex = 9;
+            label8.Text = "抄表数:";
+            // 
+            // label7
+            // 
+            label7.AutoSize = true;
+            label7.Location = new System.Drawing.Point(36, 13);
+            label7.Name = "label7";
+            label7.Size = new System.Drawing.Size(58, 13);
+            label7.TabIndex = 8;
+            label7.Text = "抄表时间:";
             // 
             // comboBox_comp
             // 
             this.comboBox_comp.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox_comp.FormattingEnabled = true;
-            this.comboBox_comp.Location = new System.Drawing.Point(101, 6);
+            this.comboBox_comp.Location = new System.Drawing.Point(101, 7);
             this.comboBox_comp.Name = "comboBox_comp";
-            this.comboBox_comp.Size = new System.Drawing.Size(171, 20);
-            this.comboBox_comp.TabIndex = 2;
+            this.comboBox_comp.Size = new System.Drawing.Size(171, 21);
+            this.comboBox_comp.TabIndex = 1;
             this.comboBox_comp.SelectedIndexChanged += new System.EventHandler(this.comboBox_comp_SelectedIndexChanged);
             // 
             // comboBox_room
             // 
             this.comboBox_room.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox_room.FormattingEnabled = true;
-            this.comboBox_room.Location = new System.Drawing.Point(101, 32);
+            this.comboBox_room.Location = new System.Drawing.Point(101, 35);
             this.comboBox_room.Name = "comboBox_room";
-            this.comboBox_room.Size = new System.Drawing.Size(171, 20);
+            this.comboBox_room.Size = new System.Drawing.Size(171, 21);
             this.comboBox_room.TabIndex = 2;
             this.comboBox_room.SelectedIndexChanged += new System.EventHandler(this.comboBox_room_SelectedIndexChanged);
             // 
@@ -123,10 +195,10 @@
             "水费",
             "电费",
             "煤气费"});
-            this.comboBox_type.Location = new System.Drawing.Point(101, 58);
+            this.comboBox_type.Location = new System.Drawing.Point(101, 63);
             this.comboBox_type.Name = "comboBox_type";
-            this.comboBox_type.Size = new System.Drawing.Size(171, 20);
-            this.comboBox_type.TabIndex = 2;
+            this.comboBox_type.Size = new System.Drawing.Size(171, 21);
+            this.comboBox_type.TabIndex = 3;
             this.comboBox_type.SelectedIndexChanged += new System.EventHandler(this.comboBox_type_SelectedIndexChanged);
             // 
             // panel_last
@@ -137,28 +209,28 @@
             this.panel_last.Controls.Add(label6);
             this.panel_last.Controls.Add(label5);
             this.panel_last.Controls.Add(label4);
-            this.panel_last.Location = new System.Drawing.Point(0, 82);
+            this.panel_last.Location = new System.Drawing.Point(0, 89);
             this.panel_last.Name = "panel_last";
-            this.panel_last.Size = new System.Drawing.Size(283, 77);
-            this.panel_last.TabIndex = 5;
+            this.panel_last.Size = new System.Drawing.Size(283, 83);
+            this.panel_last.TabIndex = 4;
             // 
             // textBox_lastcharge
             // 
             this.textBox_lastcharge.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox_lastcharge.Location = new System.Drawing.Point(101, 56);
+            this.textBox_lastcharge.Location = new System.Drawing.Point(101, 61);
             this.textBox_lastcharge.Name = "textBox_lastcharge";
             this.textBox_lastcharge.ReadOnly = true;
-            this.textBox_lastcharge.Size = new System.Drawing.Size(171, 21);
-            this.textBox_lastcharge.TabIndex = 5;
+            this.textBox_lastcharge.Size = new System.Drawing.Size(171, 20);
+            this.textBox_lastcharge.TabIndex = 3;
             // 
             // textBox_lastsum
             // 
             this.textBox_lastsum.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox_lastsum.Location = new System.Drawing.Point(101, 30);
+            this.textBox_lastsum.Location = new System.Drawing.Point(101, 33);
             this.textBox_lastsum.Name = "textBox_lastsum";
             this.textBox_lastsum.ReadOnly = true;
-            this.textBox_lastsum.Size = new System.Drawing.Size(171, 21);
-            this.textBox_lastsum.TabIndex = 6;
+            this.textBox_lastsum.Size = new System.Drawing.Size(171, 20);
+            this.textBox_lastsum.TabIndex = 2;
             // 
             // textBox_lasttime
             // 
@@ -166,35 +238,8 @@
             this.textBox_lasttime.Location = new System.Drawing.Point(101, 4);
             this.textBox_lasttime.Name = "textBox_lasttime";
             this.textBox_lasttime.ReadOnly = true;
-            this.textBox_lasttime.Size = new System.Drawing.Size(171, 21);
-            this.textBox_lasttime.TabIndex = 7;
-            // 
-            // label6
-            // 
-            label6.AutoSize = true;
-            label6.Location = new System.Drawing.Point(36, 59);
-            label6.Name = "label6";
-            label6.Size = new System.Drawing.Size(59, 12);
-            label6.TabIndex = 3;
-            label6.Text = "上期费用:";
-            // 
-            // label5
-            // 
-            label5.AutoSize = true;
-            label5.Location = new System.Drawing.Point(24, 33);
-            label5.Name = "label5";
-            label5.Size = new System.Drawing.Size(71, 12);
-            label5.TabIndex = 2;
-            label5.Text = "上期抄表数:";
-            // 
-            // label4
-            // 
-            label4.AutoSize = true;
-            label4.Location = new System.Drawing.Point(12, 7);
-            label4.Name = "label4";
-            label4.Size = new System.Drawing.Size(83, 12);
-            label4.TabIndex = 4;
-            label4.Text = "上期抄表时间:";
+            this.textBox_lasttime.Size = new System.Drawing.Size(171, 20);
+            this.textBox_lasttime.TabIndex = 1;
             // 
             // panel_move
             // 
@@ -209,106 +254,63 @@
             this.panel_move.Controls.Add(label9);
             this.panel_move.Controls.Add(label8);
             this.panel_move.Controls.Add(label7);
-            this.panel_move.Location = new System.Drawing.Point(0, 159);
+            this.panel_move.Location = new System.Drawing.Point(0, 172);
             this.panel_move.Name = "panel_move";
-            this.panel_move.Size = new System.Drawing.Size(283, 199);
-            this.panel_move.TabIndex = 6;
+            this.panel_move.Size = new System.Drawing.Size(283, 216);
+            this.panel_move.TabIndex = 5;
             // 
             // button_confirm
             // 
-            this.button_confirm.Location = new System.Drawing.Point(197, 170);
+            this.button_confirm.Location = new System.Drawing.Point(197, 184);
             this.button_confirm.Name = "button_confirm";
-            this.button_confirm.Size = new System.Drawing.Size(75, 23);
-            this.button_confirm.TabIndex = 15;
+            this.button_confirm.Size = new System.Drawing.Size(75, 25);
+            this.button_confirm.TabIndex = 6;
             this.button_confirm.Text = "确定录入";
             this.button_confirm.UseVisualStyleBackColor = true;
+            this.button_confirm.Click += new System.EventHandler(this.button_confirm_Click);
             // 
             // dateTimePicker_cb
             // 
-            this.dateTimePicker_cb.Location = new System.Drawing.Point(101, 6);
+            this.dateTimePicker_cb.Location = new System.Drawing.Point(101, 7);
             this.dateTimePicker_cb.Name = "dateTimePicker_cb";
-            this.dateTimePicker_cb.Size = new System.Drawing.Size(171, 21);
-            this.dateTimePicker_cb.TabIndex = 14;
+            this.dateTimePicker_cb.Size = new System.Drawing.Size(171, 20);
+            this.dateTimePicker_cb.TabIndex = 1;
             // 
             // textBox_comment
             // 
-            this.textBox_comment.Location = new System.Drawing.Point(101, 113);
+            this.textBox_comment.Location = new System.Drawing.Point(101, 122);
             this.textBox_comment.Multiline = true;
             this.textBox_comment.Name = "textBox_comment";
-            this.textBox_comment.Size = new System.Drawing.Size(171, 51);
-            this.textBox_comment.TabIndex = 11;
+            this.textBox_comment.Size = new System.Drawing.Size(171, 55);
+            this.textBox_comment.TabIndex = 5;
             // 
             // textBox_cber
             // 
-            this.textBox_cber.Location = new System.Drawing.Point(101, 87);
+            this.textBox_cber.Location = new System.Drawing.Point(101, 94);
             this.textBox_cber.Name = "textBox_cber";
-            this.textBox_cber.Size = new System.Drawing.Size(171, 21);
-            this.textBox_cber.TabIndex = 12;
+            this.textBox_cber.Size = new System.Drawing.Size(171, 20);
+            this.textBox_cber.TabIndex = 4;
             // 
             // textBox_charge
             // 
-            this.textBox_charge.Location = new System.Drawing.Point(101, 61);
+            this.textBox_charge.Location = new System.Drawing.Point(101, 66);
             this.textBox_charge.Name = "textBox_charge";
-            this.textBox_charge.Size = new System.Drawing.Size(171, 21);
-            this.textBox_charge.TabIndex = 13;
+            this.textBox_charge.Size = new System.Drawing.Size(171, 20);
+            this.textBox_charge.TabIndex = 3;
             // 
             // textBox_sum
             // 
-            this.textBox_sum.Location = new System.Drawing.Point(101, 35);
+            this.textBox_sum.Location = new System.Drawing.Point(101, 38);
             this.textBox_sum.Name = "textBox_sum";
-            this.textBox_sum.Size = new System.Drawing.Size(171, 21);
-            this.textBox_sum.TabIndex = 10;
-            // 
-            // label11
-            // 
-            label11.AutoSize = true;
-            label11.Location = new System.Drawing.Point(60, 116);
-            label11.Name = "label11";
-            label11.Size = new System.Drawing.Size(35, 12);
-            label11.TabIndex = 6;
-            label11.Text = "备注:";
-            // 
-            // label10
-            // 
-            label10.AutoSize = true;
-            label10.Location = new System.Drawing.Point(48, 90);
-            label10.Name = "label10";
-            label10.Size = new System.Drawing.Size(47, 12);
-            label10.TabIndex = 5;
-            label10.Text = "抄表员:";
-            // 
-            // label9
-            // 
-            label9.AutoSize = true;
-            label9.Location = new System.Drawing.Point(60, 64);
-            label9.Name = "label9";
-            label9.Size = new System.Drawing.Size(35, 12);
-            label9.TabIndex = 7;
-            label9.Text = "金额:";
-            // 
-            // label8
-            // 
-            label8.AutoSize = true;
-            label8.Location = new System.Drawing.Point(48, 38);
-            label8.Name = "label8";
-            label8.Size = new System.Drawing.Size(47, 12);
-            label8.TabIndex = 9;
-            label8.Text = "抄表数:";
-            // 
-            // label7
-            // 
-            label7.AutoSize = true;
-            label7.Location = new System.Drawing.Point(36, 12);
-            label7.Name = "label7";
-            label7.Size = new System.Drawing.Size(59, 12);
-            label7.TabIndex = 8;
-            label7.Text = "抄表时间:";
+            this.textBox_sum.Size = new System.Drawing.Size(171, 20);
+            this.textBox_sum.TabIndex = 2;
+            this.textBox_sum.TextChanged += new System.EventHandler(this.textBox_sum_TextChanged);
             // 
             // FormAddSdm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(284, 358);
+            this.ClientSize = new System.Drawing.Size(284, 388);
             this.Controls.Add(this.panel_move);
             this.Controls.Add(this.panel_last);
             this.Controls.Add(this.comboBox_type);

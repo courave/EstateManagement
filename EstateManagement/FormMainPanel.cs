@@ -90,6 +90,18 @@ namespace EstateManagement
             frmSdm.Show();
         }
 
+        private void ToolStripMenuItem_sdmbase_Click(object sender, EventArgs e)
+        {
+            charges.FormSdmBase frmSdmBase = new charges.FormSdmBase();
+            frmSdmBase.Show();
+        }
+
+        private void ToolStripMenuItem_sdm_Click(object sender, EventArgs e)
+        {
+            charges.FormSdm frmSdm = new charges.FormSdm();
+            frmSdm.Show();
+        }
+
 
 
     }
