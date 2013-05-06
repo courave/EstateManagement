@@ -28,8 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dgvSdmBase = new System.Windows.Forms.DataGridView();
+            this.contextMenuStrip_init = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.ToolStripMenuItem_init = new System.Windows.Forms.ToolStripMenuItem();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -37,6 +40,7 @@
             this.SDM_TYPE = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.SDM_UNIT = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSdmBase)).BeginInit();
+            this.contextMenuStrip_init.SuspendLayout();
             this.SuspendLayout();
             // 
             // dgvSdmBase
@@ -59,13 +63,29 @@
             this.ID,
             this.SDM_TYPE,
             this.SDM_UNIT});
+            this.dgvSdmBase.ContextMenuStrip = this.contextMenuStrip_init;
             this.dgvSdmBase.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvSdmBase.EditMode = System.Windows.Forms.DataGridViewEditMode.EditOnEnter;
             this.dgvSdmBase.Location = new System.Drawing.Point(0, 0);
             this.dgvSdmBase.Name = "dgvSdmBase";
-            this.dgvSdmBase.Size = new System.Drawing.Size(243, 118);
+            this.dgvSdmBase.RowTemplate.Height = 23;
+            this.dgvSdmBase.Size = new System.Drawing.Size(243, 109);
             this.dgvSdmBase.TabIndex = 0;
             this.dgvSdmBase.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvSdmBase_CellEndEdit);
+            // 
+            // contextMenuStrip_init
+            // 
+            this.contextMenuStrip_init.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.ToolStripMenuItem_init});
+            this.contextMenuStrip_init.Name = "contextMenuStrip_init";
+            this.contextMenuStrip_init.Size = new System.Drawing.Size(137, 26);
+            // 
+            // ToolStripMenuItem_init
+            // 
+            this.ToolStripMenuItem_init.Name = "ToolStripMenuItem_init";
+            this.ToolStripMenuItem_init.Size = new System.Drawing.Size(136, 22);
+            this.ToolStripMenuItem_init.Text = "初始化数据";
+            this.ToolStripMenuItem_init.Click += new System.EventHandler(this.ToolStripMenuItem_init_Click);
             // 
             // dataGridViewTextBoxColumn1
             // 
@@ -111,15 +131,16 @@
             // 
             // FormSdmBase
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(243, 118);
+            this.ClientSize = new System.Drawing.Size(243, 109);
             this.Controls.Add(this.dgvSdmBase);
             this.Name = "FormSdmBase";
             this.Text = "水电煤基数管理";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FormSdmBase_FormClosing);
             this.Load += new System.EventHandler(this.FormSdmBase_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvSdmBase)).EndInit();
+            this.contextMenuStrip_init.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -127,11 +148,13 @@
         #endregion
 
         private System.Windows.Forms.DataGridView dgvSdmBase;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ID;
-        private System.Windows.Forms.DataGridViewTextBoxColumn SDM_TYPE;
-        private System.Windows.Forms.DataGridViewTextBoxColumn SDM_UNIT;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn SDM_TYPE;
+        private System.Windows.Forms.DataGridViewTextBoxColumn SDM_UNIT;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStrip_init;
+        private System.Windows.Forms.ToolStripMenuItem ToolStripMenuItem_init;
     }
 }

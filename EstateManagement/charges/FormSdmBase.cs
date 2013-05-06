@@ -47,6 +47,10 @@ namespace EstateManagement.charges
         private void FormSdmBase_Load(object sender, EventArgs e)
         {
             LoadData();
+            if (dgvSdmBase.RowCount == 3)
+            {
+                dgvSdmBase.ContextMenuStrip = null;
+            }
         }
         private void SaveChanges()
         {
@@ -74,6 +78,23 @@ namespace EstateManagement.charges
         private void FormSdmBase_FormClosing(object sender, FormClosingEventArgs e)
         {
             SaveChanges();
+        }
+
+        private void ToolStripMenuItem_init_Click(object sender, EventArgs e)
+        {
+            if (dgvSdmBase.RowCount < 3)
+            {
+                
+                using (DataBase db = new DataBase())
+                {
+                    //perform delete action
+                    db.ExecuteNonQuery("DELETE FROM SDM_BASE");
+                    db.ExecuteNonQuery("INSERT INTO [SDM_BASE]([SDM_TYPE],[SDM_UNIT]) VALUES('水费',0)");
+                    db.ExecuteNonQuery("INSERT INTO [SDM_BASE]([SDM_TYPE],[SDM_UNIT]) VALUES('电费',0)");
+                    db.ExecuteNonQuery("INSERT INTO [SDM_BASE]([SDM_TYPE],[SDM_UNIT]) VALUES('煤气费',0)");
+                    LoadData();
+                }
+            }
         }
 
     }

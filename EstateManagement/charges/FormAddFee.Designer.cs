@@ -28,125 +28,197 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
+            System.Windows.Forms.Label label1;
+            System.Windows.Forms.Label label2;
+            System.Windows.Forms.Label label3;
+            System.Windows.Forms.Label label4;
+            System.Windows.Forms.Label label5;
+            System.Windows.Forms.Label label6;
+            System.Windows.Forms.Label label7;
+            System.Windows.Forms.Label label10;
+            this.comboBox_comp = new System.Windows.Forms.ComboBox();
+            this.comboBox_type = new System.Windows.Forms.ComboBox();
+            this.textBox_charge = new System.Windows.Forms.TextBox();
+            this.textBox_curdate = new System.Windows.Forms.TextBox();
+            this.dateTimePicker_lastend = new System.Windows.Forms.DateTimePicker();
+            this.dateTimePicker_nextstart = new System.Windows.Forms.DateTimePicker();
+            this.textBox_genmonth = new System.Windows.Forms.TextBox();
+            this.textBox_comment = new System.Windows.Forms.TextBox();
+            this.button_confirm = new System.Windows.Forms.Button();
+            label1 = new System.Windows.Forms.Label();
+            label2 = new System.Windows.Forms.Label();
+            label3 = new System.Windows.Forms.Label();
+            label4 = new System.Windows.Forms.Label();
+            label5 = new System.Windows.Forms.Label();
+            label6 = new System.Windows.Forms.Label();
+            label7 = new System.Windows.Forms.Label();
+            label10 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label1
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(12, 36);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(35, 13);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "label1";
+            label1.AutoSize = true;
+            label1.Location = new System.Drawing.Point(60, 36);
+            label1.Name = "label1";
+            label1.Size = new System.Drawing.Size(35, 12);
+            label1.TabIndex = 0;
+            label1.Text = "名目:";
             // 
             // label2
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(12, 9);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(35, 13);
-            this.label2.TabIndex = 0;
-            this.label2.Text = "label1";
+            label2.AutoSize = true;
+            label2.Location = new System.Drawing.Point(60, 9);
+            label2.Name = "label2";
+            label2.Size = new System.Drawing.Size(35, 12);
+            label2.TabIndex = 0;
+            label2.Text = "公司:";
             // 
             // label3
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(12, 62);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(35, 13);
-            this.label3.TabIndex = 0;
-            this.label3.Text = "label1";
+            label3.AutoSize = true;
+            label3.Location = new System.Drawing.Point(36, 63);
+            label3.Name = "label3";
+            label3.Size = new System.Drawing.Size(59, 12);
+            label3.TabIndex = 0;
+            label3.Text = "费用年月:";
             // 
             // label4
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(12, 94);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(35, 13);
-            this.label4.TabIndex = 0;
-            this.label4.Text = "label1";
+            label4.AutoSize = true;
+            label4.Location = new System.Drawing.Point(60, 90);
+            label4.Name = "label4";
+            label4.Size = new System.Drawing.Size(35, 12);
+            label4.TabIndex = 0;
+            label4.Text = "金额:";
             // 
             // label5
             // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(12, 128);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(35, 13);
-            this.label5.TabIndex = 0;
-            this.label5.Text = "label1";
+            label5.AutoSize = true;
+            label5.Location = new System.Drawing.Point(12, 117);
+            label5.Name = "label5";
+            label5.Size = new System.Drawing.Size(83, 12);
+            label5.TabIndex = 0;
+            label5.Text = "上期截止日期:";
             // 
             // label6
             // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(12, 188);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(35, 13);
-            this.label6.TabIndex = 0;
-            this.label6.Text = "label1";
+            label6.AutoSize = true;
+            label6.Location = new System.Drawing.Point(12, 171);
+            label6.Name = "label6";
+            label6.Size = new System.Drawing.Size(83, 12);
+            label6.TabIndex = 0;
+            label6.Text = "下期起付日期:";
             // 
             // label7
             // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(12, 214);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(35, 13);
-            this.label7.TabIndex = 0;
-            this.label7.Text = "label1";
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(12, 246);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(35, 13);
-            this.label8.TabIndex = 0;
-            this.label8.Text = "label1";
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(12, 280);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(35, 13);
-            this.label9.TabIndex = 0;
-            this.label9.Text = "label1";
+            label7.AutoSize = true;
+            label7.Location = new System.Drawing.Point(60, 198);
+            label7.Name = "label7";
+            label7.Size = new System.Drawing.Size(35, 12);
+            label7.TabIndex = 0;
+            label7.Text = "备注:";
             // 
             // label10
             // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(12, 161);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(35, 13);
-            this.label10.TabIndex = 0;
-            this.label10.Text = "label1";
+            label10.AutoSize = true;
+            label10.Location = new System.Drawing.Point(12, 144);
+            label10.Name = "label10";
+            label10.Size = new System.Drawing.Size(83, 12);
+            label10.TabIndex = 0;
+            label10.Text = "本期结算日期:";
+            // 
+            // comboBox_comp
+            // 
+            this.comboBox_comp.FormattingEnabled = true;
+            this.comboBox_comp.Location = new System.Drawing.Point(101, 6);
+            this.comboBox_comp.Name = "comboBox_comp";
+            this.comboBox_comp.Size = new System.Drawing.Size(171, 20);
+            this.comboBox_comp.TabIndex = 1;
+            // 
+            // comboBox_type
+            // 
+            this.comboBox_type.FormattingEnabled = true;
+            this.comboBox_type.Location = new System.Drawing.Point(101, 33);
+            this.comboBox_type.Name = "comboBox_type";
+            this.comboBox_type.Size = new System.Drawing.Size(171, 20);
+            this.comboBox_type.TabIndex = 2;
+            // 
+            // textBox_charge
+            // 
+            this.textBox_charge.Location = new System.Drawing.Point(101, 87);
+            this.textBox_charge.Name = "textBox_charge";
+            this.textBox_charge.Size = new System.Drawing.Size(171, 21);
+            this.textBox_charge.TabIndex = 3;
+            // 
+            // textBox_curdate
+            // 
+            this.textBox_curdate.Location = new System.Drawing.Point(101, 141);
+            this.textBox_curdate.Name = "textBox_curdate";
+            this.textBox_curdate.Size = new System.Drawing.Size(171, 21);
+            this.textBox_curdate.TabIndex = 3;
+            // 
+            // dateTimePicker_lastend
+            // 
+            this.dateTimePicker_lastend.Location = new System.Drawing.Point(101, 111);
+            this.dateTimePicker_lastend.Name = "dateTimePicker_lastend";
+            this.dateTimePicker_lastend.Size = new System.Drawing.Size(171, 21);
+            this.dateTimePicker_lastend.TabIndex = 4;
+            // 
+            // dateTimePicker_nextstart
+            // 
+            this.dateTimePicker_nextstart.Location = new System.Drawing.Point(101, 165);
+            this.dateTimePicker_nextstart.Name = "dateTimePicker_nextstart";
+            this.dateTimePicker_nextstart.Size = new System.Drawing.Size(171, 21);
+            this.dateTimePicker_nextstart.TabIndex = 4;
+            // 
+            // textBox_genmonth
+            // 
+            this.textBox_genmonth.Location = new System.Drawing.Point(101, 60);
+            this.textBox_genmonth.Name = "textBox_genmonth";
+            this.textBox_genmonth.Size = new System.Drawing.Size(171, 21);
+            this.textBox_genmonth.TabIndex = 3;
+            // 
+            // textBox_comment
+            // 
+            this.textBox_comment.Location = new System.Drawing.Point(101, 195);
+            this.textBox_comment.Multiline = true;
+            this.textBox_comment.Name = "textBox_comment";
+            this.textBox_comment.Size = new System.Drawing.Size(171, 52);
+            this.textBox_comment.TabIndex = 3;
+            // 
+            // button_confirm
+            // 
+            this.button_confirm.Location = new System.Drawing.Point(197, 254);
+            this.button_confirm.Name = "button_confirm";
+            this.button_confirm.Size = new System.Drawing.Size(75, 23);
+            this.button_confirm.TabIndex = 5;
+            this.button_confirm.Text = "确定新增";
+            this.button_confirm.UseVisualStyleBackColor = true;
             // 
             // FormAddFee
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(284, 365);
-            this.Controls.Add(this.label10);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label9);
-            this.Controls.Add(this.label8);
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.label7);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.label6);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.label1);
+            this.ClientSize = new System.Drawing.Size(284, 289);
+            this.Controls.Add(this.button_confirm);
+            this.Controls.Add(this.dateTimePicker_nextstart);
+            this.Controls.Add(this.dateTimePicker_lastend);
+            this.Controls.Add(this.textBox_curdate);
+            this.Controls.Add(this.textBox_genmonth);
+            this.Controls.Add(this.textBox_comment);
+            this.Controls.Add(this.textBox_charge);
+            this.Controls.Add(this.comboBox_type);
+            this.Controls.Add(this.comboBox_comp);
+            this.Controls.Add(label10);
+            this.Controls.Add(label2);
+            this.Controls.Add(label5);
+            this.Controls.Add(label7);
+            this.Controls.Add(label4);
+            this.Controls.Add(label6);
+            this.Controls.Add(label3);
+            this.Controls.Add(label1);
             this.Name = "FormAddFee";
-            this.Text = "FormAddFee";
+            this.Text = "费用录入";
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -154,15 +226,15 @@
 
         #endregion
 
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.ComboBox comboBox_comp;
+        private System.Windows.Forms.ComboBox comboBox_type;
+        private System.Windows.Forms.TextBox textBox_charge;
+        private System.Windows.Forms.TextBox textBox_curdate;
+        private System.Windows.Forms.DateTimePicker dateTimePicker_lastend;
+        private System.Windows.Forms.DateTimePicker dateTimePicker_nextstart;
+        private System.Windows.Forms.TextBox textBox_genmonth;
+        private System.Windows.Forms.TextBox textBox_comment;
+        private System.Windows.Forms.Button button_confirm;
+
     }
 }
