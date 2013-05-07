@@ -58,148 +58,156 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new System.Drawing.Point(60, 36);
+            label1.Location = new System.Drawing.Point(60, 39);
             label1.Name = "label1";
-            label1.Size = new System.Drawing.Size(35, 12);
+            label1.Size = new System.Drawing.Size(34, 13);
             label1.TabIndex = 0;
             label1.Text = "名目:";
             // 
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new System.Drawing.Point(60, 9);
+            label2.Location = new System.Drawing.Point(60, 10);
             label2.Name = "label2";
-            label2.Size = new System.Drawing.Size(35, 12);
+            label2.Size = new System.Drawing.Size(34, 13);
             label2.TabIndex = 0;
             label2.Text = "公司:";
             // 
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new System.Drawing.Point(36, 63);
+            label3.Location = new System.Drawing.Point(36, 68);
             label3.Name = "label3";
-            label3.Size = new System.Drawing.Size(59, 12);
+            label3.Size = new System.Drawing.Size(58, 13);
             label3.TabIndex = 0;
             label3.Text = "费用年月:";
             // 
             // label4
             // 
             label4.AutoSize = true;
-            label4.Location = new System.Drawing.Point(60, 90);
+            label4.Location = new System.Drawing.Point(60, 98);
             label4.Name = "label4";
-            label4.Size = new System.Drawing.Size(35, 12);
+            label4.Size = new System.Drawing.Size(34, 13);
             label4.TabIndex = 0;
             label4.Text = "金额:";
             // 
             // label5
             // 
             label5.AutoSize = true;
-            label5.Location = new System.Drawing.Point(12, 117);
+            label5.Location = new System.Drawing.Point(12, 127);
             label5.Name = "label5";
-            label5.Size = new System.Drawing.Size(83, 12);
+            label5.Size = new System.Drawing.Size(82, 13);
             label5.TabIndex = 0;
             label5.Text = "上期截止日期:";
             // 
             // label6
             // 
             label6.AutoSize = true;
-            label6.Location = new System.Drawing.Point(12, 171);
+            label6.Location = new System.Drawing.Point(12, 185);
             label6.Name = "label6";
-            label6.Size = new System.Drawing.Size(83, 12);
+            label6.Size = new System.Drawing.Size(82, 13);
             label6.TabIndex = 0;
             label6.Text = "下期起付日期:";
             // 
             // label7
             // 
             label7.AutoSize = true;
-            label7.Location = new System.Drawing.Point(60, 198);
+            label7.Location = new System.Drawing.Point(60, 215);
             label7.Name = "label7";
-            label7.Size = new System.Drawing.Size(35, 12);
+            label7.Size = new System.Drawing.Size(34, 13);
             label7.TabIndex = 0;
             label7.Text = "备注:";
             // 
             // label10
             // 
             label10.AutoSize = true;
-            label10.Location = new System.Drawing.Point(12, 144);
+            label10.Location = new System.Drawing.Point(12, 156);
             label10.Name = "label10";
-            label10.Size = new System.Drawing.Size(83, 12);
+            label10.Size = new System.Drawing.Size(82, 13);
             label10.TabIndex = 0;
             label10.Text = "本期结算日期:";
             // 
             // comboBox_comp
             // 
+            this.comboBox_comp.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox_comp.FormattingEnabled = true;
-            this.comboBox_comp.Location = new System.Drawing.Point(101, 6);
+            this.comboBox_comp.Location = new System.Drawing.Point(101, 7);
             this.comboBox_comp.Name = "comboBox_comp";
-            this.comboBox_comp.Size = new System.Drawing.Size(171, 20);
+            this.comboBox_comp.Size = new System.Drawing.Size(171, 21);
             this.comboBox_comp.TabIndex = 1;
+            this.comboBox_comp.SelectedIndexChanged += new System.EventHandler(this.comboBox_comp_SelectedIndexChanged);
             // 
             // comboBox_type
             // 
             this.comboBox_type.FormattingEnabled = true;
-            this.comboBox_type.Location = new System.Drawing.Point(101, 33);
+            this.comboBox_type.Location = new System.Drawing.Point(101, 36);
             this.comboBox_type.Name = "comboBox_type";
-            this.comboBox_type.Size = new System.Drawing.Size(171, 20);
+            this.comboBox_type.Size = new System.Drawing.Size(171, 21);
             this.comboBox_type.TabIndex = 2;
+            this.comboBox_type.SelectedIndexChanged += new System.EventHandler(this.comboBox_type_SelectedIndexChanged);
             // 
             // textBox_charge
             // 
-            this.textBox_charge.Location = new System.Drawing.Point(101, 87);
+            this.textBox_charge.Location = new System.Drawing.Point(101, 94);
             this.textBox_charge.Name = "textBox_charge";
-            this.textBox_charge.Size = new System.Drawing.Size(171, 21);
+            this.textBox_charge.Size = new System.Drawing.Size(171, 20);
             this.textBox_charge.TabIndex = 3;
             // 
             // textBox_curdate
             // 
-            this.textBox_curdate.Location = new System.Drawing.Point(101, 141);
+            this.textBox_curdate.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.textBox_curdate.Location = new System.Drawing.Point(101, 153);
             this.textBox_curdate.Name = "textBox_curdate";
-            this.textBox_curdate.Size = new System.Drawing.Size(171, 21);
+            this.textBox_curdate.ReadOnly = true;
+            this.textBox_curdate.Size = new System.Drawing.Size(171, 20);
             this.textBox_curdate.TabIndex = 3;
             // 
             // dateTimePicker_lastend
             // 
-            this.dateTimePicker_lastend.Location = new System.Drawing.Point(101, 111);
+            this.dateTimePicker_lastend.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dateTimePicker_lastend.Location = new System.Drawing.Point(101, 120);
             this.dateTimePicker_lastend.Name = "dateTimePicker_lastend";
-            this.dateTimePicker_lastend.Size = new System.Drawing.Size(171, 21);
+            this.dateTimePicker_lastend.Size = new System.Drawing.Size(171, 20);
             this.dateTimePicker_lastend.TabIndex = 4;
             // 
             // dateTimePicker_nextstart
             // 
-            this.dateTimePicker_nextstart.Location = new System.Drawing.Point(101, 165);
+            this.dateTimePicker_nextstart.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dateTimePicker_nextstart.Location = new System.Drawing.Point(101, 179);
             this.dateTimePicker_nextstart.Name = "dateTimePicker_nextstart";
-            this.dateTimePicker_nextstart.Size = new System.Drawing.Size(171, 21);
+            this.dateTimePicker_nextstart.Size = new System.Drawing.Size(171, 20);
             this.dateTimePicker_nextstart.TabIndex = 4;
             // 
             // textBox_genmonth
             // 
-            this.textBox_genmonth.Location = new System.Drawing.Point(101, 60);
+            this.textBox_genmonth.Location = new System.Drawing.Point(101, 65);
             this.textBox_genmonth.Name = "textBox_genmonth";
-            this.textBox_genmonth.Size = new System.Drawing.Size(171, 21);
+            this.textBox_genmonth.Size = new System.Drawing.Size(171, 20);
             this.textBox_genmonth.TabIndex = 3;
             // 
             // textBox_comment
             // 
-            this.textBox_comment.Location = new System.Drawing.Point(101, 195);
+            this.textBox_comment.Location = new System.Drawing.Point(101, 211);
             this.textBox_comment.Multiline = true;
             this.textBox_comment.Name = "textBox_comment";
-            this.textBox_comment.Size = new System.Drawing.Size(171, 52);
+            this.textBox_comment.Size = new System.Drawing.Size(171, 56);
             this.textBox_comment.TabIndex = 3;
             // 
             // button_confirm
             // 
-            this.button_confirm.Location = new System.Drawing.Point(197, 254);
+            this.button_confirm.Location = new System.Drawing.Point(203, 273);
             this.button_confirm.Name = "button_confirm";
-            this.button_confirm.Size = new System.Drawing.Size(75, 23);
+            this.button_confirm.Size = new System.Drawing.Size(69, 42);
             this.button_confirm.TabIndex = 5;
             this.button_confirm.Text = "确定新增";
             this.button_confirm.UseVisualStyleBackColor = true;
+            this.button_confirm.Click += new System.EventHandler(this.button_confirm_Click);
             // 
             // FormAddFee
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(284, 289);
+            this.ClientSize = new System.Drawing.Size(284, 327);
             this.Controls.Add(this.button_confirm);
             this.Controls.Add(this.dateTimePicker_nextstart);
             this.Controls.Add(this.dateTimePicker_lastend);

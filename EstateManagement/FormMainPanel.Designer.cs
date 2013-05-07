@@ -41,7 +41,7 @@
             this.ToolStripMenuItem_predcharge = new System.Windows.Forms.ToolStripMenuItem();
             this.费用管理FToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ToolStripMenuItem_addsdm = new System.Windows.Forms.ToolStripMenuItem();
-            this.其他费用录入ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.ToolStripMenuItem_addfee = new System.Windows.Forms.ToolStripMenuItem();
             this.ToolStripMenuItem_sdm = new System.Windows.Forms.ToolStripMenuItem();
             this.其他费用列表ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ToolStripMenuItem_sdmbase = new System.Windows.Forms.ToolStripMenuItem();
@@ -147,7 +147,7 @@
             // 
             this.费用管理FToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.ToolStripMenuItem_addsdm,
-            this.其他费用录入ToolStripMenuItem,
+            this.ToolStripMenuItem_addfee,
             this.ToolStripMenuItem_sdm,
             this.其他费用列表ToolStripMenuItem,
             this.ToolStripMenuItem_sdmbase});
@@ -162,11 +162,12 @@
             this.ToolStripMenuItem_addsdm.Text = "水电煤录入(按房间号)";
             this.ToolStripMenuItem_addsdm.Click += new System.EventHandler(this.ToolStripMenuItem_addsdm_Click);
             // 
-            // 其他费用录入ToolStripMenuItem
+            // ToolStripMenuItem_addfee
             // 
-            this.其他费用录入ToolStripMenuItem.Name = "其他费用录入ToolStripMenuItem";
-            this.其他费用录入ToolStripMenuItem.Size = new System.Drawing.Size(190, 22);
-            this.其他费用录入ToolStripMenuItem.Text = "其他费用录入";
+            this.ToolStripMenuItem_addfee.Name = "ToolStripMenuItem_addfee";
+            this.ToolStripMenuItem_addfee.Size = new System.Drawing.Size(190, 22);
+            this.ToolStripMenuItem_addfee.Text = "其他费用录入";
+            this.ToolStripMenuItem_addfee.Click += new System.EventHandler(this.ToolStripMenuItem_addfee_Click);
             // 
             // ToolStripMenuItem_sdm
             // 
@@ -298,7 +299,7 @@
         private System.Windows.Forms.ToolStripMenuItem ToolStripMenuItem_deposit;
         private System.Windows.Forms.ToolStripMenuItem 费用管理FToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem ToolStripMenuItem_addsdm;
-        private System.Windows.Forms.ToolStripMenuItem 其他费用录入ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem ToolStripMenuItem_addfee;
         private System.Windows.Forms.ToolStripMenuItem ToolStripMenuItem_sdm;
         private System.Windows.Forms.ToolStripMenuItem 其他费用列表ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem ToolStripMenuItem_sdmbase;

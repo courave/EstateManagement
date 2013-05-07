@@ -102,6 +102,12 @@ namespace EstateManagement
             frmSdm.Show();
         }
 
+        private void ToolStripMenuItem_addfee_Click(object sender, EventArgs e)
+        {
+            charges.FormAddFee frmAddFee = new charges.FormAddFee();
+            frmAddFee.Show();
+        }
+
 
 
     }
