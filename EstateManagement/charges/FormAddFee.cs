@@ -98,7 +98,7 @@ namespace EstateManagement.charges
         private bool CheckDataValidation()
         {
             if(comboBox_comp.SelectedItem==null ||
-                comboBox_type.SelectedItem==null ||
+                comboBox_type.Text=="" ||
                 textBox_genmonth.Text.Length != 6)
             {
                 return false;
@@ -139,7 +139,7 @@ namespace EstateManagement.charges
                 return;
             }
             string sql = "";
-            string feetype = comboBox_type.SelectedItem.ToString();
+            string feetype = comboBox_type.Text;
             double feecharge = 0.0;
             double.TryParse(textBox_charge.Text,out feecharge);
             string compid = ((ComboItem)comboBox_comp.SelectedItem).Key;
@@ -194,10 +194,24 @@ namespace EstateManagement.charges
             else
                 this.Close();
         }
+        private void InitComboType()
+        {
+            using (DataBase db = new DataBase())
+            {
+                comboBox_type.Items.Clear();
+                DataTable dt = db.ExecuteDataTable("SELECT DISTINCT FEE_TYPE FROM FEE_INFO");
+                foreach (DataRow dr in dt.Rows)
+                {
+                    comboBox_type.Items.Add(dr[0].ToString());
+                }
+            }
+        }
         private void ClearControls()
         {
             comboBox_comp.SelectedItem = null;
+            comboBox_type.Text = "";
             comboBox_type.SelectedItem = null;
+            InitComboType();
             textBox_genmonth.Text = DateTime.Now.ToString("yyyyMM");
             textBox_charge.Text = "";
             dateTimePicker_lastend.Value = DateTime.Now;

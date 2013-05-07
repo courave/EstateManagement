@@ -56,6 +56,12 @@
     <Compile Include="charges\FormAddSdm.Designer.cs">
       <DependentUpon>FormAddSdm.cs</DependentUpon>
     </Compile>
+    <Compile Include="charges\FormFee.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="charges\FormFee.Designer.cs">
+      <DependentUpon>FormFee.cs</DependentUpon>
+    </Compile>
     <Compile Include="charges\FormSdm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -147,6 +153,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="charges\FormAddSdm.resx">
       <DependentUpon>FormAddSdm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="charges\FormFee.resx">
+      <DependentUpon>FormFee.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="charges\FormSdm.resx">
       <DependentUpon>FormSdm.cs</DependentUpon>
