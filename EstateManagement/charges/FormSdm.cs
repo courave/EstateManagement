@@ -79,7 +79,7 @@ namespace EstateManagement.charges
             if (dgvselrows.Count == 1)
             {
                 string sdmid = dgvselrows[0].Cells["ID"].Value.ToString();
-                string compname = dgvselrows[0].Cells["COMP_NAME"].Value.ToString(); ;
+                string compname = dgvselrows[0].Cells["COMP_NAME"].Value.ToString();
                 string roomno = dgvselrows[0].Cells["ROOM_NO"].Value.ToString();
                 string sdmtype = dgvselrows[0].Cells["SDM_TYPE"].Value.ToString();
                 string cbtime = dgvselrows[0].Cells["SDM_TIME"].Value.ToString();

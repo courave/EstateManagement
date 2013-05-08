@@ -33,28 +33,18 @@
             System.Windows.Forms.ToolStripMenuItem ToolStripMenuItem_room;
             System.Windows.Forms.ToolStripMenuItem ToolStripMenuItem_type;
             System.Windows.Forms.ToolStripMenuItem ToolStripMenuItem_cbtime;
-            this.menuStrip_sdm = new System.Windows.Forms.MenuStrip();
-            this.dgvSdm = new System.Windows.Forms.DataGridView();
-            this.ISPAID = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.ToolStripMenuItem_addrecord = new System.Windows.Forms.ToolStripMenuItem();
-            this.ToolStripMenuItem_modifyrecord = new System.Windows.Forms.ToolStripMenuItem();
-            this.ToolStripMenuItem_setpaid = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
-            this.ToolStripMenuItem_showpaid = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripComboBox_comp = new System.Windows.Forms.ToolStripComboBox();
             this.toolStripComboBox_room = new System.Windows.Forms.ToolStripComboBox();
             this.toolStripComboBox_type = new System.Windows.Forms.ToolStripComboBox();
             this.toolStripTextBox_cbtime = new System.Windows.Forms.ToolStripTextBox();
+            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.ToolStripMenuItem_showpaid = new System.Windows.Forms.ToolStripMenuItem();
             this.ToolStripMenuItem_reset = new System.Windows.Forms.ToolStripMenuItem();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.menuStrip_sdm = new System.Windows.Forms.MenuStrip();
+            this.ToolStripMenuItem_addrecord = new System.Windows.Forms.ToolStripMenuItem();
+            this.ToolStripMenuItem_modifyrecord = new System.Windows.Forms.ToolStripMenuItem();
+            this.ToolStripMenuItem_setpaid = new System.Windows.Forms.ToolStripMenuItem();
+            this.dgvSdm = new System.Windows.Forms.DataGridView();
             this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.COMP_NAME = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ROOM_NO = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -64,6 +54,16 @@
             this.SDM_TIME = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.SDM_CBER = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.COMMENT = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ISPAID = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ToolStripMenuItem_search = new System.Windows.Forms.ToolStripMenuItem();
             ToolStripMenuItem_comp = new System.Windows.Forms.ToolStripMenuItem();
             ToolStripMenuItem_room = new System.Windows.Forms.ToolStripMenuItem();
@@ -72,72 +72,6 @@
             this.menuStrip_sdm.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSdm)).BeginInit();
             this.SuspendLayout();
-            // 
-            // menuStrip_sdm
-            // 
-            this.menuStrip_sdm.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.ToolStripMenuItem_addrecord,
-            this.ToolStripMenuItem_modifyrecord,
-            this.ToolStripMenuItem_setpaid,
-            ToolStripMenuItem_search});
-            this.menuStrip_sdm.Location = new System.Drawing.Point(0, 0);
-            this.menuStrip_sdm.Name = "menuStrip_sdm";
-            this.menuStrip_sdm.Size = new System.Drawing.Size(930, 24);
-            this.menuStrip_sdm.TabIndex = 0;
-            this.menuStrip_sdm.Text = "menuStrip1";
-            // 
-            // dgvSdm
-            // 
-            this.dgvSdm.AllowUserToAddRows = false;
-            this.dgvSdm.AllowUserToDeleteRows = false;
-            this.dgvSdm.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvSdm.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.ID,
-            this.COMP_NAME,
-            this.ROOM_NO,
-            this.SDM_TYPE,
-            this.SDM_SUM,
-            this.SDM_CHARGE,
-            this.SDM_TIME,
-            this.SDM_CBER,
-            this.COMMENT,
-            this.ISPAID});
-            this.dgvSdm.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvSdm.Location = new System.Drawing.Point(0, 24);
-            this.dgvSdm.Name = "dgvSdm";
-            this.dgvSdm.ReadOnly = true;
-            this.dgvSdm.Size = new System.Drawing.Size(930, 421);
-            this.dgvSdm.TabIndex = 1;
-            // 
-            // ISPAID
-            // 
-            this.ISPAID.DataPropertyName = "ISPAID";
-            this.ISPAID.FalseValue = "是";
-            this.ISPAID.HeaderText = "是否付款";
-            this.ISPAID.Name = "ISPAID";
-            this.ISPAID.ReadOnly = true;
-            this.ISPAID.TrueValue = "否";
-            // 
-            // ToolStripMenuItem_addrecord
-            // 
-            this.ToolStripMenuItem_addrecord.Name = "ToolStripMenuItem_addrecord";
-            this.ToolStripMenuItem_addrecord.Size = new System.Drawing.Size(67, 20);
-            this.ToolStripMenuItem_addrecord.Text = "添加记录";
-            this.ToolStripMenuItem_addrecord.Click += new System.EventHandler(this.ToolStripMenuItem_addrecord_Click);
-            // 
-            // ToolStripMenuItem_modifyrecord
-            // 
-            this.ToolStripMenuItem_modifyrecord.Name = "ToolStripMenuItem_modifyrecord";
-            this.ToolStripMenuItem_modifyrecord.Size = new System.Drawing.Size(67, 20);
-            this.ToolStripMenuItem_modifyrecord.Text = "修改记录";
-            this.ToolStripMenuItem_modifyrecord.Click += new System.EventHandler(this.ToolStripMenuItem_modifyrecord_Click);
-            // 
-            // ToolStripMenuItem_setpaid
-            // 
-            this.ToolStripMenuItem_setpaid.Name = "ToolStripMenuItem_setpaid";
-            this.ToolStripMenuItem_setpaid.Size = new System.Drawing.Size(91, 20);
-            this.ToolStripMenuItem_setpaid.Text = "设置为已付款";
-            this.ToolStripMenuItem_setpaid.Click += new System.EventHandler(this.ToolStripMenuItem_setpaid_Click);
             // 
             // ToolStripMenuItem_search
             // 
@@ -161,42 +95,6 @@
             ToolStripMenuItem_comp.Size = new System.Drawing.Size(158, 22);
             ToolStripMenuItem_comp.Text = "公司";
             // 
-            // ToolStripMenuItem_room
-            // 
-            ToolStripMenuItem_room.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripComboBox_room});
-            ToolStripMenuItem_room.Name = "ToolStripMenuItem_room";
-            ToolStripMenuItem_room.Size = new System.Drawing.Size(158, 22);
-            ToolStripMenuItem_room.Text = "房间号";
-            // 
-            // ToolStripMenuItem_type
-            // 
-            ToolStripMenuItem_type.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripComboBox_type});
-            ToolStripMenuItem_type.Name = "ToolStripMenuItem_type";
-            ToolStripMenuItem_type.Size = new System.Drawing.Size(158, 22);
-            ToolStripMenuItem_type.Text = "名目";
-            // 
-            // ToolStripMenuItem_cbtime
-            // 
-            ToolStripMenuItem_cbtime.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripTextBox_cbtime});
-            ToolStripMenuItem_cbtime.Name = "ToolStripMenuItem_cbtime";
-            ToolStripMenuItem_cbtime.Size = new System.Drawing.Size(158, 22);
-            ToolStripMenuItem_cbtime.Text = "抄表时间";
-            // 
-            // toolStripSeparator1
-            // 
-            this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(155, 6);
-            // 
-            // ToolStripMenuItem_showpaid
-            // 
-            this.ToolStripMenuItem_showpaid.Name = "ToolStripMenuItem_showpaid";
-            this.ToolStripMenuItem_showpaid.Size = new System.Drawing.Size(158, 22);
-            this.ToolStripMenuItem_showpaid.Text = "显示已付款项目";
-            this.ToolStripMenuItem_showpaid.Click += new System.EventHandler(this.ToolStripMenuItem_showpaid_Click);
-            // 
             // toolStripComboBox_comp
             // 
             this.toolStripComboBox_comp.FlatStyle = System.Windows.Forms.FlatStyle.Standard;
@@ -206,6 +104,14 @@
             this.toolStripComboBox_comp.SelectedIndexChanged += new System.EventHandler(this.toolStripComboBox_comp_SelectedIndexChanged);
             this.toolStripComboBox_comp.TextUpdate += new System.EventHandler(this.toolStripComboBox_comp_TextUpdate);
             // 
+            // ToolStripMenuItem_room
+            // 
+            ToolStripMenuItem_room.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripComboBox_room});
+            ToolStripMenuItem_room.Name = "ToolStripMenuItem_room";
+            ToolStripMenuItem_room.Size = new System.Drawing.Size(158, 22);
+            ToolStripMenuItem_room.Text = "房间号";
+            // 
             // toolStripComboBox_room
             // 
             this.toolStripComboBox_room.FlatStyle = System.Windows.Forms.FlatStyle.Standard;
@@ -214,6 +120,14 @@
             this.toolStripComboBox_room.Size = new System.Drawing.Size(121, 19);
             this.toolStripComboBox_room.SelectedIndexChanged += new System.EventHandler(this.toolStripComboBox_room_SelectedIndexChanged);
             this.toolStripComboBox_room.TextUpdate += new System.EventHandler(this.toolStripComboBox_room_TextUpdate);
+            // 
+            // ToolStripMenuItem_type
+            // 
+            ToolStripMenuItem_type.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripComboBox_type});
+            ToolStripMenuItem_type.Name = "ToolStripMenuItem_type";
+            ToolStripMenuItem_type.Size = new System.Drawing.Size(158, 22);
+            ToolStripMenuItem_type.Text = "名目";
             // 
             // toolStripComboBox_type
             // 
@@ -228,6 +142,14 @@
             this.toolStripComboBox_type.Size = new System.Drawing.Size(121, 19);
             this.toolStripComboBox_type.SelectedIndexChanged += new System.EventHandler(this.toolStripComboBox_type_SelectedIndexChanged);
             // 
+            // ToolStripMenuItem_cbtime
+            // 
+            ToolStripMenuItem_cbtime.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripTextBox_cbtime});
+            ToolStripMenuItem_cbtime.Name = "ToolStripMenuItem_cbtime";
+            ToolStripMenuItem_cbtime.Size = new System.Drawing.Size(158, 22);
+            ToolStripMenuItem_cbtime.Text = "抄表时间";
+            // 
             // toolStripTextBox_cbtime
             // 
             this.toolStripTextBox_cbtime.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
@@ -237,6 +159,18 @@
             this.toolStripTextBox_cbtime.ToolTipText = ">20130612";
             this.toolStripTextBox_cbtime.TextChanged += new System.EventHandler(this.toolStripTextBox_cbtime_TextChanged);
             // 
+            // toolStripSeparator1
+            // 
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            this.toolStripSeparator1.Size = new System.Drawing.Size(155, 6);
+            // 
+            // ToolStripMenuItem_showpaid
+            // 
+            this.ToolStripMenuItem_showpaid.Name = "ToolStripMenuItem_showpaid";
+            this.ToolStripMenuItem_showpaid.Size = new System.Drawing.Size(158, 22);
+            this.ToolStripMenuItem_showpaid.Text = "显示已付款项目";
+            this.ToolStripMenuItem_showpaid.Click += new System.EventHandler(this.ToolStripMenuItem_showpaid_Click);
+            // 
             // ToolStripMenuItem_reset
             // 
             this.ToolStripMenuItem_reset.Name = "ToolStripMenuItem_reset";
@@ -244,69 +178,62 @@
             this.ToolStripMenuItem_reset.Text = "Reset";
             this.ToolStripMenuItem_reset.Click += new System.EventHandler(this.ToolStripMenuItem_reset_Click);
             // 
-            // dataGridViewTextBoxColumn1
+            // menuStrip_sdm
             // 
-            this.dataGridViewTextBoxColumn1.DataPropertyName = "ID";
-            this.dataGridViewTextBoxColumn1.HeaderText = "ID";
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            this.dataGridViewTextBoxColumn1.ReadOnly = true;
-            this.dataGridViewTextBoxColumn1.Visible = false;
+            this.menuStrip_sdm.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.ToolStripMenuItem_addrecord,
+            this.ToolStripMenuItem_modifyrecord,
+            this.ToolStripMenuItem_setpaid,
+            ToolStripMenuItem_search});
+            this.menuStrip_sdm.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip_sdm.Name = "menuStrip_sdm";
+            this.menuStrip_sdm.Size = new System.Drawing.Size(930, 24);
+            this.menuStrip_sdm.TabIndex = 0;
+            this.menuStrip_sdm.Text = "menuStrip1";
             // 
-            // dataGridViewTextBoxColumn2
+            // ToolStripMenuItem_addrecord
             // 
-            this.dataGridViewTextBoxColumn2.DataPropertyName = "COMP_NAME";
-            this.dataGridViewTextBoxColumn2.HeaderText = "公司";
-            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            this.dataGridViewTextBoxColumn2.ReadOnly = true;
+            this.ToolStripMenuItem_addrecord.Name = "ToolStripMenuItem_addrecord";
+            this.ToolStripMenuItem_addrecord.Size = new System.Drawing.Size(67, 20);
+            this.ToolStripMenuItem_addrecord.Text = "添加记录";
+            this.ToolStripMenuItem_addrecord.Click += new System.EventHandler(this.ToolStripMenuItem_addrecord_Click);
             // 
-            // dataGridViewTextBoxColumn3
+            // ToolStripMenuItem_modifyrecord
             // 
-            this.dataGridViewTextBoxColumn3.DataPropertyName = "ROOM_NO";
-            this.dataGridViewTextBoxColumn3.HeaderText = "房间号";
-            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
-            this.dataGridViewTextBoxColumn3.ReadOnly = true;
+            this.ToolStripMenuItem_modifyrecord.Name = "ToolStripMenuItem_modifyrecord";
+            this.ToolStripMenuItem_modifyrecord.Size = new System.Drawing.Size(67, 20);
+            this.ToolStripMenuItem_modifyrecord.Text = "修改记录";
+            this.ToolStripMenuItem_modifyrecord.Click += new System.EventHandler(this.ToolStripMenuItem_modifyrecord_Click);
             // 
-            // dataGridViewTextBoxColumn4
+            // ToolStripMenuItem_setpaid
             // 
-            this.dataGridViewTextBoxColumn4.DataPropertyName = "SDM_TYPE";
-            this.dataGridViewTextBoxColumn4.HeaderText = "名目";
-            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
-            this.dataGridViewTextBoxColumn4.ReadOnly = true;
+            this.ToolStripMenuItem_setpaid.Name = "ToolStripMenuItem_setpaid";
+            this.ToolStripMenuItem_setpaid.Size = new System.Drawing.Size(91, 20);
+            this.ToolStripMenuItem_setpaid.Text = "标记为已付款";
+            this.ToolStripMenuItem_setpaid.Click += new System.EventHandler(this.ToolStripMenuItem_setpaid_Click);
             // 
-            // dataGridViewTextBoxColumn5
+            // dgvSdm
             // 
-            this.dataGridViewTextBoxColumn5.DataPropertyName = "SDM_SUM";
-            this.dataGridViewTextBoxColumn5.HeaderText = "抄表数";
-            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
-            this.dataGridViewTextBoxColumn5.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn6
-            // 
-            this.dataGridViewTextBoxColumn6.DataPropertyName = "SDM_CHARGE";
-            this.dataGridViewTextBoxColumn6.HeaderText = "金额";
-            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
-            this.dataGridViewTextBoxColumn6.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn7
-            // 
-            this.dataGridViewTextBoxColumn7.DataPropertyName = "SDM_TIME";
-            this.dataGridViewTextBoxColumn7.HeaderText = "抄表时间";
-            this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
-            this.dataGridViewTextBoxColumn7.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn8
-            // 
-            this.dataGridViewTextBoxColumn8.DataPropertyName = "SDM_CBER";
-            this.dataGridViewTextBoxColumn8.HeaderText = "抄表员";
-            this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
-            this.dataGridViewTextBoxColumn8.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn9
-            // 
-            this.dataGridViewTextBoxColumn9.DataPropertyName = "COMMENT";
-            this.dataGridViewTextBoxColumn9.HeaderText = "备注";
-            this.dataGridViewTextBoxColumn9.Name = "dataGridViewTextBoxColumn9";
-            this.dataGridViewTextBoxColumn9.ReadOnly = true;
+            this.dgvSdm.AllowUserToAddRows = false;
+            this.dgvSdm.AllowUserToDeleteRows = false;
+            this.dgvSdm.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvSdm.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.ID,
+            this.COMP_NAME,
+            this.ROOM_NO,
+            this.SDM_TYPE,
+            this.SDM_SUM,
+            this.SDM_CHARGE,
+            this.SDM_TIME,
+            this.SDM_CBER,
+            this.COMMENT,
+            this.ISPAID});
+            this.dgvSdm.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvSdm.Location = new System.Drawing.Point(0, 24);
+            this.dgvSdm.Name = "dgvSdm";
+            this.dgvSdm.ReadOnly = true;
+            this.dgvSdm.Size = new System.Drawing.Size(930, 421);
+            this.dgvSdm.TabIndex = 1;
             // 
             // ID
             // 
@@ -371,6 +298,79 @@
             this.COMMENT.HeaderText = "备注";
             this.COMMENT.Name = "COMMENT";
             this.COMMENT.ReadOnly = true;
+            // 
+            // ISPAID
+            // 
+            this.ISPAID.DataPropertyName = "ISPAID";
+            this.ISPAID.FalseValue = "是";
+            this.ISPAID.HeaderText = "是否付款";
+            this.ISPAID.Name = "ISPAID";
+            this.ISPAID.ReadOnly = true;
+            this.ISPAID.TrueValue = "否";
+            // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.DataPropertyName = "ID";
+            this.dataGridViewTextBoxColumn1.HeaderText = "ID";
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.ReadOnly = true;
+            this.dataGridViewTextBoxColumn1.Visible = false;
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            this.dataGridViewTextBoxColumn2.DataPropertyName = "COMP_NAME";
+            this.dataGridViewTextBoxColumn2.HeaderText = "公司";
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            this.dataGridViewTextBoxColumn2.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn3
+            // 
+            this.dataGridViewTextBoxColumn3.DataPropertyName = "ROOM_NO";
+            this.dataGridViewTextBoxColumn3.HeaderText = "房间号";
+            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            this.dataGridViewTextBoxColumn3.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn4
+            // 
+            this.dataGridViewTextBoxColumn4.DataPropertyName = "SDM_TYPE";
+            this.dataGridViewTextBoxColumn4.HeaderText = "名目";
+            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            this.dataGridViewTextBoxColumn4.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn5
+            // 
+            this.dataGridViewTextBoxColumn5.DataPropertyName = "SDM_SUM";
+            this.dataGridViewTextBoxColumn5.HeaderText = "抄表数";
+            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
+            this.dataGridViewTextBoxColumn5.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn6
+            // 
+            this.dataGridViewTextBoxColumn6.DataPropertyName = "SDM_CHARGE";
+            this.dataGridViewTextBoxColumn6.HeaderText = "金额";
+            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
+            this.dataGridViewTextBoxColumn6.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn7
+            // 
+            this.dataGridViewTextBoxColumn7.DataPropertyName = "SDM_TIME";
+            this.dataGridViewTextBoxColumn7.HeaderText = "抄表时间";
+            this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
+            this.dataGridViewTextBoxColumn7.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn8
+            // 
+            this.dataGridViewTextBoxColumn8.DataPropertyName = "SDM_CBER";
+            this.dataGridViewTextBoxColumn8.HeaderText = "抄表员";
+            this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
+            this.dataGridViewTextBoxColumn8.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn9
+            // 
+            this.dataGridViewTextBoxColumn9.DataPropertyName = "COMMENT";
+            this.dataGridViewTextBoxColumn9.HeaderText = "备注";
+            this.dataGridViewTextBoxColumn9.Name = "dataGridViewTextBoxColumn9";
+            this.dataGridViewTextBoxColumn9.ReadOnly = true;
             // 
             // FormSdm
             // 

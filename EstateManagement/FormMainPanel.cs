@@ -108,6 +108,23 @@ namespace EstateManagement
             frmAddFee.Show();
         }
 
+        private void ToolStripMenuItem_feelist_Click(object sender, EventArgs e)
+        {
+            charges.FormFee frmFee = new charges.FormFee();
+            frmFee.Show();
+        }
+
+        private void ToolStripMenuItem_print_Click(object sender, EventArgs e)
+        {
+            //todo
+        }
+
+        private void ToolStripMenuItem_generate_Click(object sender, EventArgs e)
+        {
+            report.FormGenerate frmGen = new report.FormGenerate();
+            frmGen.Show();
+        }
+
 
 
     }
