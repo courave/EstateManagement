@@ -57,7 +57,7 @@ namespace EstateManagement.report
             {
 
                 //DataTable dt = db.ExecuteDataTable("SELECT TOP 1 * FROM [CJ_MAIN_FEE] WHERE [LAST_END] >= '" + mMonthBegin.ToString() + "' AND [LAST_END] <= '" + mMonthEnd.ToString() + "'");
-                DataTable dt = db.ExecuteDataTable("SELECT TOP 1 * FROM [FEE_INFO] WHERE [GEN_MONTH] = '" + mMonth + "'");
+                DataTable dt = db.ExecuteDataTable("SELECT TOP 1 * FROM [FEE_INFO] WHERE [GEN_MONTH] = '" + mMonth + "' AND [FEE_TYPE]='房租'");
                 if (dt.Rows.Count > 0)
                     return true;
             }
@@ -82,13 +82,13 @@ namespace EstateManagement.report
         {
             if (CheckIfExist())
             {
-                DialogResult dr=MessageBox.Show("所选月份已生成过报表,确定要继续吗?", "确认", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-                if (dr == DialogResult.No)
-                {
+                //DialogResult dr=MessageBox.Show("所选月份已生成过报表,确定要继续吗?", "确认", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                //if (dr == DialogResult.No)
+                //{
                     mMessage = "所选月份已经生成过报表。";
                     mCompleted = true;
                     return;
-                }
+                //}
             }
             //get all un-terminated companys
             DataTable dtCustomers=new DataTable();
@@ -198,58 +198,70 @@ namespace EstateManagement.report
                     }
                 }
                 //水电煤
+                int roomcnt = GetRoomCount(COMPANY_ID);
                 //水费
                 using (DataBase db = new DataBase())
                 {
                     db.AddParameter("COMPANY_ID", COMPANY_ID);
-                    DataTable dtMiscFee = db.ExecuteDataTable("SELECT TOP 1 * FROM SDM_INFO WHERE SDM_TYPE='水费' AND COMP_ID=@COMPANY_ID AND ISPAID<>1 ORDER BY SDM_TIME DESC");
-                    if (dtMiscFee.Rows.Count > 0)
+                    DataTable dtMiscFee = db.ExecuteDataTable("SELECT TOP "+roomcnt+" * FROM SDM_INFO WHERE SDM_TYPE='水费' AND COMP_ID=@COMPANY_ID AND ISPAID<>1 ORDER BY SDM_TIME DESC");
+                    DateTime dtCBTime=DateTime.Now;
+                    double dFee = 0,tmp=0;
+                    string comment = "";
+                    foreach (DataRow dr in dtMiscFee.Rows)
                     {
-                        DateTime dtCBTime;
-                        DateTime.TryParse(dtMiscFee.Rows[0]["SDM_TIME"].ToString(), out dtCBTime);
+                        DateTime.TryParse(dr["SDM_TIME"].ToString(), out dtCBTime);
+                        if (double.TryParse(dr["SDM_CHARGE"].ToString(), out tmp))
+                        {
+                            dFee += tmp;
+                            comment += GetRoomNo(dr["ROOM_ID"].ToString())+":"+dr["SDM_SUM"].ToString() + ";";
+                        }
 
-                        double dFee = 0;
-                        double.TryParse(dtMiscFee.Rows[0]["SDM_CHARGE"].ToString(), out dFee);
-
-                        if (dFee != 0)
-                            addMainFee("水费", dFee, dtCBTime, null,"抄表数:"+ dtMiscFee.Rows[0]["SDM_SUM"].ToString(), iCompanyID);
                     }
+                    if (dFee != 0)
+                        addMainFee("水费", dFee, dtCBTime, null, comment, iCompanyID);
                 }
                 //电费
                 using (DataBase db = new DataBase())
                 {
                     db.AddParameter("COMPANY_ID", COMPANY_ID);
-                    DataTable dtMiscFee = db.ExecuteDataTable("SELECT TOP 1 * FROM SDM_INFO WHERE SDM_TYPE='电费' AND COMP_ID=@COMPANY_ID AND ISPAID<>1 ORDER BY SDM_TIME DESC");
-                    if (dtMiscFee.Rows.Count > 0)
+                    DataTable dtMiscFee = db.ExecuteDataTable("SELECT TOP " + roomcnt + " * FROM SDM_INFO WHERE SDM_TYPE='电费' AND COMP_ID=@COMPANY_ID AND ISPAID<>1 ORDER BY SDM_TIME DESC");
+                    DateTime dtCBTime = DateTime.Now;
+                    double dFee = 0, tmp = 0;
+                    string comment = "";
+                    foreach (DataRow dr in dtMiscFee.Rows)
                     {
-                        DateTime dtCBTime;
-                        DateTime.TryParse(dtMiscFee.Rows[0]["SDM_TIME"].ToString(), out dtCBTime);
+                        DateTime.TryParse(dr["SDM_TIME"].ToString(), out dtCBTime);
+                        if (double.TryParse(dr["SDM_CHARGE"].ToString(), out tmp))
+                        {
+                            dFee += tmp;
+                            comment += GetRoomNo(dr["ROOM_ID"].ToString()) + ":" + dr["SDM_SUM"].ToString() + ";";
+                        }
 
-                        double dFee = 0;
-                        double.TryParse(dtMiscFee.Rows[0]["SDM_CHARGE"].ToString(), out dFee);
-
-                        if (dFee != 0)
-                            addMainFee("电费", dFee, dtCBTime, null, "抄表数:" + dtMiscFee.Rows[0]["SDM_SUM"].ToString(), iCompanyID);
                     }
+                    if (dFee != 0)
+                        addMainFee("电费", dFee, dtCBTime, null, comment, iCompanyID);
                 }
                 //煤气费
                 using (DataBase db = new DataBase())
                 {
                     db.AddParameter("COMPANY_ID", COMPANY_ID);
-                    DataTable dtMiscFee = db.ExecuteDataTable("SELECT TOP 1 * FROM SDM_INFO WHERE SDM_TYPE='煤气费' AND COMP_ID=@COMPANY_ID AND ISPAID<>1 ORDER BY SDM_TIME DESC");
-                    if (dtMiscFee.Rows.Count > 0)
+                    DataTable dtMiscFee = db.ExecuteDataTable("SELECT TOP " + roomcnt + " * FROM SDM_INFO WHERE SDM_TYPE='煤气费' AND COMP_ID=@COMPANY_ID AND ISPAID<>1 ORDER BY SDM_TIME DESC");
+                    DateTime dtCBTime = DateTime.Now;
+                    double dFee = 0, tmp = 0;
+                    string comment = "";
+                    foreach (DataRow dr in dtMiscFee.Rows)
                     {
-                        DateTime dtCBTime;
-                        DateTime.TryParse(dtMiscFee.Rows[0]["SDM_TIME"].ToString(), out dtCBTime);
+                        DateTime.TryParse(dr["SDM_TIME"].ToString(), out dtCBTime);
+                        if (double.TryParse(dr["SDM_CHARGE"].ToString(), out tmp))
+                        {
+                            dFee += tmp;
+                            comment += GetRoomNo(dr["ROOM_ID"].ToString()) + ":" + dr["SDM_SUM"].ToString() + ";";
+                        }
 
-                        double dFee = 0;
-                        double.TryParse(dtMiscFee.Rows[0]["SDM_CHARGE"].ToString(), out dFee);
-
-                        if (dFee != 0)
-                            addMainFee("煤气费", dFee, dtCBTime, null, "抄表数:" + dtMiscFee.Rows[0]["SDM_SUM"].ToString(), iCompanyID);
                     }
+                    if (dFee != 0)
+                        addMainFee("煤气费", dFee, dtCBTime, null, comment, iCompanyID);
                 }
-
 
             }
             mSucceed = true;
@@ -346,5 +358,26 @@ namespace EstateManagement.report
 
         }
 
+        private int GetRoomCount(string compid)
+        {
+            using (DataBase db = new DataBase())
+            {
+                DataTable dt = db.ExecuteDataTable("SELECT COUNT(ID) AS ROOMCNT FROM ROOM_INFO WHERE COMP_ID=" + compid);
+                if (dt.Rows.Count > 0)
+                    return (int)dt.Rows[0][0];
+            }
+            return 0;
+        }
+        private string GetRoomNo(string roomid)
+        {
+            using (DataBase db = new DataBase())
+            {
+
+                DataTable dt = db.ExecuteDataTable("SELECT ROOM_NO FROM ROOM_INFO WHERE ID=" + roomid);
+                if (dt.Rows.Count > 0)
+                    return dt.Rows[0][0].ToString();
+            }
+            return "";
+        }
     }
 }
