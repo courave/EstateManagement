@@ -140,6 +140,13 @@
     <Compile Include="FormMainPanel.Designer.cs">
       <DependentUpon>FormMainPanel.cs</DependentUpon>
     </Compile>
+    <Compile Include="print\ClassFeeReport.cs" />
+    <Compile Include="print\CrystalReport_feelist.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CrystalReport_feelist.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="print\FormPrintComp.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -211,6 +218,10 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormMainPanel.resx">
       <DependentUpon>FormMainPanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="print\CrystalReport_feelist.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CrystalReport_feelist.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="print\FormPrintComp.resx">
       <DependentUpon>FormPrintComp.cs</DependentUpon>

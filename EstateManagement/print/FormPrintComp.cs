@@ -142,7 +142,14 @@ namespace EstateManagement.print
         }
         private void CreateExcelFromDataTable(DataTable dtComps,string filename)
         {
-            if (dtComps.Rows.Count <= 0) return;
+            if (dtComps.Rows.Count <= 0)
+            {
+                MessageBox.Show("没有数据");
+                
+                timer_compprint.Enabled = false;
+                progressBar_printcomp.Value = 0;
+                return;
+            }
             string lastCompName = "";
             object missing = System.Reflection.Missing.Value;
             curPos = 2;
