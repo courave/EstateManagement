@@ -125,6 +125,13 @@ namespace EstateManagement
             frmGen.Show();
         }
 
+        private void ToolStripMenuItem_printcomp_Click(object sender, EventArgs e)
+        {
+            //todo
+            print.FormPrintComp frmPrintcomp = new print.FormPrintComp();
+            frmPrintcomp.Show();
+        }
+
 
 
     }

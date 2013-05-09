@@ -347,6 +347,7 @@ namespace EstateManagement.customers
             }
             return true;
         }
+
         private void CleanControls()
         {
             textBox_compname.Text = "";
