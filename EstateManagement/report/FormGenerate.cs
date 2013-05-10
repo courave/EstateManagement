@@ -82,13 +82,9 @@ namespace EstateManagement.report
         {
             if (CheckIfExist())
             {
-                //DialogResult dr=MessageBox.Show("所选月份已生成过报表,确定要继续吗?", "确认", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-                //if (dr == DialogResult.No)
-                //{
-                    mMessage = "所选月份已经生成过报表。";
-                    mCompleted = true;
-                    return;
-                //}
+                mMessage = "所选月份已经生成过报表。";
+                mCompleted = true;
+                return;
             }
             //get all un-terminated companys
             DataTable dtCustomers=new DataTable();
@@ -102,8 +98,9 @@ namespace EstateManagement.report
             for (mCurrentCount = 0; mCurrentCount < mTotalCount; mCurrentCount++)
             {
                 DataRow drCustomer = dtCustomers.Rows[mCurrentCount];
-                if ((DateTime)drCustomer["END_DATE"] < mMonthBegin)
-                    continue;//合同到期的不处理
+                //ignore
+                //if ((DateTime)drCustomer["END_DATE"] < mMonthBegin)
+                //    continue;//合同到期的不处理
                 String COMPANY_ID = drCustomer["ID"].ToString();
                 int iCompanyID = -1;
                 int.TryParse(COMPANY_ID, out iCompanyID);
@@ -153,6 +150,7 @@ namespace EstateManagement.report
                 {
                     continue;
                 }
+                DateTime? lastlastend = getLastLastEndTime(COMPANY_ID);
                 double fangzu = 0;
                 double wuye = 0;
                 double fuwu = 0;
@@ -178,25 +176,7 @@ namespace EstateManagement.report
                     addMainFee("网络费", wangluo * interval, lastEnd, nextStart, "", iCompanyID);
                 }
                 //车位费
-                using (DataBase db = new DataBase())
-                {
-                    DataTable dtParking = db.ExecuteDataTable("SELECT CAR_PLATE,PRICE_MONTH FROM PARKING_INFO WHERE COMP_ID="+iCompanyID+" AND TERMINATE<>1");
-                    if (dtParking.Rows.Count > 0)
-                    {
-                        //
-                        string comment = "总共" + dtParking.Rows.Count + "个车位";
-                        double ParkingFee = 0;
-                        double tmp = 0;
-                        foreach (DataRow dr in dtParking.Rows)
-                        {
-                            if (double.TryParse(dr[1].ToString(), out tmp))
-                            {
-                                ParkingFee += tmp;
-                            }
-                        }
-                        addMainFee("车位费", ParkingFee * interval, lastEnd, nextStart, comment, iCompanyID);
-                    }
-                }
+                GenParkingFee(iCompanyID, lastEnd, nextStart, lastlastend, interval);
                 //水电煤
                 int roomcnt = GetRoomCount(COMPANY_ID);
                 //水费
@@ -269,7 +249,28 @@ namespace EstateManagement.report
             mCompleted = true;
 
         }
-
+        private void GenParkingFee(int compid,DateTime lastend,DateTime? nextstart,DateTime? lastlastend,int interval)
+        {
+            using (DataBase db = new DataBase())
+            {
+                DataTable dt = db.ExecuteDataTable("SELECT START_DATE,PRICE_MONTH FROM PARKING_INFO WHERE COMP_ID=" + compid+" AND TERMINATE<>1");
+                DateTime startdate = new DateTime();
+                double pricemonth = 0;
+                double sum = 0;
+                foreach (DataRow dr in dt.Rows)
+                {
+                    startdate = (DateTime)dr[0];
+                    pricemonth = (double)dr[1];
+                    if (lastlastend!=null && startdate > lastlastend && startdate < lastend)
+                    {
+                        sum += (lastend - startdate).Days / 30 * pricemonth;
+                    }
+                    sum += pricemonth * interval;
+                }
+                if(sum!=0)
+                    addMainFee("车位费", sum, lastend, nextstart, dt.Rows.Count+"个车位", compid);
+            }
+        }
         private void timer_fee_Tick(object sender, EventArgs e)
         {
             if (mCompleted)
@@ -323,6 +324,23 @@ namespace EstateManagement.report
                 // 得到最大的NextTime。  
                 // 
                 DataTable dt = db.ExecuteDataTable("SELECT MAX([NEXT_START]) FROM [FEE_INFO] WHERE [COMP_ID]=@COMP_ID AND [FEE_TYPE]='房租'");
+                if (dt.Rows.Count == 1)
+                {
+                    if (dt.Rows[0][0].ToString() == "")
+                        return null;
+                    return (DateTime?)dt.Rows[0][0];
+                }
+            }
+            return null;
+        }
+        private DateTime? getLastLastEndTime(String company_id)
+        {
+            using (DataBase db = new DataBase())
+            {
+                db.AddParameter("COMP_ID", company_id);
+                // 得到最大的NextTime。  
+                // 
+                DataTable dt = db.ExecuteDataTable("SELECT MAX([LAST_END]) FROM [FEE_INFO] WHERE [COMP_ID]=@COMP_ID AND [FEE_TYPE]='房租'");
                 if (dt.Rows.Count == 1)
                 {
                     if (dt.Rows[0][0].ToString() == "")

@@ -280,6 +280,18 @@ namespace EstateManagement.customers
                         db.AddParameter("PARKING_ID", lot.Key);
                         db.ExecuteNonQuery(sql);
                     }
+                    //generate new company fee according to compid
+                    //todo
+                    if (MessageBox.Show("新公司录入成功,是否生成费用报表", "新公司录入成功", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                    {
+                        int icompid = 0;
+                        if (int.TryParse(compid, out icompid))
+                        {
+                            GenerateNewCompFee(icompid, interval, startDate);
+                        }
+
+                    }
+                    
                 }
             }
             else
@@ -491,5 +503,70 @@ namespace EstateManagement.customers
             }
 
         }
+        private void GenerateNewCompFee(int compid,int interval,DateTime startdate)
+        {
+            //insert into fee info
+            //fz,fwf,wyf,wlf,cwf
+            double fangzu = 0;
+            double wuye = 0;
+            double fuwu = 0;
+            double wangluo = 0;
+            double chewei = 0;
+            using (DataBase db = new DataBase())
+            {
+                DataTable dt = db.ExecuteDataTable("SELECT * FROM View_PRED_CHARGE WHERE COMP_ID=" + compid);
+                if (dt.Rows.Count != 1) return;
+                double.TryParse(dt.Rows[0]["FANGZU"].ToString(), out fangzu);
+                double.TryParse(dt.Rows[0]["WUYE"].ToString(), out wuye);
+                double.TryParse(dt.Rows[0]["FUWU"].ToString(), out fuwu);
+                double.TryParse(dt.Rows[0]["WANGLUO"].ToString(), out wangluo);
+                dt = db.ExecuteDataTable("SELECT * FROM PARKING_INFO WHERE COMP_ID=" + compid + " AND TERMINATE<>1");
+                foreach (DataRow dr in dt.Rows)
+                {
+                    chewei += (double)dr["PRICE_MONTH"];
+                }
+                //insert into fee_info
+                if (fangzu != 0)
+                    addMainFee("房租", fangzu * interval, startdate, startdate.AddMonths(interval), "新进客户", compid);
+                if(wuye!=0)
+                    addMainFee("物业费", wuye * interval, startdate, startdate.AddMonths(interval), "新进客户", compid);
+                if(fuwu!=0)
+                    addMainFee("服务费", fuwu * interval, startdate, startdate.AddMonths(interval), "新进客户", compid);
+                if(wangluo!=0)
+                    addMainFee("网络费", wangluo * interval, startdate, startdate.AddMonths(interval), "新进客户", compid);
+                if(chewei!=0)
+                    addMainFee("车位费", chewei * interval, startdate, startdate.AddMonths(interval), "新进客户", compid);
+                
+            }
+            //
+            //generate bill
+            //
+        }
+        private int addMainFee(String FEE_TYPE, double FEE, DateTime LAST_END, DateTime? NEXT_START, String COMMENT, int COMPANY_ID)
+        {
+            String sql = "INSERT INTO [FEE_INFO]([FEE_TYPE],[FEE_CHARGE],[LAST_END],[NEXT_START] " +
+                ",[COMP_ID],[COMMENT],[GEN_MONTH],[ISPAID]) VALUES (@FEE_TYPE,@FEE_CHARGE " +
+                ",@LAST_END,@NEXT_START,@COMP_ID,@COMMENT,@GEN_MONTH,@ISPAID)";
+
+            using (DataBase db = new DataBase())
+            {
+                db.AddParameter("FEE_TYPE", FEE_TYPE);
+                db.AddParameter("FEE_CHARGE", FEE);
+                db.AddParameter("LAST_END", LAST_END);
+                if (NEXT_START == null)
+                    db.AddParameter("NEXT_START", DBNull.Value);
+                else
+                    db.AddParameter("NEXT_START", NEXT_START);
+                db.AddParameter("COMMENT", COMMENT);
+                db.AddParameter("COMP_ID", COMPANY_ID);
+                db.AddParameter("GEN_MONTH", mMonth);
+                db.AddParameter("ISPAID", false);
+
+                return db.ExecuteNonQuery(sql);
+            }
+
+
+        }
+
     }
 }

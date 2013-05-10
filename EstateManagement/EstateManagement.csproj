@@ -36,11 +36,15 @@
     <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
     <Reference Include="CrystalDecisions.ReportSource, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
     <Reference Include="CrystalDecisions.Shared, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Windows.Forms, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="FlashControlV71, Version=1.0.3187.32366, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
     <Reference Include="Microsoft.Office.Interop.Excel, Version=12.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c">
       <EmbedInteropTypes>True</EmbedInteropTypes>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Services" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="System.Data" />
@@ -147,6 +151,12 @@
       <DependentUpon>CrystalReport_feelist.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="print\FormFeePrintPreview.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="print\FormFeePrintPreview.Designer.cs">
+      <DependentUpon>FormFeePrintPreview.cs</DependentUpon>
+    </Compile>
     <Compile Include="print\FormPrintComp.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -222,6 +232,9 @@
     <EmbeddedResource Include="print\CrystalReport_feelist.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>CrystalReport_feelist.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="print\FormFeePrintPreview.resx">
+      <DependentUpon>FormFeePrintPreview.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="print\FormPrintComp.resx">
       <DependentUpon>FormPrintComp.cs</DependentUpon>

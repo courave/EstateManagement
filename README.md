@@ -25,3 +25,8 @@ EstateManagement
 水费:
 煤气费:
 其他:
+
+todo:修改收费逻辑,根据nextstart-lastend算时间收费done
+公司一入驻就立马收费//ongoing
+生成费用的时候需要根据公司来判断是否已经生成过//tbd
+新系统使用的时候需要把上个月的数据录入系统//tbd
