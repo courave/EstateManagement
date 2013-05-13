@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.ListViewItem listViewItem2 = new System.Windows.Forms.ListViewItem("");
+            System.Windows.Forms.ListViewItem listViewItem1 = new System.Windows.Forms.ListViewItem("");
             this.menuStripMain = new System.Windows.Forms.MenuStrip();
             this.客户管理CToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem_addNewCustomer = new System.Windows.Forms.ToolStripMenuItem();
@@ -45,10 +45,12 @@
             this.ToolStripMenuItem_sdmbase = new System.Windows.Forms.ToolStripMenuItem();
             this.ToolStripMenuItem_addfee = new System.Windows.Forms.ToolStripMenuItem();
             this.ToolStripMenuItem_feelist = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
+            this.ToolStripMenuItem_printcomp = new System.Windows.Forms.ToolStripMenuItem();
             this.报表管理RToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ToolStripMenuItem_generate = new System.Windows.Forms.ToolStripMenuItem();
             this.ToolStripMenuItem_print = new System.Windows.Forms.ToolStripMenuItem();
-            this.费用报表管理ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.ToolStripMenuItem_feereport = new System.Windows.Forms.ToolStripMenuItem();
             this.用户管理UToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.用户管理ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.角色管理ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -57,8 +59,6 @@
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripTextBoxUserInfo = new System.Windows.Forms.ToolStripTextBox();
             this.listViewMain = new System.Windows.Forms.ListView();
-            this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
-            this.ToolStripMenuItem_printcomp = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStripMain.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -195,12 +195,24 @@
             this.ToolStripMenuItem_feelist.Text = "通用费用列表";
             this.ToolStripMenuItem_feelist.Click += new System.EventHandler(this.ToolStripMenuItem_feelist_Click);
             // 
+            // toolStripSeparator2
+            // 
+            this.toolStripSeparator2.Name = "toolStripSeparator2";
+            this.toolStripSeparator2.Size = new System.Drawing.Size(203, 6);
+            // 
+            // ToolStripMenuItem_printcomp
+            // 
+            this.ToolStripMenuItem_printcomp.Name = "ToolStripMenuItem_printcomp";
+            this.ToolStripMenuItem_printcomp.Size = new System.Drawing.Size(206, 22);
+            this.ToolStripMenuItem_printcomp.Text = "生成需要收费的公司列表";
+            this.ToolStripMenuItem_printcomp.Click += new System.EventHandler(this.ToolStripMenuItem_printcomp_Click);
+            // 
             // 报表管理RToolStripMenuItem
             // 
             this.报表管理RToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.ToolStripMenuItem_generate,
             this.ToolStripMenuItem_print,
-            this.费用报表管理ToolStripMenuItem});
+            this.ToolStripMenuItem_feereport});
             this.报表管理RToolStripMenuItem.Name = "报表管理RToolStripMenuItem";
             this.报表管理RToolStripMenuItem.Size = new System.Drawing.Size(82, 20);
             this.报表管理RToolStripMenuItem.Text = "报表管理(&R)";
@@ -219,11 +231,12 @@
             this.ToolStripMenuItem_print.Text = "打印当月报表";
             this.ToolStripMenuItem_print.Click += new System.EventHandler(this.ToolStripMenuItem_print_Click);
             // 
-            // 费用报表管理ToolStripMenuItem
+            // ToolStripMenuItem_feereport
             // 
-            this.费用报表管理ToolStripMenuItem.Name = "费用报表管理ToolStripMenuItem";
-            this.费用报表管理ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.费用报表管理ToolStripMenuItem.Text = "费用报表管理";
+            this.ToolStripMenuItem_feereport.Name = "ToolStripMenuItem_feereport";
+            this.ToolStripMenuItem_feereport.Size = new System.Drawing.Size(152, 22);
+            this.ToolStripMenuItem_feereport.Text = "费用报表管理";
+            this.ToolStripMenuItem_feereport.Click += new System.EventHandler(this.ToolStripMenuItem_feereport_Click);
             // 
             // 用户管理UToolStripMenuItem
             // 
@@ -279,24 +292,12 @@
             // 
             this.listViewMain.Dock = System.Windows.Forms.DockStyle.Fill;
             this.listViewMain.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
-            listViewItem2});
+            listViewItem1});
             this.listViewMain.Location = new System.Drawing.Point(0, 24);
             this.listViewMain.Name = "listViewMain";
             this.listViewMain.Size = new System.Drawing.Size(768, 430);
             this.listViewMain.TabIndex = 1;
             this.listViewMain.UseCompatibleStateImageBehavior = false;
-            // 
-            // toolStripSeparator2
-            // 
-            this.toolStripSeparator2.Name = "toolStripSeparator2";
-            this.toolStripSeparator2.Size = new System.Drawing.Size(203, 6);
-            // 
-            // ToolStripMenuItem_printcomp
-            // 
-            this.ToolStripMenuItem_printcomp.Name = "ToolStripMenuItem_printcomp";
-            this.ToolStripMenuItem_printcomp.Size = new System.Drawing.Size(206, 22);
-            this.ToolStripMenuItem_printcomp.Text = "生成需要收费的公司列表";
-            this.ToolStripMenuItem_printcomp.Click += new System.EventHandler(this.ToolStripMenuItem_printcomp_Click);
             // 
             // FormMainPanel
             // 
@@ -331,7 +332,7 @@
         private System.Windows.Forms.ToolStripMenuItem ToolStripMenuItem_feelist;
         private System.Windows.Forms.ToolStripMenuItem ToolStripMenuItem_sdmbase;
         private System.Windows.Forms.ToolStripMenuItem 报表管理RToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem 费用报表管理ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem ToolStripMenuItem_feereport;
         private System.Windows.Forms.ToolStripMenuItem ToolStripMenuItem_print;
         private System.Windows.Forms.ToolStripMenuItem 用户管理UToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 用户管理ToolStripMenuItem;

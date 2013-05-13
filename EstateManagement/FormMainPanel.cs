@@ -116,7 +116,8 @@ namespace EstateManagement
 
         private void ToolStripMenuItem_print_Click(object sender, EventArgs e)
         {
-            //todo
+            print.FormSelMonth frmSelMonth = new print.FormSelMonth();
+            frmSelMonth.Show();
         }
 
         private void ToolStripMenuItem_generate_Click(object sender, EventArgs e)
@@ -127,9 +128,14 @@ namespace EstateManagement
 
         private void ToolStripMenuItem_printcomp_Click(object sender, EventArgs e)
         {
-            //todo
             print.FormPrintComp frmPrintcomp = new print.FormPrintComp();
             frmPrintcomp.Show();
+        }
+
+        private void ToolStripMenuItem_feereport_Click(object sender, EventArgs e)
+        {
+            report.FormFeeReport frmFeeReport = new report.FormFeeReport();
+            frmFeeReport.Show();
         }
 
 

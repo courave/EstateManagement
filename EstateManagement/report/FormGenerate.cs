@@ -51,19 +51,18 @@ namespace EstateManagement.report
             timer_fee.Enabled = true;
 
         }
-        private bool CheckIfExist()
+        private bool CheckIfExist(string _compid)
         {
             using (DataBase db = new DataBase())
             {
 
                 //DataTable dt = db.ExecuteDataTable("SELECT TOP 1 * FROM [CJ_MAIN_FEE] WHERE [LAST_END] >= '" + mMonthBegin.ToString() + "' AND [LAST_END] <= '" + mMonthEnd.ToString() + "'");
-                DataTable dt = db.ExecuteDataTable("SELECT TOP 1 * FROM [FEE_INFO] WHERE [GEN_MONTH] = '" + mMonth + "' AND [FEE_TYPE]='房租'");
+                DataTable dt = db.ExecuteDataTable("SELECT TOP 1 * FROM [FEE_INFO] WHERE [GEN_MONTH] = '" + mMonth + "' AND [FEE_TYPE]='房租' AND COMP_ID="+_compid);
                 if (dt.Rows.Count > 0)
                     return true;
             }
             return false;
         }
-
         private void FormGenerate_Load(object sender, EventArgs e)
         {
             dateTimePicker_selmonth.Value = dateTimePicker_selmonth.Value.AddDays(1 - dateTimePicker_selmonth.Value.Day).Date;
@@ -80,12 +79,12 @@ namespace EstateManagement.report
 
         private void generate()
         {
-            if (CheckIfExist())
-            {
-                mMessage = "所选月份已经生成过报表。";
-                mCompleted = true;
-                return;
-            }
+            //if (CheckIfExist())
+            //{
+            //    mMessage = "所选月份已经生成过报表。";
+            //    mCompleted = true;
+            //    return;
+            //}
             //get all un-terminated companys
             DataTable dtCustomers=new DataTable();
             int interval = 3;
@@ -102,6 +101,13 @@ namespace EstateManagement.report
                 //if ((DateTime)drCustomer["END_DATE"] < mMonthBegin)
                 //    continue;//合同到期的不处理
                 String COMPANY_ID = drCustomer["ID"].ToString();
+                string compname = drCustomer["COMP_NAME"].ToString();
+                if (CheckIfExist(COMPANY_ID))
+                {
+                    mMessage = "所选月份 " + compname + " 已生成过报表";
+                    MessageBox.Show(mMessage);
+                    continue;
+                }
                 int iCompanyID = -1;
                 int.TryParse(COMPANY_ID, out iCompanyID);
                 
@@ -260,7 +266,7 @@ namespace EstateManagement.report
                 foreach (DataRow dr in dt.Rows)
                 {
                     startdate = (DateTime)dr[0];
-                    pricemonth = (double)dr[1];
+                    double.TryParse(dr[1].ToString(), out pricemonth);
                     if (lastlastend!=null && startdate > lastlastend && startdate < lastend)
                     {
                         sum += (lastend - startdate).Days / 30 * pricemonth;

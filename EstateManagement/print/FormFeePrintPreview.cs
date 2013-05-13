@@ -13,11 +13,11 @@ namespace EstateManagement.print
     public partial class FormFeePrintPreview : Form
     {
         public string mMonth;
-        private bool isPaid;
+        private int isPaid;
         private int compid;
-        public FormFeePrintPreview():this("<全部>",false){}
-        public FormFeePrintPreview(string _mMonth,bool _isPaid):this(_mMonth,_isPaid,-1){}
-        public FormFeePrintPreview(string _mMonth,bool _isPaid,int _compid)
+        public FormFeePrintPreview():this("<全部>",0){}
+        public FormFeePrintPreview(string _mMonth,int _isPaid):this(_mMonth,_isPaid,-1){}
+        public FormFeePrintPreview(string _mMonth,int _isPaid,int _compid)
         {
             InitializeComponent();
             mMonth = _mMonth;
@@ -32,8 +32,17 @@ namespace EstateManagement.print
             DataTable dtReport;
             using (DataBase db = new DataBase())
             {
-                String sql = "SELECT * FROM View_FEE_REPORT WHERE ISPAID=@ISPAID ";
-                db.AddParameter("ISPAID", isPaid);
+                String sql = "SELECT * FROM View_FEE_REPORT WHERE 1=1 ";
+                if (isPaid == 1)
+                {
+                    sql += " AND ISPAID=@ISPAID ";
+                    db.AddParameter("ISPAID", true);
+                }
+                else if (isPaid == 2)
+                {
+                    sql += " AND ISPAID=@ISPAID ";
+                    db.AddParameter("ISPAID", false);
+                }
                 if (mMonth != "<全部>")
                 {
                     sql += " AND GEN_MONTH=@GEN_MONTH ";
@@ -52,6 +61,7 @@ namespace EstateManagement.print
                 Dispose();
                 return;
             }
+            double tmp = 0;
             foreach (DataRow dr in dtReport.Rows)
             {
                 double subTotal = 0;
@@ -65,78 +75,97 @@ namespace EstateManagement.print
                     bill.feeDate1 = ((DateTime)dr["FZ_LE"]).ToString("yy.M.d") + "－" + ((DateTime)dr["FZ_NS"]).AddDays(-1).ToString("yy.M.d");
                     bill.feeAmount1 = dr["FZ_FEE"].ToString();
                     bill.comment1 = dr["FZ_COMMENT"].ToString();
-                    subTotal += (double)dr["FZ_FEE"];
+                    if (double.TryParse(dr["FZ_FEE"].ToString(),out tmp))
+                        subTotal += tmp;
                 }
                 if (dr["FWF_FEE"].ToString() != "")
                 {
-                    bill.feeType1 = "综合技术服务费";
-                    bill.feeDate1 = ((DateTime)dr["FWF_LE"]).ToString("yy.M.d") + "－" + ((DateTime)dr["FWF_NS"]).AddDays(-1).ToString("yy.M.d");
-                    bill.feeAmount1 = dr["FWF_FEE"].ToString();
-                    bill.comment1 = dr["FWF_COMMENT"].ToString();
-                    subTotal += (double)dr["FWF_FEE"];
+                    bill.feeType2 = "综合技术服务费";
+                    bill.feeDate2 = ((DateTime)dr["FWF_LE"]).ToString("yy.M.d") + "－" + ((DateTime)dr["FWF_NS"]).AddDays(-1).ToString("yy.M.d");
+                    bill.feeAmount2 = dr["FWF_FEE"].ToString();
+                    bill.comment2 = dr["FWF_COMMENT"].ToString();
+                    if (double.TryParse(dr["FWF_FEE"].ToString(), out tmp))
+                        subTotal += tmp;
                 }
                 if (dr["WY_FEE"].ToString() != "")
                 {
-                    bill.feeType1 = "物业费";
-                    bill.feeDate1 = ((DateTime)dr["WY_LE"]).ToString("yy.M.d") + "－" + ((DateTime)dr["WY_NS"]).AddDays(-1).ToString("yy.M.d");
-                    bill.feeAmount1 = dr["WY_FEE"].ToString();
-                    bill.comment1 = dr["WY_COMMENT"].ToString();
-                    subTotal += (double)dr["WY_FEE"];
+                    bill.feeType3 = "物业费";
+                    bill.feeDate3 = ((DateTime)dr["WY_LE"]).ToString("yy.M.d") + "－" + ((DateTime)dr["WY_NS"]).AddDays(-1).ToString("yy.M.d");
+                    bill.feeAmount3 = dr["WY_FEE"].ToString();
+                    bill.comment3 = dr["WY_COMMENT"].ToString();
+                    if (double.TryParse(dr["WY_FEE"].ToString(), out tmp))
+                        subTotal += tmp;
                 }
                 if (dr["WL_FEE"].ToString() != "")
                 {
-                    bill.feeType1 = "网络费";
-                    bill.feeDate1 = ((DateTime)dr["WL_LE"]).ToString("yy.M.d") + "－" + ((DateTime)dr["WL_NS"]).AddDays(-1).ToString("yy.M.d");
-                    bill.feeAmount1 = dr["WL_FEE"].ToString();
-                    bill.comment1 = dr["WL_COMMENT"].ToString();
-                    subTotal += (double)dr["WL_FEE"];
+                    bill.feeType4 = "网络费";
+                    bill.feeDate4 = ((DateTime)dr["WL_LE"]).ToString("yy.M.d") + "－" + ((DateTime)dr["WL_NS"]).AddDays(-1).ToString("yy.M.d");
+                    bill.feeAmount4 = dr["WL_FEE"].ToString();
+                    bill.comment4 = dr["WL_COMMENT"].ToString();
+                    if (double.TryParse(dr["WL_FEE"].ToString(), out tmp))
+                        subTotal += tmp;
                 }
                 if (dr["CW_FEE"].ToString() != "")
                 {
-                    bill.feeType1 = "车位费";
-                    bill.feeDate1 = ((DateTime)dr["CW_LE"]).ToString("yy.M.d") + "－" + ((DateTime)dr["CW_NS"]).AddDays(-1).ToString("yy.M.d");
-                    bill.feeAmount1 = dr["CW_FEE"].ToString();
-                    bill.comment1 = dr["CW_COMMENT"].ToString();
-                    subTotal += (double)dr["CW_FEE"];
+                    bill.feeType5 = "车位费";
+                    bill.feeDate5 = ((DateTime)dr["CW_LE"]).ToString("yy.M.d") + "－" + ((DateTime)dr["CW_NS"]).AddDays(-1).ToString("yy.M.d");
+                    bill.feeAmount5 = dr["CW_FEE"].ToString();
+                    bill.comment5 = dr["CW_COMMENT"].ToString();
+                    if (double.TryParse(dr["CW_FEE"].ToString(), out tmp))
+                        subTotal += tmp;
                 }
                 if (dr["QITA_FEE"].ToString() != "")
                 {
-                    bill.feeType1 = "其他费用";
-                    bill.feeDate1 = ((DateTime)dr["QITA_LE"]).ToString("yy.M.d") + "－" + ((DateTime)dr["QITA_NS"]).AddDays(-1).ToString("yy.M.d");
-                    bill.feeAmount1 = dr["QITA_FEE"].ToString();
-                    bill.comment1 = dr["QITA_COMMENT"].ToString();
-                    subTotal += (double)dr["QITA_FEE"];
+                    bill.feeType6 = "其他费用";
+                    bill.feeDate6 = "";//((DateTime)dr["QITA_LE"]).ToString("yy.M.d") + "－" + ((DateTime)dr["QITA_NS"]).AddDays(-1).ToString("yy.M.d");
+                    bill.feeAmount6 = dr["QITA_FEE"].ToString();
+                    bill.comment6 = dr["QITA_COMMENT"].ToString();
+                    if (double.TryParse(dr["QITA_FEE"].ToString(), out tmp))
+                        subTotal += tmp;
                 }
                 bill.subtotal = subTotal.ToString();
                 if (dr["SF_FEE"].ToString() != "")
                 {
-                    bill.feeType1 = "水费";
-                    bill.feeDate1 = ((DateTime)dr["SF_LE"]).ToString("yy.M.d") + "抄表";
-                    bill.feeAmount1 = dr["SF_FEE"].ToString();
-                    bill.comment1 = dr["SF_COMMENT"].ToString();
-                    subTotal += (double)dr["SF_FEE"];
+                    bill.feeType7 = "水费";
+                    bill.feeDate7 = ((DateTime)dr["SF_LE"]).ToString("yy.M.d") + "抄表";
+                    bill.feeAmount7 = dr["SF_FEE"].ToString();
+                    bill.comment7 = dr["SF_COMMENT"].ToString();
+                    if (double.TryParse(dr["SF_FEE"].ToString(), out tmp))
+                        subTotal += tmp;
                 }
                 if (dr["DF_FEE"].ToString() != "")
                 {
-                    bill.feeType1 = "电费";
-                    bill.feeDate1 = ((DateTime)dr["DF_LE"]).ToString("yy.M.d") + "－" + ((DateTime)dr["DF_NS"]).AddDays(-1).ToString("yy.M.d");
-                    bill.feeAmount1 = dr["DF_FEE"].ToString();
-                    bill.comment1 = dr["DF_COMMENT"].ToString();
-                    subTotal += (double)dr["DF_FEE"];
+                    bill.feeType8 = "电费";
+                    bill.feeDate8 = ((DateTime)dr["DF_LE"]).ToString("yy.M.d") + "抄表";
+                    bill.feeAmount8 = dr["DF_FEE"].ToString();
+                    bill.comment8 = dr["DF_COMMENT"].ToString();
+                    if (double.TryParse(dr["DF_FEE"].ToString(), out tmp))
+                        subTotal += tmp;
                 }
                 if (dr["MQF_FEE"].ToString() != "")
                 {
-                    bill.feeType1 = "煤气费";
-                    bill.feeDate1 = ((DateTime)dr["MQF_LE"]).ToString("yy.M.d") + "－" + ((DateTime)dr["MQF_NS"]).AddDays(-1).ToString("yy.M.d");
-                    bill.feeAmount1 = dr["MQF_FEE"].ToString();
-                    bill.comment1 = dr["MQF_COMMENT"].ToString();
-                    subTotal += (double)dr["MQF_FEE"];
+                    bill.feeType9 = "煤气费";
+                    bill.feeDate9 = ((DateTime)dr["MQF_LE"]).ToString("yy.M.d") + "抄表";
+                    bill.feeAmount9 = dr["MQF_FEE"].ToString();
+                    bill.comment9 = dr["MQF_COMMENT"].ToString();
+                    if (double.TryParse(dr["MQF_FEE"].ToString(), out tmp))
+                        subTotal += tmp;
                 }
+                bill.total = subTotal.ToString();
+                printList.Add(bill);
             }
+            feereport.SetDataSource(printList);
+            crystalReportViewer_feepreview.ReportSource = feereport;
         }
         private string GetRoomNo(string _compid)
         {
-            //todo
+            string sql = "select ROOM_NO+';' AS [text()] from room_info where comp_id="+_compid+" for xml path('')";
+            using (DataBase db = new DataBase())
+            {
+                DataTable dt = db.ExecuteDataTable(sql);
+                if (dt.Rows.Count == 1)
+                    return dt.Rows[0][0].ToString();
+            }
             return "";
         }
     }

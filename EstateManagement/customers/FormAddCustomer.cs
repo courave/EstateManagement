@@ -512,6 +512,7 @@ namespace EstateManagement.customers
             double fuwu = 0;
             double wangluo = 0;
             double chewei = 0;
+            double tmp = 0;
             using (DataBase db = new DataBase())
             {
                 DataTable dt = db.ExecuteDataTable("SELECT * FROM View_PRED_CHARGE WHERE COMP_ID=" + compid);
@@ -523,7 +524,8 @@ namespace EstateManagement.customers
                 dt = db.ExecuteDataTable("SELECT * FROM PARKING_INFO WHERE COMP_ID=" + compid + " AND TERMINATE<>1");
                 foreach (DataRow dr in dt.Rows)
                 {
-                    chewei += (double)dr["PRICE_MONTH"];
+                    if (double.TryParse(dr["PRICE_MONTH"].ToString(),out tmp))
+                        chewei += tmp;
                 }
                 //insert into fee_info
                 if (fangzu != 0)
@@ -541,6 +543,11 @@ namespace EstateManagement.customers
             //
             //generate bill
             //
+            if (MessageBox.Show("是否打印费用单?", "费用单生成成功", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                print.FormFeePrintPreview frmPreview = new print.FormFeePrintPreview("<全部>", 0, compid);
+                frmPreview.ShowDialog();
+            }
         }
         private int addMainFee(String FEE_TYPE, double FEE, DateTime LAST_END, DateTime? NEXT_START, String COMMENT, int COMPANY_ID)
         {
@@ -559,7 +566,7 @@ namespace EstateManagement.customers
                     db.AddParameter("NEXT_START", NEXT_START);
                 db.AddParameter("COMMENT", COMMENT);
                 db.AddParameter("COMP_ID", COMPANY_ID);
-                db.AddParameter("GEN_MONTH", mMonth);
+                db.AddParameter("GEN_MONTH", DateTime.Now.Year.ToString() + (DateTime.Now.Month < 10 ? "0" + DateTime.Now.Month : DateTime.Now.Month.ToString()));
                 db.AddParameter("ISPAID", false);
 
                 return db.ExecuteNonQuery(sql);

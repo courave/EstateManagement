@@ -83,3 +83,6 @@ C:\Users\11171\Documents\Visual Studio 2010\Projects\EstateManagement\EstateMana
 C:\Users\11171\Documents\Visual Studio 2010\Projects\EstateManagement\EstateManagement\EstateManagement\bin\Debug\Microsoft.Office.Interop.Excel.xml
 C:\Users\11171\Documents\Visual Studio 2010\Projects\EstateManagement\EstateManagement\EstateManagement\bin\Debug\office.xml
 C:\Users\lancelot\Documents\Visual Studio 2010\Projects\EstateManagement\EstateManagement\obj\x86\Debug\EstateManagement.print.FormPrintComp.resources
+C:\Users\11171\Documents\Visual Studio 2010\Projects\EstateManagement\EstateManagement\EstateManagement\obj\x86\Debug\EstateManagement.print.FormFeePrintPreview.resources
+C:\Users\11171\Documents\Visual Studio 2010\Projects\EstateManagement\EstateManagement\EstateManagement\obj\x86\Debug\EstateManagement.print.FormSelMonth.resources
+C:\Users\11171\Documents\Visual Studio 2010\Projects\EstateManagement\EstateManagement\EstateManagement\obj\x86\Debug\EstateManagement.report.FormFeeReport.resources
