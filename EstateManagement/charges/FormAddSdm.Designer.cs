@@ -72,7 +72,7 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new System.Drawing.Point(60, 10);
+            label1.Location = new System.Drawing.Point(60, 39);
             label1.Name = "label1";
             label1.Size = new System.Drawing.Size(34, 13);
             label1.TabIndex = 0;
@@ -81,7 +81,7 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new System.Drawing.Point(48, 38);
+            label2.Location = new System.Drawing.Point(48, 9);
             label2.Name = "label2";
             label2.Size = new System.Drawing.Size(46, 13);
             label2.TabIndex = 0;
@@ -172,7 +172,7 @@
             // 
             this.comboBox_comp.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox_comp.FormattingEnabled = true;
-            this.comboBox_comp.Location = new System.Drawing.Point(101, 7);
+            this.comboBox_comp.Location = new System.Drawing.Point(101, 36);
             this.comboBox_comp.Name = "comboBox_comp";
             this.comboBox_comp.Size = new System.Drawing.Size(171, 21);
             this.comboBox_comp.TabIndex = 1;
@@ -182,7 +182,7 @@
             // 
             this.comboBox_room.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox_room.FormattingEnabled = true;
-            this.comboBox_room.Location = new System.Drawing.Point(101, 35);
+            this.comboBox_room.Location = new System.Drawing.Point(101, 6);
             this.comboBox_room.Name = "comboBox_room";
             this.comboBox_room.Size = new System.Drawing.Size(171, 21);
             this.comboBox_room.TabIndex = 2;

@@ -100,15 +100,38 @@ namespace EstateManagement.charges
             else
             {
                 //get compnames
+                AutoCompleteStringCollection strSuggestComps = new AutoCompleteStringCollection();
                 using (DataBase db = new DataBase())
                 {
                     DataTable dt = db.ExecuteDataTable("SELECT ID,COMP_NAME FROM CONTRACT_INFO WHERE TERMINATE<>1");
                     foreach (DataRow dr in dt.Rows)
                     {
                         comboBox_comp.Items.Add(new ComboItem(dr[0].ToString(), dr[1].ToString()));
+                        strSuggestComps.Add(dr[1].ToString());
                     }
                 }
-                comboBox_room.Enabled = false;
+                comboBox_comp.DropDownStyle = ComboBoxStyle.DropDown;
+                comboBox_comp.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
+                comboBox_comp.AutoCompleteSource = AutoCompleteSource.ListItems;
+                comboBox_comp.AutoCompleteCustomSource = strSuggestComps;
+
+                //get rooms
+                AutoCompleteStringCollection strSuggestRoom = new AutoCompleteStringCollection();
+                using (DataBase db = new DataBase())
+                {
+                    DataTable dt = db.ExecuteDataTable("SELECT ID,ROOM_NO FROM ROOM_INFO WHERE HASCOMP=1 ORDER BY ROOM_NO");
+                    foreach (DataRow dr in dt.Rows)
+                    {
+                        comboBox_room.Items.Add(new ComboItem(dr[0].ToString(), dr[1].ToString()));
+                        strSuggestRoom.Add(dr[1].ToString());
+                    }
+                }
+                comboBox_room.DropDownStyle = ComboBoxStyle.DropDown;
+                comboBox_room.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
+                comboBox_room.AutoCompleteSource = AutoCompleteSource.ListItems;
+                comboBox_room.AutoCompleteCustomSource = strSuggestRoom;
+
+                comboBox_comp.Enabled = false;
                 comboBox_type.Enabled = false;
             }
 
@@ -123,29 +146,31 @@ namespace EstateManagement.charges
 
         private void comboBox_comp_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (comboBox_comp.SelectedItem != null)
-            {
-                comboBox_room.Enabled = true;
-                ComboItem compitem = (ComboItem)comboBox_comp.SelectedItem;
-                using (DataBase db = new DataBase())
-                {
-                    DataTable dt = db.ExecuteDataTable("SELECT ID,ROOM_NO FROM ROOM_INFO WHERE COMP_ID="+compitem.Key);
-                    foreach (DataRow dr in dt.Rows)
-                    {
-                        comboBox_room.Items.Add(new ComboItem(dr[0].ToString(), dr[1].ToString()));
-                    }
-                }
-            }
-            else
-            {
-                comboBox_room.Items.Clear();
-                comboBox_room.Enabled = false;
-            }
+
         }
 
         private void comboBox_room_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (comboBox_room.SelectedItem != null)
+            {
+                using (DataBase db = new DataBase())
+                {
+                    DataTable dt = db.ExecuteDataTable("SELECT COMP_ID FROM ROOM_INFO WHERE ID="+((ComboItem)comboBox_room.SelectedItem).Key);
+                    if (dt.Rows.Count != 1) return;
+                    
+                    foreach (ComboItem item in comboBox_comp.Items)
+                    {
+                        if (item.Key == dt.Rows[0][0].ToString())
+                        {
+                            comboBox_comp.Enabled = true;
+                            comboBox_comp.SelectedItem = item;
+                            break;
+                        }
+                    }
+                }
+            }
+            if (comboBox_comp.Enabled == false) return;
+            if (comboBox_comp.SelectedItem != null)
             {
                 comboBox_type.Enabled = true;
             }
@@ -153,6 +178,7 @@ namespace EstateManagement.charges
             {
                 comboBox_type.Enabled = false;
             }
+            comboBox_comp.Enabled = false;
         }
 
         private void comboBox_type_SelectedIndexChanged(object sender, EventArgs e)
@@ -309,8 +335,6 @@ namespace EstateManagement.charges
             comboBox_comp.SelectedItem = null;
             comboBox_type.SelectedItem = null;
             comboBox_type.Enabled = false;
-            comboBox_room.Items.Clear();
-            comboBox_room.Enabled = false;
             textBox_lastcharge.Text = "";
             textBox_lastsum.Text = "";
             textBox_lasttime.Text = "";
