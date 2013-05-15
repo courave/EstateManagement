@@ -30,15 +30,16 @@
         {
             this.components = new System.ComponentModel.Container();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormSdmBase));
             this.dgvSdmBase = new System.Windows.Forms.DataGridView();
+            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SDM_TYPE = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SDM_UNIT = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.contextMenuStrip_init = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.ToolStripMenuItem_init = new System.Windows.Forms.ToolStripMenuItem();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.SDM_TYPE = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.SDM_UNIT = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSdmBase)).BeginInit();
             this.contextMenuStrip_init.SuspendLayout();
             this.SuspendLayout();
@@ -69,9 +70,30 @@
             this.dgvSdmBase.Location = new System.Drawing.Point(0, 0);
             this.dgvSdmBase.Name = "dgvSdmBase";
             this.dgvSdmBase.RowTemplate.Height = 23;
-            this.dgvSdmBase.Size = new System.Drawing.Size(243, 109);
+            this.dgvSdmBase.Size = new System.Drawing.Size(243, 118);
             this.dgvSdmBase.TabIndex = 0;
             this.dgvSdmBase.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvSdmBase_CellEndEdit);
+            // 
+            // ID
+            // 
+            this.ID.DataPropertyName = "ID";
+            this.ID.HeaderText = "ID";
+            this.ID.Name = "ID";
+            this.ID.ReadOnly = true;
+            this.ID.Visible = false;
+            // 
+            // SDM_TYPE
+            // 
+            this.SDM_TYPE.DataPropertyName = "SDM_TYPE";
+            this.SDM_TYPE.HeaderText = "名目";
+            this.SDM_TYPE.Name = "SDM_TYPE";
+            this.SDM_TYPE.ReadOnly = true;
+            // 
+            // SDM_UNIT
+            // 
+            this.SDM_UNIT.DataPropertyName = "SDM_UNIT";
+            this.SDM_UNIT.HeaderText = "单价";
+            this.SDM_UNIT.Name = "SDM_UNIT";
             // 
             // contextMenuStrip_init
             // 
@@ -108,33 +130,13 @@
             this.dataGridViewTextBoxColumn3.HeaderText = "单价";
             this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
             // 
-            // ID
-            // 
-            this.ID.DataPropertyName = "ID";
-            this.ID.HeaderText = "ID";
-            this.ID.Name = "ID";
-            this.ID.ReadOnly = true;
-            this.ID.Visible = false;
-            // 
-            // SDM_TYPE
-            // 
-            this.SDM_TYPE.DataPropertyName = "SDM_TYPE";
-            this.SDM_TYPE.HeaderText = "名目";
-            this.SDM_TYPE.Name = "SDM_TYPE";
-            this.SDM_TYPE.ReadOnly = true;
-            // 
-            // SDM_UNIT
-            // 
-            this.SDM_UNIT.DataPropertyName = "SDM_UNIT";
-            this.SDM_UNIT.HeaderText = "单价";
-            this.SDM_UNIT.Name = "SDM_UNIT";
-            // 
             // FormSdmBase
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(243, 109);
+            this.ClientSize = new System.Drawing.Size(243, 118);
             this.Controls.Add(this.dgvSdmBase);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FormSdmBase";
             this.Text = "水电煤基数管理";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FormSdmBase_FormClosing);

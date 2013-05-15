@@ -15,6 +15,8 @@ namespace EstateManagement.print
         public string mMonth;
         private int isPaid;
         private int compid;
+        private bool customizable = false;
+        private DataTable dataReport;
         public FormFeePrintPreview():this("<全部>",0){}
         public FormFeePrintPreview(string _mMonth,int _isPaid):this(_mMonth,_isPaid,-1){}
         public FormFeePrintPreview(string _mMonth,int _isPaid,int _compid)
@@ -24,37 +26,53 @@ namespace EstateManagement.print
             isPaid = _isPaid;
             compid = _compid;
         }
-
+        public FormFeePrintPreview(bool _customizable,DataTable _dtReport)
+        {
+            InitializeComponent();
+            customizable = _customizable;
+            dataReport = _dtReport;
+        }
         private void FormFeePrintPreview_Load(object sender, EventArgs e)
+        {
+            if (customizable)
+            {
+                PrintTable(dataReport);
+            }
+            else
+            {
+                DataTable dtReport;
+                using (DataBase db = new DataBase())
+                {
+                    String sql = "SELECT * FROM View_FEE_REPORT WHERE 1=1 ";
+                    if (isPaid == 1)
+                    {
+                        sql += " AND ISPAID=@ISPAID ";
+                        db.AddParameter("ISPAID", true);
+                    }
+                    else if (isPaid == 2)
+                    {
+                        sql += " AND ISPAID=@ISPAID ";
+                        db.AddParameter("ISPAID", false);
+                    }
+                    if (mMonth != "<全部>")
+                    {
+                        sql += " AND GEN_MONTH=@GEN_MONTH ";
+                        db.AddParameter("GEN_MONTH", mMonth);
+                    }
+                    if (compid != -1)
+                    {
+                        sql += " AND ID=@ID ";
+                        db.AddParameter("ID", compid);
+                    }
+                    dtReport = db.ExecuteDataTable(sql);
+                }
+                PrintTable(dtReport);
+            }
+        }
+        private void PrintTable(DataTable dtReport)
         {
             CrystalReport_feelist feereport = new CrystalReport_feelist();
             List<ClassFeeReport> printList = new List<ClassFeeReport>();
-            DataTable dtReport;
-            using (DataBase db = new DataBase())
-            {
-                String sql = "SELECT * FROM View_FEE_REPORT WHERE 1=1 ";
-                if (isPaid == 1)
-                {
-                    sql += " AND ISPAID=@ISPAID ";
-                    db.AddParameter("ISPAID", true);
-                }
-                else if (isPaid == 2)
-                {
-                    sql += " AND ISPAID=@ISPAID ";
-                    db.AddParameter("ISPAID", false);
-                }
-                if (mMonth != "<全部>")
-                {
-                    sql += " AND GEN_MONTH=@GEN_MONTH ";
-                    db.AddParameter("GEN_MONTH", mMonth);
-                }
-                if (compid != -1)
-                {
-                    sql += " AND ID=@ID ";
-                    db.AddParameter("ID", compid);
-                }
-                dtReport = db.ExecuteDataTable(sql);
-            }
             if (dtReport.Rows.Count == 0)
             {
                 MessageBox.Show("没有需要打印的记录");
@@ -75,7 +93,7 @@ namespace EstateManagement.print
                     bill.feeDate1 = ((DateTime)dr["FZ_LE"]).ToString("yy.M.d") + "－" + ((DateTime)dr["FZ_NS"]).AddDays(-1).ToString("yy.M.d");
                     bill.feeAmount1 = dr["FZ_FEE"].ToString();
                     bill.comment1 = dr["FZ_COMMENT"].ToString();
-                    if (double.TryParse(dr["FZ_FEE"].ToString(),out tmp))
+                    if (double.TryParse(dr["FZ_FEE"].ToString(), out tmp))
                         subTotal += tmp;
                 }
                 if (dr["FWF_FEE"].ToString() != "")
@@ -156,6 +174,7 @@ namespace EstateManagement.print
             }
             feereport.SetDataSource(printList);
             crystalReportViewer_feepreview.ReportSource = feereport;
+
         }
         private string GetRoomNo(string _compid)
         {

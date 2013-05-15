@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormRooms));
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.button_search = new System.Windows.Forms.Button();
             this.textBox_search = new System.Windows.Forms.TextBox();
@@ -72,7 +73,7 @@
             // splitContainer1.Panel2
             // 
             this.splitContainer1.Panel2.Controls.Add(this.dgvRooms);
-            this.splitContainer1.Size = new System.Drawing.Size(517, 390);
+            this.splitContainer1.Size = new System.Drawing.Size(517, 423);
             this.splitContainer1.SplitterDistance = 34;
             this.splitContainer1.TabIndex = 0;
             // 
@@ -91,7 +92,7 @@
             // 
             this.textBox_search.AcceptsReturn = true;
             this.textBox_search.Dock = System.Windows.Forms.DockStyle.Left;
-            this.textBox_search.Font = new System.Drawing.Font("宋体", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.textBox_search.Font = new System.Drawing.Font("SimSun", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.textBox_search.Location = new System.Drawing.Point(189, 0);
             this.textBox_search.Name = "textBox_search";
             this.textBox_search.Size = new System.Drawing.Size(120, 30);
@@ -158,7 +159,7 @@
             this.dgvRooms.Name = "dgvRooms";
             this.dgvRooms.ReadOnly = true;
             this.dgvRooms.RowTemplate.Height = 23;
-            this.dgvRooms.Size = new System.Drawing.Size(517, 352);
+            this.dgvRooms.Size = new System.Drawing.Size(517, 385);
             this.dgvRooms.TabIndex = 0;
             // 
             // ID
@@ -230,10 +231,11 @@
             // 
             // FormRooms
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(517, 390);
+            this.ClientSize = new System.Drawing.Size(517, 423);
             this.Controls.Add(this.splitContainer1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FormRooms";
             this.Text = "房间管理";
             this.Load += new System.EventHandler(this.FormRooms_Load);

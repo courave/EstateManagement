@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormCars));
             this.splitContainer_cars = new System.Windows.Forms.SplitContainer();
             this.button_add = new System.Windows.Forms.Button();
             this.button_modify = new System.Windows.Forms.Button();
@@ -349,6 +350,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(638, 464);
             this.Controls.Add(this.splitContainer_cars);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FormCars";
             this.Text = "车位管理";
             this.Load += new System.EventHandler(this.FormCars_Load);

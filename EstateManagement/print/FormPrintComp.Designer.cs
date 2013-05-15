@@ -30,6 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             System.Windows.Forms.Label label1;
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormPrintComp));
             this.dateTimePicker_selmonth = new System.Windows.Forms.DateTimePicker();
             this.button_print = new System.Windows.Forms.Button();
             this.progressBar_printcomp = new System.Windows.Forms.ProgressBar();
@@ -87,6 +88,7 @@
             this.Controls.Add(this.button_print);
             this.Controls.Add(this.dateTimePicker_selmonth);
             this.Controls.Add(label1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FormPrintComp";
             this.Text = "打印待收费公司名单";
             this.Load += new System.EventHandler(this.FormPrintComp_Load);

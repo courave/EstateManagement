@@ -54,6 +54,7 @@
             System.Windows.Forms.Label label17;
             System.Windows.Forms.GroupBox groupBox_deposit;
             System.Windows.Forms.Label label22;
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormAddCustomer));
             this.button_cancelroom = new System.Windows.Forms.Button();
             this.button_refresh = new System.Windows.Forms.Button();
             this.button_addroom = new System.Windows.Forms.Button();
@@ -693,6 +694,7 @@
             this.Controls.Add(label3);
             this.Controls.Add(label2);
             this.Controls.Add(label1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FormAddCustomer";
             this.Text = "新增客户";
             this.Load += new System.EventHandler(this.FormAddCustomer_Load);

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ContractList));
             this.splitContainer_contract = new System.Windows.Forms.SplitContainer();
             this.button_search = new System.Windows.Forms.Button();
             this.textBox_search = new System.Windows.Forms.TextBox();
@@ -377,6 +378,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(793, 460);
             this.Controls.Add(this.splitContainer_contract);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "ContractList";
             this.Text = "合同管理";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.ContractList_FormClosing);

@@ -34,12 +34,22 @@ namespace EstateManagement
         private void InitListView()
         {
             ImageList itemsImageList = new ImageList();
-
-            Image pic=Image.FromFile(Application.StartupPath+"\\resources\\customer.jpg");
-            itemsImageList.ImageSize = new Size(150, 150);
-            itemsImageList.Images.Add(pic);
+            itemsImageList.ColorDepth = ColorDepth.Depth32Bit;
+            Image customerPic = Properties.Resources.customers;
+            Image feereportPic = Properties.Resources.feereport;
+            Image printPic = Properties.Resources.printreport;
+            Image sdmPic = Properties.Resources.sdm;
+            itemsImageList.ImageSize = new Size(100, 100);
+            itemsImageList.Images.Add(customerPic);
+            itemsImageList.Images.Add(feereportPic);
+            itemsImageList.Images.Add(printPic);
+            itemsImageList.Images.Add(sdmPic);
             listViewMain.LargeImageList = itemsImageList;
-            listViewMain.Items.Add(new ListViewItem("客户管理", 0));
+            listViewMain.Items.Add(new ListViewItem("客户信息管理", 0));
+            listViewMain.Items.Add(new ListViewItem("费用报表管理", 1));
+            listViewMain.Items.Add(new ListViewItem("打印当月报表", 2));
+            listViewMain.Items.Add(new ListViewItem("水电煤录入", 3));
+            
         }
 
         private void ToolStripMenuItem_ContractManage_Click(object sender, EventArgs e)
@@ -136,6 +146,58 @@ namespace EstateManagement
         {
             report.FormFeeReport frmFeeReport = new report.FormFeeReport();
             frmFeeReport.Show();
+        }
+
+
+        private void ToolStripMenuItem_rolelist_Click(object sender, EventArgs e)
+        {
+            users.FormRoles frmRoles = new users.FormRoles();
+            frmRoles.Show();
+        }
+
+
+        private void ToolStripMenuItem_userlist_Click(object sender, EventArgs e)
+        {
+            users.FormUsers frmUsers = new users.FormUsers();
+            frmUsers.Show();
+        }
+
+        private void ToolStripMenuItem_logout_Click(object sender, EventArgs e)
+        {
+            this.Dispose();
+            users.FormLogin frmLogin = new users.FormLogin();
+            frmLogin.Show();
+        }
+
+        private void aboutToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            about.FormAbout frmAbout = new about.FormAbout();
+            frmAbout.ShowDialog();
+        }
+
+        private void listViewMain_DoubleClick(object sender, EventArgs e)
+        {
+            if (listViewMain.SelectedItems.Count != 1) return;
+            ListViewItem item = listViewMain.SelectedItems[0];
+            switch (item.ImageIndex)
+            {
+                case 0:
+                    customers.FormCustomers frmCustomer = new customers.FormCustomers();
+                    frmCustomer.Show();
+                    break;
+                case 1:
+                    report.FormFeeReport frmReport = new report.FormFeeReport();
+                    frmReport.Show();
+                    break;
+                case 2:
+                    print.FormSelMonth frmSelMonth = new print.FormSelMonth();
+                    frmSelMonth.Show();
+                    break;
+                case 3:
+                    charges.FormAddSdm frmSdm = new charges.FormAddSdm();
+                    frmSdm.Show();
+                    break;
+            }
         }
 
 

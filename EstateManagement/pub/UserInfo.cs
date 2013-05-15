@@ -14,6 +14,7 @@ namespace EstateManagement.pub
         public static int ID;
         public static bool checkIfExist(string UserName, string Password)
         {
+            Password = pub.Cryptography.Encrypt(Password);
             using (DataBase db = new DataBase())
             {
                 db.AddParameter("USER_NAME", UserName);

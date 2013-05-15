@@ -39,6 +39,7 @@
             System.Windows.Forms.Label label9;
             System.Windows.Forms.Label label10;
             System.Windows.Forms.Label label11;
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormAddCar));
             this.textBox_user = new System.Windows.Forms.TextBox();
             this.textBox_plate = new System.Windows.Forms.TextBox();
             this.textBox_id = new System.Windows.Forms.TextBox();
@@ -286,6 +287,7 @@
             this.Controls.Add(label3);
             this.Controls.Add(label2);
             this.Controls.Add(label1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FormAddCar";
             this.Text = "添加车位信息";
             this.ResumeLayout(false);

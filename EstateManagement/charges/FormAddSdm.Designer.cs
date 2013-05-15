@@ -39,6 +39,7 @@
             System.Windows.Forms.Label label9;
             System.Windows.Forms.Label label8;
             System.Windows.Forms.Label label7;
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormAddSdm));
             this.comboBox_comp = new System.Windows.Forms.ComboBox();
             this.comboBox_room = new System.Windows.Forms.ComboBox();
             this.comboBox_type = new System.Windows.Forms.ComboBox();
@@ -319,6 +320,7 @@
             this.Controls.Add(label3);
             this.Controls.Add(label2);
             this.Controls.Add(label1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FormAddSdm";
             this.Text = "水电煤等录入(按房间号)";
             this.panel_last.ResumeLayout(false);

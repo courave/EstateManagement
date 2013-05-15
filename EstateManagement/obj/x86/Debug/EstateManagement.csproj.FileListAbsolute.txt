@@ -86,3 +86,8 @@ C:\Users\lancelot\Documents\Visual Studio 2010\Projects\EstateManagement\EstateM
 C:\Users\11171\Documents\Visual Studio 2010\Projects\EstateManagement\EstateManagement\EstateManagement\obj\x86\Debug\EstateManagement.print.FormFeePrintPreview.resources
 C:\Users\11171\Documents\Visual Studio 2010\Projects\EstateManagement\EstateManagement\EstateManagement\obj\x86\Debug\EstateManagement.print.FormSelMonth.resources
 C:\Users\11171\Documents\Visual Studio 2010\Projects\EstateManagement\EstateManagement\EstateManagement\obj\x86\Debug\EstateManagement.report.FormFeeReport.resources
+C:\Users\11171\Documents\Visual Studio 2010\Projects\EstateManagement\EstateManagement\EstateManagement\obj\x86\Debug\EstateManagement.users.FormAddRole.resources
+C:\Users\11171\Documents\Visual Studio 2010\Projects\EstateManagement\EstateManagement\EstateManagement\obj\x86\Debug\EstateManagement.users.FormRoles.resources
+C:\Users\11171\Documents\Visual Studio 2010\Projects\EstateManagement\EstateManagement\EstateManagement\obj\x86\Debug\EstateManagement.users.FormAddUser.resources
+C:\Users\11171\Documents\Visual Studio 2010\Projects\EstateManagement\EstateManagement\EstateManagement\obj\x86\Debug\EstateManagement.users.FormUsers.resources
+C:\Users\11171\Documents\Visual Studio 2010\Projects\EstateManagement\EstateManagement\EstateManagement\obj\x86\Debug\EstateManagement.about.FormAbout.resources

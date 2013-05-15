@@ -22,6 +22,18 @@ namespace EstateManagement.charges
             LoadData();
             InitComboData();
         }
+        public FormFee(string compid, string genmonth)
+        {
+            InitializeComponent();
+            queryStr = "SELECT A.[ID],B.[COMP_NAME],A.[FEE_TYPE],A.[FEE_CHARGE],CONVERT(CHAR(10), A.[LAST_END], 111) AS LAST_END, " +
+                                    "CONVERT(CHAR(10), A.[LAST_END], 111) + ' - '+CONVERT(CHAR(10), A.[NEXT_START], 111) AS CUR_DATE, " +
+                                    "CONVERT(CHAR(10), A.[NEXT_START], 111) AS NEXT_START,A.[COMMENT],A.[GEN_MONTH],A.[ISPAID] " +
+                                    "FROM [FEE_INFO] A,[CONTRACT_INFO] B WHERE A.COMP_ID=B.ID "+
+                                    " AND B.ID=" + compid + " AND A.GEN_MONTH='" + genmonth + "'";
+            LoadData();
+            InitComboData();
+            
+        }
         private void InitComboData()
         {
             using (DataBase db = new DataBase())

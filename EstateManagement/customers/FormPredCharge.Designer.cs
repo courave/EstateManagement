@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormPredCharge));
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.button_reset = new System.Windows.Forms.Button();
             this.comboBox_comp = new System.Windows.Forms.ComboBox();
@@ -191,6 +192,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(517, 441);
             this.Controls.Add(this.splitContainer1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FormPredCharge";
             this.Text = "固定资费预设置管理";
             this.Load += new System.EventHandler(this.FormPredCharge_Load);

@@ -30,6 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             System.Windows.Forms.Label label1;
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormGenerate));
             this.lblMsg = new System.Windows.Forms.Label();
             this.dateTimePicker_selmonth = new System.Windows.Forms.DateTimePicker();
             this.button_generate = new System.Windows.Forms.Button();
@@ -99,6 +100,7 @@
             this.Controls.Add(this.dateTimePicker_selmonth);
             this.Controls.Add(this.lblMsg);
             this.Controls.Add(label1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FormGenerate";
             this.Text = "生成费用报表";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FormGenerate_FormClosing);

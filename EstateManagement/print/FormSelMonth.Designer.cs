@@ -30,6 +30,7 @@
         {
             System.Windows.Forms.Label label1;
             System.Windows.Forms.Label label2;
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormSelMonth));
             this.comboBox_month = new System.Windows.Forms.ComboBox();
             this.comboBox_ispaid = new System.Windows.Forms.ComboBox();
             this.button_confirm = new System.Windows.Forms.Button();
@@ -97,6 +98,7 @@
             this.Controls.Add(this.comboBox_month);
             this.Controls.Add(label2);
             this.Controls.Add(label1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FormSelMonth";
             this.Text = "打印范围";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FormSelMonth_FormClosing);

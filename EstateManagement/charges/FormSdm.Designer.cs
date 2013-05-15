@@ -33,6 +33,7 @@
             System.Windows.Forms.ToolStripMenuItem ToolStripMenuItem_room;
             System.Windows.Forms.ToolStripMenuItem ToolStripMenuItem_type;
             System.Windows.Forms.ToolStripMenuItem ToolStripMenuItem_cbtime;
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormSdm));
             this.toolStripComboBox_comp = new System.Windows.Forms.ToolStripComboBox();
             this.toolStripComboBox_room = new System.Windows.Forms.ToolStripComboBox();
             this.toolStripComboBox_type = new System.Windows.Forms.ToolStripComboBox();
@@ -379,6 +380,7 @@
             this.ClientSize = new System.Drawing.Size(930, 445);
             this.Controls.Add(this.dgvSdm);
             this.Controls.Add(this.menuStrip_sdm);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip_sdm;
             this.Name = "FormSdm";
             this.Text = "水电煤费用列表";

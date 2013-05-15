@@ -34,6 +34,7 @@
             System.Windows.Forms.ToolStripMenuItem ToolStripMenuItem_lastend;
             System.Windows.Forms.ToolStripMenuItem ToolStripMenuItem_nextstart;
             System.Windows.Forms.ToolStripMenuItem ToolStripMenuItem_genmonth;
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormFee));
             this.toolStripComboBox_comp = new System.Windows.Forms.ToolStripComboBox();
             this.toolStripComboBox_type = new System.Windows.Forms.ToolStripComboBox();
             this.toolStripTextBox_lastend = new System.Windows.Forms.ToolStripTextBox();
@@ -417,6 +418,7 @@
             this.ClientSize = new System.Drawing.Size(821, 474);
             this.Controls.Add(this.dgvFee);
             this.Controls.Add(this.menuStrip_fee);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip_fee;
             this.Name = "FormFee";
             this.Text = "费用列表";
