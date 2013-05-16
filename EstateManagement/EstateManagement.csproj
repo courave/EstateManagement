@@ -153,6 +153,12 @@
     <Compile Include="FormMainPanel.Designer.cs">
       <DependentUpon>FormMainPanel.cs</DependentUpon>
     </Compile>
+    <Compile Include="notification\FormNotification.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="notification\FormNotification.Designer.cs">
+      <DependentUpon>FormNotification.cs</DependentUpon>
+    </Compile>
     <Compile Include="print\ClassFeeReport.cs" />
     <Compile Include="print\CrystalReport_feelist.cs">
       <AutoGen>True</AutoGen>
@@ -279,6 +285,9 @@
     <EmbeddedResource Include="FormMainPanel.resx">
       <DependentUpon>FormMainPanel.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="notification\FormNotification.resx">
+      <DependentUpon>FormNotification.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="print\CrystalReport_feelist.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>CrystalReport_feelist.cs</LastGenOutput>
@@ -342,6 +351,7 @@
     <None Include="resources\printreport.jpg" />
     <None Include="resources\sdm.jpg" />
     <None Include="resources\logo.ico" />
+    <None Include="resources\btnClose.jpg" />
     <Content Include="resources\test.bmp" />
   </ItemGroup>
   <ItemGroup>

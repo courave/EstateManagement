@@ -200,6 +200,12 @@ namespace EstateManagement
             }
         }
 
+        private void FormMainPanel_Load(object sender, EventArgs e)
+        {
+            notification.FormNotification frmNotification = new notification.FormNotification();
+            frmNotification.Show();
+        }
+
 
 
     }

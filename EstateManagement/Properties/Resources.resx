@@ -121,17 +121,14 @@
   <data name="logo385x385" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\resources\logo385x385.jpg;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="logo187x95" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\resources\logo187x95.jpg;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="logo750x382" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\resources\logo750x382.jpg;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="feereport" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\feereport.jpg;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="customers" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\resources\customers.jpg;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="feereport" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\resources\feereport.jpg;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="logo750x382" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\logo750x382.jpg;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="printreport" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\resources\printreport.jpg;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -139,8 +136,14 @@
   <data name="sdm" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\resources\sdm.jpg;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="logo187x95" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\logo187x95.jpg;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="logo" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\resources\logo.ico;System.Drawing.Icon, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="btnClose" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\btnClose.jpg;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

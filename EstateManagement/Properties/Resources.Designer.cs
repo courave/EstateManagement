@@ -60,6 +60,13 @@ namespace EstateManagement.Properties {
             }
         }
         
+        internal static System.Drawing.Bitmap btnClose {
+            get {
+                object obj = ResourceManager.GetObject("btnClose", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
         internal static System.Drawing.Bitmap customers {
             get {
                 object obj = ResourceManager.GetObject("customers", resourceCulture);

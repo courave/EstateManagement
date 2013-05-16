@@ -318,8 +318,10 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStripMain;
             this.Name = "FormMainPanel";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "小蔡物业管理软件(陈姐特别版)";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FormMainPanel_FormClosed);
+            this.Load += new System.EventHandler(this.FormMainPanel_Load);
             this.menuStripMain.ResumeLayout(false);
             this.menuStripMain.PerformLayout();
             this.ResumeLayout(false);
